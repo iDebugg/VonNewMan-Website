@@ -16,9 +16,10 @@ function ProductColumn({ product }: { product: Product }) {
     <article
       id={product.id}
       aria-labelledby={`${product.id}-name`}
-      className="grid scroll-mt-header lg:row-span-full lg:grid-rows-subgrid"
+      className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] overflow-hidden rounded-nav border border-line bg-paper lg:row-span-full lg:grid-rows-subgrid"
     >
-      <div className="relative aspect-[16/10] border border-ink">
+      {/* Card: screenshot fills the top edge to edge; the sheet rows sit beneath it. */}
+      <div className="relative aspect-[16/10] border-b border-line">
         <Image
           src={product.image.src}
           alt={product.image.alt}
@@ -28,9 +29,9 @@ function ProductColumn({ product }: { product: Product }) {
         />
       </div>
 
-      <p className="pt-4 pb-3 text-label text-brand">{product.badge}</p>
+      <p className="px-6 pt-5 pb-3 text-label text-brand lg:px-7">{product.badge}</p>
 
-      <div className="border-t-2 border-ink pt-5 pb-6">
+      <div className="mx-6 border-t border-ink pt-5 pb-6 lg:mx-7">
         <h3 id={`${product.id}-name`} className="font-display text-product">
           {product.name}
         </h3>
@@ -40,12 +41,12 @@ function ProductColumn({ product }: { product: Product }) {
         </p>
       </div>
 
-      <p className="border-t border-line py-6 text-body text-slate">
+      <p className="mx-6 border-t border-line py-6 text-body text-slate lg:mx-7">
         <strong className="font-semibold text-ink">{product.positioning}</strong>{" "}
         {product.description}
       </p>
 
-      <div className="border-t border-line py-6">
+      <div className="mx-6 border-t border-line py-6 lg:mx-7">
         {product.figures ? (
           <dl className="grid grid-cols-3 gap-6">
             {product.figures.map((figure) => (
@@ -68,7 +69,7 @@ function ProductColumn({ product }: { product: Product }) {
         ) : null}
       </div>
 
-      <ul className="grid list-none gap-3 border-t border-line py-6">
+      <ul className="mx-6 grid list-none gap-3 border-t border-line py-6 lg:mx-7">
         {product.features.map((feature) => (
           <li key={feature.lead} className="text-body text-slate">
             <strong className="font-semibold text-ink">{feature.lead}</strong> {feature.text}
@@ -76,7 +77,7 @@ function ProductColumn({ product }: { product: Product }) {
         ))}
       </ul>
 
-      <div className="flex flex-wrap items-center gap-3 border-t border-line pt-6">
+      <div className="mx-6 flex flex-wrap items-center gap-3 border-t border-line py-6 lg:mx-7">
         {product.actions.map((action, index) => (
           <ButtonLink key={action.label} item={action} variant={actionVariants[index] ?? "link"} />
         ))}
@@ -93,7 +94,7 @@ export function Products() {
         title={productsIntro.headline}
         lede={productsIntro.lede}
       />
-      <div className="mt-12 grid gap-y-20 lg:mt-16 lg:grid-cols-2 lg:grid-rows-[repeat(7,auto)] lg:gap-x-12 lg:gap-y-0">
+      <div className="mt-12 grid gap-y-8 lg:mt-16 lg:grid-cols-2 lg:grid-rows-[repeat(7,auto)] lg:gap-x-8 lg:gap-y-0">
         {products.map((product) => (
           <ProductColumn key={product.id} product={product} />
         ))}
