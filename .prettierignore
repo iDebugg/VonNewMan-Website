@@ -1,0 +1,8 @@
+.next
+node_modules
+package-lock.json
+public
+docs
+BUILD.md
+README.md
+.claude

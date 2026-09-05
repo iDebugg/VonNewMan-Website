@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Von Newman Technology Consultants</title>
+<meta name="description" content="Von Newman Technology Consultants builds custom software, learning platforms and infrastructure intelligence for public and private sector organisations across Nigeria and the UK. Adapted to you, never off the shelf.">
+<link rel="icon" href="assets/vn-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 13v6H5V6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5v-15zM4 20.5A2.5 2.5 0 016.5 18H20v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><path d="M12 12L19 5M12 21a9 9 0 110-18M12 17a5 5 0 110-10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.5 6.5a3.5 3.5 0 004.7 4.7L21 13l-2 2-1.8-1.8-6.9 6.9a2 2 0 01-2.8-2.8l6.9-6.9L12.6 8.6l2-2zM4 4l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><path d="M16 19v-1.5a3.5 3.5 0 00-3.5-3.5h-5A3.5 3.5 0 004 17.5V19M21 19v-1.5a3.5 3.5 0 00-2.6-3.4M15 4.2a3.5 3.5 0 010 6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="7.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 5v14M17 5v14M3 10h4M3 14h4M17 10h4M17 14h4M10 9.5v5l4-2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3M20 16V6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 01-.5-7.97A6 6 0 0118 9a4.5 4.5 0 01-.5 9H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="19" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="19" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5M12 12.5l-5.5 4.5M12 12.5l5.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M14 4c3 0 6 3 6 6-2 4-5 7-9 9l-3-3c2-4 5-7 6-12zM8 16l-3 5 5-3M15 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 20a8 8 0 0116 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== Navigation ========== -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="Von Newman Technology Consultants, home">
+      <img src="assets/vn-mark.png" alt="" width="36" height="36">
+      <span>Von Newman<small>Technology Consultants</small></span>
+    </a>
+
+    <ul class="nav__links">
+      <li class="has-menu">
+        <button class="nav__link" data-menu="menu-products" aria-expanded="false" aria-haspopup="true">Products <svg><use href="#i-chevron"/></svg></button>
+        <div class="menu" id="menu-products" role="menu">
+          <a href="#atlas" role="menuitem"><span class="menu__icon"><svg><use href="#i-book"/></svg></span><span><strong>Von Newman Atlas</strong><small>Learning platform for professional training, localised for Nigeria.</small></span></a>
+          <a href="#sonar" role="menuitem"><span class="menu__icon"><svg><use href="#i-radar"/></svg></span><span><strong>Von Newman Sonar</strong><small>Hybrid infrastructure management with naira-aware FinOps.</small></span></a>
+          <div class="menu__hr"></div>
+          <a href="#services" role="menuitem"><span class="menu__icon menu__icon--alt"><svg><use href="#i-tools"/></svg></span><span><strong>Custom builds</strong><small>Software, cloud, networks and security, built for you.</small></span></a>
+        </div>
+      </li>
+      <li><a class="nav__link" href="#services">Services</a></li>
+      <li><a class="nav__link" href="#sectors">Sectors</a></li>
+      <li><a class="nav__link" href="#approach">How we work</a></li>
+      <li><a class="nav__link" href="#company">Company</a></li>
+    </ul>
+
+    <ul class="nav__right">
+      <li class="has-menu">
+        <button class="nav__link" data-menu="menu-signin" aria-expanded="false" aria-haspopup="true"><svg style="width:16px;height:16px" aria-hidden="true"><use href="#i-user"/></svg> Sign in <svg><use href="#i-chevron"/></svg></button>
+        <div class="menu menu--right" id="menu-signin" role="menu">
+          <a href="https://learn.vonnewmanlearning.com" target="_blank" rel="noopener" role="menuitem"><span class="menu__icon"><svg><use href="#i-book"/></svg></span><span><strong>Sign in to Atlas</strong><small>Learners and administrators.</small></span></a>
+          <a href="#contact" role="menuitem"><span class="menu__icon"><svg><use href="#i-radar"/></svg></span><span><strong>Sonar console</strong><small>Access is issued per organisation. Request yours.</small></span></a>
+        </div>
+      </li>
+      <li><a class="btn btn--primary btn--sm" href="#contact">Talk to us</a></li>
+    </ul>
+
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg><use href="#i-menu"/></svg></button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <div class="wrap">
+      <div class="mobile-menu__group">Products</div>
+      <a href="#atlas">Von Newman Atlas</a>
+      <a href="#sonar">Von Newman Sonar</a>
+      <div class="mobile-menu__group">Company</div>
+      <a href="#services">Services</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#approach">How we work</a>
+      <a href="#company">Team and offices</a>
+      <div class="mobile-menu__group">Sign in</div>
+      <a href="https://learn.vonnewmanlearning.com" target="_blank" rel="noopener">Sign in to Atlas</a>
+      <a href="#contact">Request Sonar access</a>
+      <a class="btn btn--primary" href="#contact">Talk to us</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== Hero ========== -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">Lagos and London · Public and private sector</span>
+        <h1>Technology adapted to you. <em>Never off the shelf.</em></h1>
+        <p class="lede">We build software, learning platforms and infrastructure intelligence for banks, ministries, agencies and enterprises. Every engagement starts with your problem, not our product list.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#contact">Start a conversation <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="#products">Explore our products</a>
+        </div>
+        <div class="hero__meta">
+          <span><i></i>Two in-house platforms</span>
+          <span><i></i>Eight practice areas</span>
+          <span><i></i>Delivered for HP and LexisNexis</span>
+        </div>
+      </div>
+
+      <div class="collage" aria-label="Screens from Von Newman Atlas and Von Newman Sonar">
+        <div class="collage__card collage__main"><img src="assets/atlas-home.jpg" alt="Von Newman Atlas learning platform home page" width="1400" height="875" loading="eager"></div>
+        <div class="collage__card collage__side"><img src="assets/sonar-inventory.jpg" alt="Von Newman Sonar cloud inventory dashboard" width="1400" height="770"></div>
+        <span class="collage__tag collage__tag--a"><i>A</i>Atlas · 109+ courses</span>
+        <span class="collage__tag collage__tag--b"><i>S</i>Sonar · every asset, one view</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Thesis ========== -->
+<section class="section thesis" id="difference">
+  <div class="wrap">
+    <div class="thesis__grid">
+      <div class="thesis__statement reveal">
+        <span class="eyebrow">What makes us different</span>
+        <h2>We solve problems. We don't <s>paper over</s> them.</h2>
+        <p class="lede">Most vendors hand you a licence and a manual. We own the architecture and roadmap of everything we build, so we reshape it around your workflows, your policies, your brand and your regulators.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-tools"/></svg></div>
+          <div><h3>Custom-built for every client</h3><p>Nothing we deliver is a generic install. Features, dashboards, content and policy logic are engineered around how your organisation actually works.</p></div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-people"/></svg></div>
+          <div><h3>Public sector and private sector, equally</h3><p>Ministries, agencies and local government on one side. Banks, insurers and enterprises on the other. We have delivered for both, in Nigeria and the UK, and we speak both languages.</p></div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-globe"/></svg></div>
+          <div><h3>Deep market experience</h3><p>Our consultants have delivered for global enterprises including HP and LexisNexis. We bring that discipline to every engagement, with content, pricing and support designed for the Nigerian market.</p></div>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-spark"/></svg></div>
+          <div><h3>A consultancy that builds its own products</h3><p>Atlas and Sonar are ours, end to end. If a feature would make the platform work better for your teams, we don't raise a ticket with a vendor. We build it.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><strong>2</strong><span>Markets: Nigeria and the UK</span></div>
+      <div class="stat"><strong>8</strong><span>Practice areas</span></div>
+      <div class="stat"><strong>2</strong><span>In-house products</span></div>
+      <div class="stat"><strong>109+</strong><span>Courses live on Atlas</span></div>
+      <div class="stat"><strong>90</strong><span>Days to a measurable first result</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Products ========== -->
+<section class="section section--mist" id="products">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <span class="eyebrow">Our platforms</span>
+        <h2>Two products we own outright, and shape around you.</h2>
+        <p class="lede">Adopt them in full, license the content into your own systems, or let us adapt them until they feel like they were built in-house. Because for you, they were.</p>
+      </div>
+    </div>
+
+    <article class="product reveal" id="atlas">
+      <div class="product__copy">
+        <div class="product__name">
+          <span class="logo logo--atlas" aria-hidden="true">A</span>
+          <div><h3>Von Newman Atlas</h3><small>Learning platform · LMS and CMS</small></div>
+        </div>
+        <p class="lede">Learning, beautifully connected. Onboarding, upskilling, compliance and certification for public and private sector teams, measured in one place and localised for Nigerian organisations.</p>
+        <div class="product__figures">
+          <div><strong>25</strong><span>Structured pathways</span></div>
+          <div><strong>109+</strong><span>Courses, growing quarterly</span></div>
+          <div><strong>NG</strong><span>Localised content</span></div>
+        </div>
+        <ul class="feature-list">
+          <li><svg><use href="#i-check"/></svg><span><b>Guided pathways.</b> Role-relevant programmes with prerequisites and visible progress.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Verified outcomes.</b> Lesson checks, module gates and trusted certificates.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Workforce analytics.</b> Track departments, overdue learning and credentials.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Content studio.</b> Doc2Video, SCORM and xAPI, microlearning, localisation.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Intelligent.</b> Recommendations, skill-gap insight and gamification.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Atlas, or your LMS.</b> License our content securely into your existing platform.</span></li>
+        </ul>
+        <div class="product__actions">
+          <a class="btn btn--primary" href="https://atlas.vonnewmanlearning.com" target="_blank" rel="noopener">Visit Atlas <svg><use href="#i-external"/></svg></a>
+          <a class="btn btn--secondary" href="https://learn.vonnewmanlearning.com" target="_blank" rel="noopener">Sign in</a>
+          <a class="btn btn--ghost" href="https://atlas.vonnewmanlearning.com/catalogue" target="_blank" rel="noopener">Browse the catalogue <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="product__media">
+        <span class="badge">Live</span>
+        <img src="assets/atlas-home.jpg" alt="Atlas home page showing pathways, progress and a request-a-demo button" width="1400" height="875" loading="lazy">
+      </div>
+    </article>
+
+    <article class="product product--flip reveal" id="sonar">
+      <div class="product__copy">
+        <div class="product__name">
+          <span class="logo logo--sonar" aria-hidden="true">S</span>
+          <div><h3>Von Newman Sonar</h3><small>Hybrid infrastructure management · FinOps</small></div>
+        </div>
+        <p class="lede">See your entire estate, control every naira. Sonar continuously maps every asset you run, across every cloud and every data centre, then keeps it governed, resilient and cost-optimised.</p>
+        <ul class="feature-list">
+          <li><svg><use href="#i-check"/></svg><span><b>One view of everything.</b> Continuous discovery and dependency mapping.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Drift and codification.</b> Unmanaged resources become clean, reviewed Terraform.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Guardrails and evidence.</b> Audit-ready, aligned to ISO 27001, SOC 2 and CBN IT guidance.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Resilience.</b> Restore whole environments to last-known-good in minutes.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Cloud FinOps.</b> Dual-currency ₦/$ visibility, budgets, rightsizing, chargeback.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Safe self-service.</b> Reusable provisioning patterns inside your guardrails.</span></li>
+        </ul>
+        <div class="product__actions">
+          <a class="btn btn--primary" href="#contact">Request a Sonar demo <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="#contact">Request console access</a>
+        </div>
+        <ul class="chips" aria-label="Works with">
+          <li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">Google Cloud</li><li class="chip">VMware</li><li class="chip">Nutanix</li><li class="chip">Kubernetes</li><li class="chip">Bare metal</li>
+        </ul>
+      </div>
+      <div class="product__media">
+        <span class="badge">Cloud inventory</span>
+        <img src="assets/sonar-inventory.jpg" alt="Sonar cloud inventory listing managed and unmanaged resources across AWS accounts" width="1400" height="770" loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== How we work ========== -->
+<section class="section" id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>Four stages, in this order, on every engagement.</h2>
+      <p class="lede">We immerse ourselves in your operating model before a line of configuration is written, and we stay after go-live to keep the platform moving with you.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="step__num">01</div><h3>Discover</h3><p>On site with your teams, we learn your operating model, regulatory context and what success has to look like to your board.</p></div>
+      <div class="step"><div class="step__num">02</div><h3>Adapt</h3><p>Our engineers tailor the product itself: features, dashboards, content, branding and policy logic built around how your institution actually works.</p></div>
+      <div class="step"><div class="step__num">03</div><h3>Embed</h3><p>Integration with identity, HR and core systems, plus change management, champion networks and training, so adoption sticks in every branch and team.</p></div>
+      <div class="step"><div class="step__num">04</div><h3>Evolve</h3><p>A living roadmap shaped by your KPIs: continuous releases, tested improvements and quarterly reviews with your leadership. Not an annual upgrade bill.</p></div>
+    </div>
+
+    <div class="quote reveal">
+      <figure>
+        <blockquote>If a feature would make the platform work better for your teams, we don't raise a ticket with a vendor. We build it.</blockquote>
+        <figcaption>The advantage of owning the product</figcaption>
+      </figure>
+      <div class="why">
+        <div><i></i><div><b>Full product ownership</b><span>We build and evolve Atlas and Sonar in-house. No third-party licence limits what can change for you.</span></div></div>
+        <div><i></i><div><b>Security-first engineering</b><span>Role-based access, audit trails and DevSecOps pipelines in every release cycle.</span></div></div>
+        <div><i></i><div><b>Nigerian depth, UK discipline</b><span>Designed for the Nigerian market, delivered to UK enterprise and public-sector standards.</span></div></div>
+        <div><i></i><div><b>Measurable outcomes</b><span>Every engagement is anchored to KPIs your board recognises: adoption, competency, cost and compliance.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Services ========== -->
+<section class="section section--mist" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Consulting and engineering</span>
+      <h2>Beyond the products: end-to-end capability.</h2>
+      <p class="lede">From in-house software engineering to zero-trust networks, we deliver across every layer of your digital estate. As a full build, a managed service, or an extension of your own teams.</p>
+    </div>
+
+    <div class="services">
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-code"/></svg></div><div><h3>Software development</h3><p>Custom web, mobile, AI and enterprise applications. API and systems integration. Automation and workflow tooling aligned to your strategic goals.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-layers"/></svg></div><div><h3>LMS engineering</h3><p>We don't just implement learning platforms, we build and evolve them: microservices, API-first, cloud-native, with DevSecOps in every release.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-film"/></svg></div><div><h3>Doc2Video digitisation</h3><p>Our studio converts manuals, policies and legacy materials into engaging video, interactive eLearning and microlearning. Accessible and localised.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-chart"/></svg></div><div><h3>HR and performance systems</h3><p>Smart workforce tools for reviews, competency mapping and performance data that connect directly to learning outcomes.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-cloud"/></svg></div><div><h3>Cloud services</h3><p>Scalable architecture, migration and ongoing management across Azure, AWS and Google Cloud, with auto-scaling and disaster recovery built in.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-network"/></svg></div><div><h3>Network and infrastructure</h3><p>Reliable enterprise networks, identity and access management, and end-user computing for organisations that cannot afford downtime.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-shield"/></svg></div><div><h3>Cybersecurity</h3><p>Secure architectures, role-based access, full audit trails and hardened delivery pipelines that protect your digital assets from modern threats.</p></div></div>
+      <div class="service reveal"><div class="service__icon"><svg><use href="#i-rocket"/></svg></div><div><h3>Advanced technology</h3><p>Applied AI, data-driven platforms and advanced engineering, including defence and space technology innovation.</p></div></div>
+    </div>
+
+    <div class="engage reveal">
+      <div class="engage__card">
+        <h4>How we engage</h4>
+        <p>Fixed-scope builds, managed services, product licensing or team augmentation. Commercial models shaped around your procurement, in naira or sterling.</p>
+        <ul class="chips"><li class="chip">Fixed scope</li><li class="chip">Managed service</li><li class="chip">Licensing</li><li class="chip">Team augmentation</li></ul>
+      </div>
+      <div class="engage__card">
+        <h4>Delivery standards</h4>
+        <p>Agile sprint delivery with CI/CD and DevSecOps, WCAG-aligned accessibility, and programmes led by PRINCE2 and Agile-qualified practitioners.</p>
+        <ul class="chips"><li class="chip">Agile and CI/CD</li><li class="chip">DevSecOps</li><li class="chip">WCAG</li><li class="chip">PRINCE2</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Sectors ========== -->
+<section class="section" id="sectors">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <span class="eyebrow">Who we work with</span>
+        <h2>Built for the realities of both sectors.</h2>
+        <p class="lede">We understand Nigeria's regulators, its infrastructure realities and its people, and we adapt our platforms to each institution rather than asking the institution to adapt to us.</p>
+      </div>
+      <div class="seg" role="tablist" aria-label="Choose a sector">
+        <button role="tab" aria-selected="true" aria-controls="panel-public" id="tab-public">Public sector</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-private" id="tab-private">Private sector</button>
+      </div>
+    </div>
+
+    <div class="sector-panel is-active reveal" id="panel-public" role="tabpanel" aria-labelledby="tab-public">
+      <div>
+        <h3>Ministries, agencies and local government.</h3>
+        <p class="lede">Public institutions need platforms that respect procurement, policy and accountability, and that work for staff in every office, not just headquarters. We design for all of that from the start.</p>
+        <a class="btn btn--secondary" href="#contact">Discuss a public sector programme <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="sector-list">
+        <li><b>Workforce learning at scale</b><span>Atlas</span><p>Induction, conditions of service, governance, ethics and revenue administration pathways, delivered to every department with completion evidence.</p></li>
+        <li><b>Custom digital services</b><span>Software</span><p>Citizen-facing portals, case management, records and workflow systems built around your mandates and your existing processes.</p></li>
+        <li><b>Estate visibility and cost control</b><span>Sonar</span><p>One view across data centres, cloud and regional sites, with budgets and evidence your auditors and the public accounts committee will accept.</p></li>
+        <li><b>Standards you can point to</b><span>Delivery</span><p>UK public-sector delivery discipline, WCAG accessibility and NDPA-conscious data handling as standard.</p></li>
+      </ul>
+    </div>
+
+    <div class="sector-panel reveal" id="panel-private" role="tabpanel" aria-labelledby="tab-private">
+      <div>
+        <h3>Banks, insurers and growing enterprises.</h3>
+        <p class="lede">Private organisations need speed without losing control: compliance that holds up to examiners, cloud spend that makes sense in naira, and software that gives them an edge rather than a template.</p>
+        <a class="btn btn--secondary" href="#contact">Discuss an enterprise engagement <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="sector-list">
+        <li><b>Compliance and conduct learning</b><span>Atlas</span><p>AML/CFT awareness, conduct, cyber hygiene, service excellence and leadership programmes co-designed with your L&amp;D and compliance teams.</p></li>
+        <li><b>Bespoke applications</b><span>Software</span><p>Customer platforms, integrations and automation aligned to strategy, not off-the-shelf modules you have to work around.</p></li>
+        <li><b>Naira-aware FinOps</b><span>Sonar</span><p>Dollar-billed cloud against naira budgets: dual-currency reporting, FX exposure views and cost narratives your CFO will actually use.</p></li>
+        <li><b>Resilience and evidence</b><span>Sonar</span><p>Capacity planning for month-end and salary-day peaks, recovery drills for critical services and audit-ready evidence packs for examiners.</p></li>
+      </ul>
+    </div>
+
+    <div class="fin reveal">
+      <span class="eyebrow">Sector focus · Financial services</span>
+      <h2 style="margin-top:1rem">Built for the realities of Nigerian banking.</h2>
+      <div class="fin__grid">
+        <div class="fin__card"><h4>People</h4><b>Compliance learning at scale</b><p>Induction, conduct, AML/CFT awareness and cyber hygiene delivered through Atlas to every branch, with completion evidence your compliance team can stand behind.</p></div>
+        <div class="fin__card"><h4>Infrastructure</h4><b>Hybrid estates, one view</b><p>Branches, data centres and cloud in a single Sonar console. Discovered, governed and recoverable, whatever mix of stacks you run today.</p></div>
+        <div class="fin__card"><h4>Cost</h4><b>Naira-aware FinOps</b><p>Dual-currency reporting, FX exposure views and board-ready cost narratives for dollar-billed cloud against naira budgets.</p></div>
+        <div class="fin__card"><h4>Trust</h4><b>Data protection and audit</b><p>NDPA-conscious data handling, role-based access and full audit trails, with evidence mapped to the frameworks your examiners ask about.</p></div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl"><small>Weeks 1 to 4</small><b>Discovery</b><p>With your L&amp;D, IT and compliance leads. Success measures agreed.</p></div>
+        <div class="tl"><small>Weeks 5 to 10</small><b>Tailored pilot, live</b><p>One Atlas learning cohort, one Sonar estate view, your branding.</p></div>
+        <div class="tl"><small>Weeks 11 to 13</small><b>Results review</b><p>Against agreed KPIs. Scale plan and commercial model for full rollout.</p></div>
+      </div>
+      <p class="tl-note">Every partnership includes a dedicated delivery lead, quarterly roadmap reviews, local support in Lagos, training and change management, and SLA-backed operations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Places ========== -->
+<section class="section places" id="company">
+  <div class="wrap">
+    <div class="places__intro reveal">
+      <span class="eyebrow">Where we are</span>
+      <h2>Engineered between Lagos and London.</h2>
+      <p>A consultancy with its own products, and a product team that consults. We operate across Nigeria and the United Kingdom, with delivery experience in both public and private sectors in each market.</p>
+    </div>
+    <div class="places__grid">
+      <div class="place reveal">
+        <div class="place__time" id="clock-lagos" aria-live="off">--:--</div>
+        <h3>Lagos · Headquarters</h3>
+        <p>Product engineering, our learning studio and client delivery for West Africa.</p>
+        <address>No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos, Nigeria</address>
+      </div>
+      <div class="place reveal">
+        <div class="place__time" id="clock-london" aria-live="off">--:--</div>
+        <h3>United Kingdom · Delivery</h3>
+        <p>Programme leadership, infrastructure and security delivery shaped by UK enterprise and public-sector standards.</p>
+        <address>London and the South East</address>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Team ========== -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Leadership team</span>
+      <h2>The people behind the platforms.</h2>
+      <p class="lede">Engineers, architects and delivery leaders working between Lagos and London. The same people who build our products sit across the table on your engagement.</p>
+    </div>
+    <div class="team">
+      <div class="person reveal"><img src="assets/team-wilfred.jpg" alt="Wilfred Babatope Achom" width="520" height="520" loading="lazy"><div><b>Wilfred Babatope Achom</b><span>Managing Director, CEO and Founder</span></div></div>
+      <div class="person reveal"><img src="assets/team-vijay.jpg" alt="Vijay Gadhia" width="520" height="520" loading="lazy"><div><b>Vijay Gadhia</b><span>Director, Infrastructure and LMS</span></div></div>
+      <div class="person reveal"><img src="assets/team-kate.jpg" alt="Kate Welling" width="520" height="520" loading="lazy"><div><b>Kate Welling</b><span>Director, Architecture and AI</span></div></div>
+      <div class="person reveal"><img src="assets/team-oyin.jpg" alt="Oyinloluwa Bolarinwa" width="520" height="520" loading="lazy"><div><b>Oyinloluwa Bolarinwa</b><span>Lead UI/UX Designer</span></div></div>
+      <div class="person reveal"><img src="assets/team-abdulrasaq.jpg" alt="Abdulrasaq Oladapo" width="520" height="520" loading="lazy"><div><b>Abdulrasaq Oladapo</b><span>Team Lead and Software Developer</span></div></div>
+      <div class="person reveal"><img src="assets/team-victor.jpg" alt="Victor Aderibigbe" width="520" height="520" loading="lazy"><div><b>Victor Aderibigbe</b><span>Lead Frontend Developer</span></div></div>
+    </div>
+    <p class="team-note reveal">A multi-disciplinary bench across product strategy, software engineering, AI, learning design, cloud, networks and security, with a proven record delivering enterprise solutions in Nigeria and the UK.</p>
+  </div>
+</section>
+
+<!-- ========== Contact ========== -->
+<section class="section section--mist" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="reveal">
+        <span class="eyebrow">Next steps</span>
+        <h2 style="margin-top:1rem">Let's build something bespoke.</h2>
+        <p class="lede" style="margin-top:1rem">A conversation, a demonstration of Atlas and Sonar with your context in mind, and a 90-day pilot shaped around your goals. That's all it takes to see the difference a product partner makes.</p>
+        <div class="contact__details">
+          <div><small>Email</small><a href="mailto:info@vonnewmanconsulting.com.ng">info@vonnewmanconsulting.com.ng</a></div>
+          <div><small>Phone</small><a href="tel:+2349029534228">+234 902 953 4228</a></div>
+          <div><small>Visit</small><span>No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos · United Kingdom</span></div>
+          <div><small>Company</small><span>Von Newman Technology Consultants Ltd · RC 8840592, Nigeria</span></div>
+        </div>
+      </div>
+      <form class="form reveal" id="contact-form" novalidate>
+        <div class="form__row">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-org">Organisation</label><input id="f-org" name="org" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="form__row">
+          <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-sector">Sector</label>
+            <select id="f-sector" name="sector"><option>Public sector</option><option>Financial services</option><option>Private sector, other</option><option>Not sure yet</option></select>
+          </div>
+        </div>
+        <div class="field"><label for="f-interest">What are you interested in?</label>
+          <select id="f-interest" name="interest"><option>A conversation about a problem we could solve</option><option>A demonstration of Atlas</option><option>A demonstration of Sonar</option><option>A custom software build</option><option>Cloud, network or security services</option><option>A 90-day pilot</option></select>
+        </div>
+        <div class="field"><label for="f-message">Tell us a little about it</label><textarea id="f-message" name="message" placeholder="What's the problem, who does it affect, and what would good look like?"></textarea></div>
+        <div class="form__foot">
+          <p id="form-note">Sending opens your email app with the message ready to go. Or write to us directly.</p>
+          <button class="btn btn--primary" type="submit">Send enquiry <svg><use href="#i-arrow"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="#top"><img src="assets/vn-mark.png" alt="" width="36" height="36"><span>Von Newman<small>Technology Consultants</small></span></a>
+        <p>Enterprise technology built around your organisation. Learning platforms, infrastructure intelligence and consulting, engineered between Lagos and London and adapted to each client we serve.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#atlas">Von Newman Atlas</a></li>
+          <li><a href="https://atlas.vonnewmanlearning.com/catalogue" target="_blank" rel="noopener">Atlas catalogue</a></li>
+          <li><a href="#sonar">Von Newman Sonar</a></li>
+          <li><a href="#services">Custom builds</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#difference">What makes us different</a></li>
+          <li><a href="#approach">How we work</a></li>
+          <li><a href="#sectors">Sectors</a></li>
+          <li><a href="#team">Leadership team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sign in</h4>
+        <ul>
+          <li><a href="https://learn.vonnewmanlearning.com" target="_blank" rel="noopener">Atlas learners and admins</a></li>
+          <li><a href="#contact">Request Sonar access</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem">Follow</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div><span>© <span id="year">2026</span> Von Newman Technology Consultants Limited</span><span>RC 8840592</span><span>Lagos · London</span></div>
+      <div><span><a href="#">Privacy policy</a></span><span><a href="#">Terms of service</a></span><span>Adapted to you. Never off the shelf.</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
