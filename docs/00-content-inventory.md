@@ -115,8 +115,8 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
   - [ ] **Atlas, or your LMS.** `License our content securely into your existing platform.`
 - [ ] Actions
   - [ ] `Visit Atlas` → `https://atlas.vonnewmanlearning.com` (new tab, external icon)
-  - [ ] `Sign in` → `https://learn.vonnewmanlearning.com` (new tab)
-  - [ ] `Browse the catalogue` → `https://atlas.vonnewmanlearning.com/catalogue` (new tab)
+  - [ ] `Sign in` → `https://learn.vonnewmanlearning.com` (new tab) **(removed from the Atlas actions on 5 September 2026 at the client's instruction; the footer keeps the link)**
+  - [ ] `Browse the catalogue` → `https://atlas.vonnewmanlearning.com/catalogue` (new tab) **(removed from the Atlas actions on 5 September 2026 at the client's instruction; the footer keeps `Atlas catalogue`)**
 - [ ] Badge `Live`
 - [ ] Image `assets/atlas-home.jpg`, alt `Atlas home page showing pathways, progress and a request-a-demo button`, 1400×875, lazy
 
@@ -135,7 +135,7 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
   - [ ] **Safe self-service.** `Reusable provisioning patterns inside your guardrails.`
 - [ ] Actions
   - [ ] `Request a Sonar demo` → `#contact`
-  - [ ] `Request console access` → `#contact`
+  - [ ] `Request console access` → `#contact` **(removed from the Sonar actions on 5 September 2026 at the client's instruction; the footer keeps `Request Sonar access`)**
 - [ ] Platform list, `aria-label="Works with"` (7): `AWS`, `Azure`, `Google Cloud`, `VMware`, `Nutanix`, `Kubernetes`, `Bare metal`
 - [ ] Badge `Cloud inventory`
 - [ ] Image `assets/sonar-inventory.jpg`, alt `Sonar cloud inventory listing managed and unmanaged resources across AWS accounts`, 1400×770, lazy

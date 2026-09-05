@@ -59,11 +59,8 @@ export const atlas: Product = {
       text: "License our content securely into your existing platform.",
     },
   ],
-  actions: [
-    { label: "Visit Atlas", href: site.urls.atlas, external: true },
-    { label: "Sign in", href: site.urls.atlasSignIn, external: true },
-    { label: "Browse the catalogue", href: site.urls.atlasCatalogue, external: true },
-  ],
+  /** "Sign in" and "Browse the catalogue" removed 5 September 2026 (client); both remain in the footer. */
+  actions: [{ label: "Visit Atlas", href: site.urls.atlas, external: true }],
   image: {
     src: "/assets/atlas-home.jpg",
     alt: "Atlas home page showing pathways, progress and a request-a-demo button",
@@ -99,10 +96,8 @@ export const sonar: Product = {
     },
     { lead: "Safe self-service.", text: "Reusable provisioning patterns inside your guardrails." },
   ],
-  actions: [
-    { label: "Request a Sonar demo", href: "#contact" },
-    { label: "Request console access", href: "#contact" },
-  ],
+  /** "Request console access" removed 5 September 2026 (client); "Request Sonar access" remains in the footer. */
+  actions: [{ label: "Request a Sonar demo", href: "#contact" }],
   image: {
     src: "/assets/sonar-inventory.jpg",
     alt: "Sonar cloud inventory listing managed and unmanaged resources across AWS accounts",

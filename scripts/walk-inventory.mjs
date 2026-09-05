@@ -74,6 +74,9 @@ const removed = new Set([
   "Sonar console",
   "Learners and administrators.",
   "Access is issued per organisation. Request yours.",
+  // Product actions removed 5 September 2026 (client); the footer keeps the same destinations.
+  "Browse the catalogue",
+  "Request console access",
   // Trust point reworded to "Delivered for NRS and More", 5 September 2026 (client).
   "Delivered for HP and LexisNexis",
 ]);
