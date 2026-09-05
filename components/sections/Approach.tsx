@@ -29,20 +29,19 @@ export function Approach() {
         ))}
       </ol>
 
-      <div className="mt-16 grid gap-10 lg:mt-20 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-        <figure className="border border-ink p-7 sm:p-9">
-          <blockquote className="font-display text-statement">{approach.quote}</blockquote>
-          <figcaption className="mt-5 text-label text-slate">{approach.quoteCaption}</figcaption>
-        </figure>
-        <ul className="grid list-none content-start gap-6">
-          {ownershipPoints.map((point) => (
-            <li key={point.title}>
-              <h3 className="text-subtitle">{point.title}</h3>
-              <p className="mt-1 text-body text-slate">{point.description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* The quote as a centred statement, the four ownership points as cards beneath it. */}
+      <figure className="mx-auto mt-20 max-w-[52rem] text-center lg:mt-24">
+        <blockquote className="font-display text-display-2">{approach.quote}</blockquote>
+        <figcaption className="mt-6 text-label text-brand">{approach.quoteCaption}</figcaption>
+      </figure>
+      <ul className="mt-12 grid list-none gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-5">
+        {ownershipPoints.map((point) => (
+          <li key={point.title} className="rounded-nav border border-line bg-paper p-6">
+            <h3 className="text-subtitle">{point.title}</h3>
+            <p className="mt-2 text-body text-slate">{point.description}</p>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }
