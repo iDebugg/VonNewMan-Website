@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Product } from "@/lib/content";
 import { products, productsIntro } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -8,50 +9,49 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 const actionVariants = ["primary", "secondary", "link"] as const;
 
 /**
- * Atlas and Sonar as a matched pair. On large screens each article is a subgrid of the
- * parent's seven rows, so every rule sits at the same height in both columns.
+ * Showcase row: a large screenshot beside the product's copy. Rows alternate sides, Atlas with
+ * the image on the left and Sonar on the right (client direction, 5 September 2026).
  */
-function ProductColumn({ product }: { product: Product }) {
+function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
   return (
     <article
       id={product.id}
       aria-labelledby={`${product.id}-name`}
-      className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] overflow-hidden rounded-nav border border-line bg-paper lg:row-span-full lg:grid-rows-subgrid"
+      className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] items-center gap-10 lg:grid-cols-5 lg:gap-16"
     >
-      {/* Card: screenshot fills the top edge to edge; the sheet rows sit beneath it. */}
-      <div className="relative aspect-[16/10] border-b border-line">
-        <Image
-          src={product.image.src}
-          alt={product.image.alt}
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-left-top"
-        />
-      </div>
+      <figure className={cn("lg:col-span-3", flip && "lg:order-2")}>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-nav border border-line">
+          <Image
+            src={product.image.src}
+            alt={product.image.alt}
+            fill
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="object-cover object-left-top"
+          />
+        </div>
+      </figure>
 
-      <p className="px-6 pt-5 pb-3 text-label text-brand lg:px-7">{product.badge}</p>
-
-      <div className="mx-6 border-t border-ink pt-5 pb-6 lg:mx-7">
-        <h3 id={`${product.id}-name`} className="font-display text-product">
+      <div className={cn("lg:col-span-2", flip && "lg:order-1")}>
+        <p className="text-label text-brand">{product.badge}</p>
+        <h3 id={`${product.id}-name`} className="mt-3 font-display text-product">
           {product.name}
         </h3>
         <p className="mt-2 flex flex-wrap gap-x-4 text-label text-slate">
           <span>{product.subline.primary}</span>
           <span>{product.subline.secondary}</span>
         </p>
-      </div>
+        <p className="mt-6 text-body text-slate">
+          <strong className="font-semibold text-ink">{product.positioning}</strong>{" "}
+          {product.description}
+        </p>
 
-      <p className="mx-6 border-t border-line py-6 text-body text-slate lg:mx-7">
-        <strong className="font-semibold text-ink">{product.positioning}</strong>{" "}
-        {product.description}
-      </p>
-
-      <div className="mx-6 border-t border-line py-6 lg:mx-7">
         {product.figures ? (
-          <dl className="grid grid-cols-3 gap-6">
+          <dl className="mt-7 grid grid-cols-3 gap-4 border-t border-line pt-6">
             {product.figures.map((figure) => (
               <div key={figure.label} className="flex flex-col">
-                <dd className="order-1 font-display text-figure tabular">{figure.value}</dd>
+                <dd className="order-1 font-display text-figure font-semibold tabular">
+                  {figure.value}
+                </dd>
                 <dt className="order-2 mt-2 text-caption text-slate">{figure.label}</dt>
               </div>
             ))}
@@ -60,27 +60,31 @@ function ProductColumn({ product }: { product: Product }) {
         {product.platforms ? (
           <ul
             aria-label={product.platformsLabel}
-            className="flex list-none flex-wrap gap-x-6 gap-y-2 text-body font-medium text-ink"
+            className="mt-7 flex list-none flex-wrap gap-x-5 gap-y-2 border-t border-line pt-6 text-body font-medium text-ink"
           >
             {product.platforms.map((platform) => (
               <li key={platform}>{platform}</li>
             ))}
           </ul>
         ) : null}
-      </div>
 
-      <ul className="mx-6 grid list-none gap-3 border-t border-line py-6 lg:mx-7">
-        {product.features.map((feature) => (
-          <li key={feature.lead} className="text-body text-slate">
-            <strong className="font-semibold text-ink">{feature.lead}</strong> {feature.text}
-          </li>
-        ))}
-      </ul>
+        <ul className="mt-7 grid list-none gap-x-6 gap-y-3 border-t border-line pt-6 sm:grid-cols-2">
+          {product.features.map((feature) => (
+            <li key={feature.lead} className="text-body text-slate">
+              <strong className="font-semibold text-ink">{feature.lead}</strong> {feature.text}
+            </li>
+          ))}
+        </ul>
 
-      <div className="mx-6 flex flex-wrap items-center gap-3 border-t border-line py-6 lg:mx-7">
-        {product.actions.map((action, index) => (
-          <ButtonLink key={action.label} item={action} variant={actionVariants[index] ?? "link"} />
-        ))}
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          {product.actions.map((action, index) => (
+            <ButtonLink
+              key={action.label}
+              item={action}
+              variant={actionVariants[index] ?? "link"}
+            />
+          ))}
+        </div>
       </div>
     </article>
   );
@@ -94,9 +98,9 @@ export function Products() {
         title={productsIntro.headline}
         lede={productsIntro.lede}
       />
-      <div className="mt-12 grid gap-y-8 lg:mt-16 lg:grid-cols-2 lg:grid-rows-[repeat(7,auto)] lg:gap-x-8 lg:gap-y-0">
-        {products.map((product) => (
-          <ProductColumn key={product.id} product={product} />
+      <div className="mt-14 grid gap-20 lg:mt-20 lg:gap-28">
+        {products.map((product, index) => (
+          <ProductRow key={product.id} product={product} flip={index % 2 === 1} />
         ))}
       </div>
     </Section>
