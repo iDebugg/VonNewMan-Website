@@ -7,16 +7,24 @@ export function Approach() {
     <Section id="approach" ground="stone" labelledBy="approach-heading">
       <SectionHeading id="approach-heading" title={approach.headline} lede={approach.lede} />
 
-      {/* A real sequence: one track, four markers. Vertical on small screens, horizontal from lg. */}
-      <ol className="mt-12 grid list-none gap-10 border-l-2 border-line pl-6 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:border-t-2 lg:border-l-0 lg:pt-6 lg:pl-0">
-        {stages.map((stage) => (
-          <li key={stage.slug} className="relative">
+      {/* A real sequence, shown as a numbered stepper: circles on one line from lg, a vertical
+          milestone list below that (client direction, 5 September 2026). */}
+      <ol className="mt-12 grid list-none lg:mt-16 lg:grid-cols-4 lg:gap-x-8">
+        {stages.map((stage, index) => (
+          <li
+            key={stage.slug}
+            className="relative flex gap-5 pb-10 last:pb-0 before:absolute before:top-10 before:bottom-0 before:left-5 before:w-px before:bg-line [&:last-child]:before:hidden lg:block lg:pb-0 lg:before:hidden lg:after:absolute lg:after:top-5 lg:after:left-12 lg:after:-right-8 lg:after:h-px lg:after:bg-line lg:after:content-[''] lg:[&:last-child]:after:hidden"
+          >
             <span
               aria-hidden="true"
-              className="absolute top-1.5 -left-[calc(1.5rem+7px)] size-3 bg-brand lg:-top-[calc(1.5rem+7px)] lg:left-0"
-            />
-            <h3 className="text-title">{stage.title}</h3>
-            <p className="mt-2 text-body text-slate">{stage.description}</p>
+              className="relative z-10 grid size-10 shrink-0 place-items-center rounded-full bg-brand font-display text-title text-paper tabular"
+            >
+              {index + 1}
+            </span>
+            <div className="pt-1.5 lg:pt-6">
+              <h3 className="text-title">{stage.title}</h3>
+              <p className="mt-2 text-body text-slate">{stage.description}</p>
+            </div>
           </li>
         ))}
       </ol>
