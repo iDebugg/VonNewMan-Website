@@ -98,11 +98,12 @@ export const sonar: Product = {
   ],
   /** "Request console access" removed 5 September 2026 (client); "Request Sonar access" remains in the footer. */
   actions: [{ label: "Request a Sonar demo", href: "#contact" }],
+  /** Screenshot replaced 5 September 2026 (client): the Sonar product homepage. */
   image: {
-    src: "/assets/sonar-inventory.jpg",
-    alt: "Sonar cloud inventory listing managed and unmanaged resources across AWS accounts",
-    width: 1400,
-    height: 770,
+    src: "/assets/sonar-home.png",
+    alt: "Von Newman Sonar homepage: find what isn't in Terraform, import it in a few steps, with a scan listing unmanaged AWS resources",
+    width: 1592,
+    height: 777,
   },
 };
 

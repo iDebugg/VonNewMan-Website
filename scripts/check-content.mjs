@@ -68,6 +68,9 @@ const structural = new Set([
   "Delivered for NRS and More",
   // New portrait supplied by the client, 5 September 2026 (renamed to bypass caches).
   "team-victor-2026.jpg",
+  // New Sonar screenshot supplied by the client, 5 September 2026.
+  "/assets/sonar-home.png",
+  "Von Newman Sonar homepage: find what isn't in Terraform, import it in a few steps, with a scan listing unmanaged AWS resources",
 ]);
 
 let checked = 0;

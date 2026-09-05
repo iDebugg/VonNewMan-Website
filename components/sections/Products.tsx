@@ -20,7 +20,11 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
       className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] items-center gap-10 lg:grid-cols-5 lg:gap-16"
     >
       <figure className={cn("lg:col-span-3", flip && "lg:order-2")}>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-nav border border-line">
+        {/* The frame takes the screenshot's own aspect ratio so nothing is cropped away. */}
+        <div
+          className="relative overflow-hidden rounded-nav border border-line"
+          style={{ aspectRatio: `${product.image.width} / ${product.image.height}` }}
+        >
           <Image
             src={product.image.src}
             alt={product.image.alt}

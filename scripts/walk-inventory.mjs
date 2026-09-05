@@ -69,6 +69,8 @@ const removed = new Set([
   "Sonar · every asset, one view",
   "Von Newman Atlas learning platform home page",
   "Von Newman Sonar cloud inventory dashboard",
+  // Sonar screenshot replaced with the product homepage, 5 September 2026 (client).
+  "Sonar cloud inventory listing managed and unmanaged resources across AWS accounts",
   // Header Sign in menu removed, 5 September 2026 (client); both links remain in the footer.
   "Sign in to Atlas",
   "Sonar console",
@@ -94,9 +96,6 @@ for (const m of body.matchAll(/`([^`]+)`/g)) {
 const attrs = {
   "Atlas alt": raw.includes(
     'alt="Atlas home page showing pathways, progress and a request-a-demo button"',
-  ),
-  "Sonar alt": raw.includes(
-    'alt="Sonar cloud inventory listing managed and unmanaged resources across AWS accounts"',
   ),
   "Works with": raw.includes('aria-label="Works with"'),
   "Choose a sector": raw.includes('aria-label="Choose a sector"'),
