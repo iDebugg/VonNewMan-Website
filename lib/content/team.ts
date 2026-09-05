@@ -57,6 +57,6 @@ export const people: Person[] = [
     slug: "victor-aderibigbe",
     name: "Victor Aderibigbe",
     title: "Lead Frontend Developer",
-    photo: portrait("team-victor.jpg", "Victor Aderibigbe"),
+    photo: portrait("team-victor-2026.jpg", "Victor Aderibigbe"),
   },
 ];

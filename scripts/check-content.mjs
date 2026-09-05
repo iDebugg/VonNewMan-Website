@@ -66,6 +66,8 @@ const structural = new Set([
   "/assets/hero-poster.jpg",
   // Client copy change, 5 September 2026: third hero trust point.
   "Delivered for NRS and More",
+  // New portrait supplied by the client, 5 September 2026 (renamed to bypass caches).
+  "team-victor-2026.jpg",
 ]);
 
 let checked = 0;
