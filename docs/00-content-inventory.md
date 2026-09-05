@@ -137,7 +137,7 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
   - [ ] `Request a Sonar demo` → `#contact`
   - [ ] `Request console access` → `#contact` **(removed from the Sonar actions on 5 September 2026 at the client's instruction; the footer keeps `Request Sonar access`)**
 - [ ] Platform list, `aria-label="Works with"` (7): `AWS`, `Azure`, `Google Cloud`, `VMware`, `Nutanix`, `Kubernetes`, `Bare metal`
-- [ ] Badge `Cloud inventory`
+- [ ] Badge `Cloud inventory` **(changed to `Live` on 5 September 2026 at the client's instruction)**
 - [ ] Image `assets/sonar-inventory.jpg`, alt `Sonar cloud inventory listing managed and unmanaged resources across AWS accounts`, 1400×770, lazy **(replaced on 5 September 2026 at the client's instruction with `assets/sonar-home.png`, the Sonar product homepage)**
 
 ### 2.4 `#approach`

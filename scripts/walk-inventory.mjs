@@ -101,7 +101,6 @@ const attrs = {
   "Choose a sector": raw.includes('aria-label="Choose a sector"'),
   "Open menu": raw.includes('aria-label="Open menu"'),
   "Live badge": text.includes(" Live "),
-  "Cloud inventory badge": text.includes("Cloud inventory"),
   "tel link": raw.includes('href="tel:+2349029534228"'),
   "mailto link": raw.includes('href="mailto:info@vonnewmanconsulting.com.ng"'),
   "lang en-GB": raw.includes('lang="en-GB"'),

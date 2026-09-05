@@ -73,7 +73,8 @@ export const sonar: Product = {
   id: "sonar",
   name: "Von Newman Sonar",
   subline: { primary: "Hybrid infrastructure management", secondary: "FinOps" },
-  badge: "Cloud inventory",
+  /** Was "Cloud inventory"; changed to "Live" on 5 September 2026 (client) with the new screenshot. */
+  badge: "Live",
   positioning: "See your entire estate, control every naira.",
   description:
     "Sonar continuously maps every asset you run, across every cloud and every data centre, then keeps it governed, resilient and cost-optimised.",
