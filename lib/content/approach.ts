@@ -5,6 +5,7 @@ export type Stage = {
 };
 
 export type OwnershipPoint = {
+  slug: string;
   title: string;
   description: string;
 };
@@ -46,20 +47,24 @@ export const stages: Stage[] = [
 
 export const ownershipPoints: OwnershipPoint[] = [
   {
+    slug: "ownership",
     title: "Full product ownership",
     description:
       "We build and evolve Atlas and Sonar in-house. No third-party licence limits what can change for you.",
   },
   {
+    slug: "security",
     title: "Security-first engineering",
     description: "Role-based access, audit trails and DevSecOps pipelines in every release cycle.",
   },
   {
+    slug: "markets",
     title: "Nigerian depth, UK discipline",
     description:
       "Designed for the Nigerian market, delivered to UK enterprise and public-sector standards.",
   },
   {
+    slug: "outcomes",
     title: "Measurable outcomes",
     description:
       "Every engagement is anchored to KPIs your board recognises: adoption, competency, cost and compliance.",

@@ -1,6 +1,11 @@
 import { approach, ownershipPoints, stages } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { Section } from "@/components/ui/Section";
+import { OwnershipIcon } from "@/components/ui/OwnershipIcon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+
+/** Each card sits a step lower than the previous one from lg, as in the client's reference. */
+const stepOffsets = ["", "lg:mt-10", "lg:mt-20", "lg:mt-30"];
 
 export function Approach() {
   return (
@@ -34,11 +39,22 @@ export function Approach() {
         <blockquote className="font-display text-display-2">{approach.quote}</blockquote>
         <figcaption className="mt-6 text-label text-brand">{approach.quoteCaption}</figcaption>
       </figure>
-      <ul className="mt-12 grid list-none gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-5">
-        {ownershipPoints.map((point) => (
-          <li key={point.title} className="rounded-nav border border-line bg-paper p-6">
-            <h3 className="text-subtitle">{point.title}</h3>
-            <p className="mt-2 text-body text-slate">{point.description}</p>
+      {/* Ownership points as outlined cards after the client's reference: square corners, an
+          outline icon, a tracked capitals title over a thin rule, border turning brand green on
+          hover, each card stepped a little lower than the last. */}
+      <ul className="mt-12 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-start">
+        {ownershipPoints.map((point, index) => (
+          <li
+            key={point.slug}
+            className={cn(
+              "border border-ink/30 bg-paper p-8 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-9",
+              stepOffsets[index],
+            )}
+          >
+            <OwnershipIcon slug={point.slug} className="text-slate" />
+            <h3 className="mt-8 text-subtitle uppercase tracking-[0.12em]">{point.title}</h3>
+            <div className="mt-5 h-px bg-ink/50" aria-hidden="true" />
+            <p className="mt-5 text-body text-slate">{point.description}</p>
           </li>
         ))}
       </ul>
