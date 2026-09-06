@@ -85,13 +85,13 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
           hidden={panel.id !== active}
           tabIndex={0}
           data-ground="dark"
-          className="mt-8 grid gap-10 rounded-nav bg-forest p-7 text-paper sm:p-9 lg:grid-cols-[2fr_3fr] lg:gap-12 lg:p-10"
+          className="mt-8 grid gap-10 rounded-nav bg-forest p-7 text-paper sm:p-9 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-12 lg:p-10"
         >
           <div>
             <h3 className="text-title-lg">{panel.heading}</h3>
             <p className="mt-4 text-lede text-paper/80">{panel.lede}</p>
             <ButtonLink item={panel.cta} variant="paper-brand" size="nav" className="mt-7" />
-            <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-nav border border-paper/15">
+            <div className="relative mt-8 aspect-[2/1] overflow-hidden rounded-nav border border-paper/15">
               <Image
                 src={panel.image.src}
                 alt={panel.image.alt}
