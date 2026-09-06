@@ -49,6 +49,7 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
         role="tablist"
         aria-label={label}
         className="inline-flex rounded-nav border border-line bg-paper p-1"
+        {...reveal()}
       >
         {panels.map((panel, index) => {
           const selected = panel.id === active;
@@ -88,7 +89,7 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
           data-ground="dark"
           className="mt-8 grid gap-10 rounded-nav bg-forest p-7 text-paper sm:p-9 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-12 lg:p-10"
         >
-          <div className="min-w-0">
+          <div className="min-w-0" {...reveal()}>
             <h3 className="text-title-lg">{panel.heading}</h3>
             <p className="mt-4 text-lede text-paper/80">{panel.lede}</p>
             <ButtonLink

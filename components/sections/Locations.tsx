@@ -15,6 +15,7 @@ export function Locations() {
       </div>
       {/* The two offices pinned on a world map, each pin breathing (client direction, 6 Sep 2026). */}
       <WorldMap
+        {...reveal(1)}
         className="mt-12 text-paper/15 lg:mt-16"
         pins={offices.map((office) => ({
           id: office.id,

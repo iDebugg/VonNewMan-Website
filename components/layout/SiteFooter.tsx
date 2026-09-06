@@ -4,6 +4,7 @@ import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils/cn";
 import { Container } from "@/components/ui/Container";
 import { ExternalHint, externalLinkProps } from "@/components/ui/ExternalHint";
+import { reveal } from "@/lib/utils/reveal";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -31,7 +32,7 @@ export function SiteFooter() {
     <footer data-ground="dark" className="bg-forest text-paper">
       <Container className="pt-14 pb-8 lg:pt-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr]">
-          <div className="md:col-span-2 lg:col-span-1">
+          <div className="md:col-span-2 lg:col-span-1" {...reveal(0)}>
             <a href="#top" aria-label={site.brand.homeLabel} className="inline-block">
               <Image
                 src={site.wordmarkWhite.src}
@@ -44,14 +45,14 @@ export function SiteFooter() {
             </a>
             <p className="mt-6 max-w-[40ch] text-body text-paper/70">{footer.descriptor}</p>
           </div>
-          {columns.map((column) => (
-            <div key={column.title}>
+          {columns.map((column, index) => (
+            <div key={column.title} {...reveal(index + 1)}>
               <h2 className="text-label font-semibold text-mint">{column.title}</h2>
               {renderLinks(column.links)}
             </div>
           ))}
           {signInCol ? (
-            <div>
+            <div {...reveal(3)}>
               <h2 className="text-label font-semibold text-mint">{signInCol.title}</h2>
               {renderLinks(signInCol.links)}
               {followCol ? (
@@ -63,7 +64,7 @@ export function SiteFooter() {
             </div>
           ) : null}
           {/* Contact details repeated here at the client's request (7 September 2026). */}
-          <div>
+          <div {...reveal(4)}>
             <h2 className="text-label font-semibold text-mint">Contact</h2>
             <ul className="mt-4 grid list-none gap-3 text-body text-paper/80">
               <li className="flex items-start gap-2.5">

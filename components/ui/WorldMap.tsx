@@ -31,11 +31,16 @@ const toPercent = (lon: number, lat: number) => ({
  * Each pin has a breathing ring; the map itself is decorative and hidden from assistive tech,
  * the pin labels are real text.
  */
-export function WorldMap({ pins, className }: { pins: MapPin[]; className?: string }) {
+export function WorldMap({
+  pins,
+  className,
+  ...rest
+}: { pins: MapPin[]; className?: string } & Record<string, unknown>) {
   return (
     <div
+      {...(rest as Record<string, never>)}
       className={cn("relative w-full", className)}
-      style={{ aspectRatio: `1000 / ${cropHeight}` }}
+      style={{ ...(rest.style as object), aspectRatio: `1000 / ${cropHeight}` }}
     >
       <svg
         viewBox={viewBox}

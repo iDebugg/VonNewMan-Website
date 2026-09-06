@@ -69,7 +69,10 @@ export function Team() {
         ))}
       </ul>
 
-      <p className="mx-auto mt-14 max-w-[46rem] text-center text-lede text-slate lg:mt-16">
+      <p
+        className="mx-auto mt-14 max-w-[46rem] text-center text-lede text-slate lg:mt-16"
+        {...reveal()}
+      >
         {team.bench}
       </p>
     </Section>

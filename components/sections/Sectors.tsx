@@ -79,7 +79,9 @@ export function Sectors() {
             </li>
           ))}
         </ol>
-        <p className="mt-8 max-w-[70ch] text-body text-slate">{financialServices.closing}</p>
+        <p className="mt-8 max-w-[70ch] text-body text-slate" {...reveal()}>
+          {financialServices.closing}
+        </p>
       </div>
     </Section>
   );
