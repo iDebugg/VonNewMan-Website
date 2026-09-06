@@ -6,7 +6,7 @@ import { WorldMap } from "@/components/ui/WorldMap";
 export function Locations() {
   return (
     <Section id="company" ground="forest" labelledBy="company-heading">
-      <div className="max-w-[46rem]">
+      <div className="mx-auto max-w-[46rem] text-center">
         <h2 id="company-heading" className="font-display text-display-2">
           {locations.headline}
         </h2>
@@ -23,7 +23,7 @@ export function Locations() {
           labelSide: office.pin.labelSide,
         }))}
       />
-      <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16 lg:mt-20">
+      <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-16 lg:mt-12">
         {offices.map((office) => (
           <div key={office.id} className="border-t border-line-dark pt-6">
             <LocalClock timeZone={office.timeZone} zoneLabel={office.zoneLabel} />

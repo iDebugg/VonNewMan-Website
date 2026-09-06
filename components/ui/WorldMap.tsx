@@ -1,4 +1,4 @@
-import { WORLD_MAP_PATH, WORLD_MAP_VIEWBOX } from "./world-map-path";
+import { WORLD_MAP_PATH } from "./world-map-path";
 import { cn } from "@/lib/utils/cn";
 
 export type MapPin = {
@@ -9,10 +9,21 @@ export type MapPin = {
   labelSide: "above" | "below";
 };
 
-/** Equirectangular: longitude and latitude map straight to percentages of the box. */
+/**
+ * The map is cropped to latitudes 80°N to 60°S: Antarctica and the polar cap add height and
+ * carry nothing. The generated path is 1000 by 500 for the full 180° of latitude.
+ */
+const LAT_TOP = 80;
+const LAT_BOTTOM = -60;
+const FULL_HEIGHT = 500;
+const cropY = ((90 - LAT_TOP) / 180) * FULL_HEIGHT;
+const cropHeight = ((LAT_TOP - LAT_BOTTOM) / 180) * FULL_HEIGHT;
+const viewBox = `0 ${cropY} 1000 ${cropHeight}`;
+
+/** Equirectangular: longitude and latitude map straight to percentages of the cropped box. */
 const toPercent = (lon: number, lat: number) => ({
   left: `${((lon + 180) / 360) * 100}%`,
-  top: `${((90 - lat) / 180) * 100}%`,
+  top: `${((LAT_TOP - lat) / (LAT_TOP - LAT_BOTTOM)) * 100}%`,
 });
 
 /**
@@ -22,9 +33,12 @@ const toPercent = (lon: number, lat: number) => ({
  */
 export function WorldMap({ pins, className }: { pins: MapPin[]; className?: string }) {
   return (
-    <div className={cn("relative aspect-[2/1] w-full", className)}>
+    <div
+      className={cn("relative w-full", className)}
+      style={{ aspectRatio: `1000 / ${cropHeight}` }}
+    >
       <svg
-        viewBox={WORLD_MAP_VIEWBOX}
+        viewBox={viewBox}
         preserveAspectRatio="none"
         aria-hidden="true"
         focusable="false"
