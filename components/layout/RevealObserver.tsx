@@ -11,6 +11,7 @@ export function RevealObserver() {
   useEffect(() => {
     const root = document.documentElement;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!("IntersectionObserver" in window)) return;
     root.dataset.js = "";
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,9 +35,19 @@ export function RevealObserver() {
       attributeFilter: ["hidden"],
       subtree: true,
     });
+    // Safety net: if the observer has not fired for something already on screen (hidden tabs,
+    // some in-app browsers), show it anyway after a moment so nothing stays invisible.
+    const safety = window.setInterval(() => {
+      const vh = window.innerHeight;
+      document.querySelectorAll<HTMLElement>("[data-reveal]:not([data-inview])").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < vh && rect.bottom > 0) el.dataset.inview = "";
+      });
+    }, 1500);
     return () => {
       observer.disconnect();
       mutations.disconnect();
+      window.clearInterval(safety);
       delete root.dataset.js;
     };
   }, []);
