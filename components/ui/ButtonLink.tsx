@@ -31,7 +31,7 @@ const sizes: Record<Size, string> = {
   md: "px-5 py-3",
   sm: "px-4 py-2",
   nav: "rounded-nav px-5 py-3 text-body font-semibold",
-  lg: "rounded-nav px-7 py-4 text-lede font-semibold",
+  lg: "rounded-nav px-6 py-3.5 text-body font-semibold",
 };
 
 type ButtonLinkProps = {
