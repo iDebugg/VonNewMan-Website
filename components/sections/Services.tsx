@@ -21,14 +21,20 @@ export function Services() {
         {practices.map((practice) => (
           <li
             key={practice.slug}
-            className="group border border-ink/30 bg-paper p-6 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-7"
+            className="group relative overflow-hidden border border-ink/20 bg-paper p-6 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-7"
           >
-            <PracticeIcon
-              slug={practice.slug}
-              className="text-slate transition-colors duration-200 group-hover:text-brand"
+            {/* Bottom bar sweeps in from the left on hover. */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-brand transition-transform duration-300 ease-out-quiet group-hover:scale-x-100"
             />
-            <h3 className="mt-6 text-subtitle uppercase tracking-[0.12em]">{practice.title}</h3>
-            <div className="mt-4 h-px bg-ink/50" aria-hidden="true" />
+            <span className="grid size-14 place-items-center rounded-nav bg-brand/10 text-brand transition-colors duration-200 group-hover:bg-brand group-hover:text-paper">
+              <PracticeIcon slug={practice.slug} size={30} strokeWidth={1.6} />
+            </span>
+            <h3 className="mt-6 text-subtitle uppercase tracking-[0.12em] transition-colors duration-200 group-hover:text-brand">
+              {practice.title}
+            </h3>
+            <div className="mt-4 h-px bg-ink/30" aria-hidden="true" />
             <p className="mt-4 text-label text-slate">{practice.description}</p>
           </li>
         ))}
