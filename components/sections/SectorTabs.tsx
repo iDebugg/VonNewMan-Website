@@ -42,7 +42,12 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
 
   return (
     <div>
-      <div role="tablist" aria-label={label} className="flex gap-8 border-b border-line">
+      {/* Pill switcher: the selected sector is solid brand green. */}
+      <div
+        role="tablist"
+        aria-label={label}
+        className="inline-flex rounded-nav border border-line bg-paper p-1"
+      >
         {panels.map((panel, index) => {
           const selected = panel.id === active;
           return (
@@ -60,8 +65,8 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
               onClick={() => setActive(panel.id)}
               onKeyDown={(event) => onKeyDown(event, index)}
               className={cn(
-                "-mb-px border-b-2 pb-3 text-label font-medium transition-colors duration-150",
-                selected ? "border-brand text-ink" : "border-transparent text-slate hover:text-ink",
+                "rounded-control px-5 py-2.5 text-label font-medium transition-colors duration-150",
+                selected ? "bg-brand text-paper" : "text-slate hover:text-ink",
               )}
             >
               {panel.tab}
@@ -83,17 +88,20 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
           <div>
             <h3 className="text-title-lg">{panel.heading}</h3>
             <p className="mt-4 text-lede text-slate">{panel.lede}</p>
-            <ButtonLink item={panel.cta} variant="secondary" className="mt-7" />
+            <ButtonLink item={panel.cta} className="mt-7" />
           </div>
-          <ul className="list-none border-t border-ink">
+          {/* The four items as compact tiles, the Atlas / Software / Sonar / Delivery tag in the corner. */}
+          <ul className="grid list-none gap-4 sm:grid-cols-2">
             {panel.items.map((item) => (
               <li
                 key={item.title}
-                className="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b border-line py-5"
+                className="relative border border-ink/20 bg-paper p-5 pt-6 transition-colors duration-200 ease-out-quiet hover:border-brand"
               >
-                <h4 className="text-subtitle">{item.title}</h4>
-                <span className="text-label text-brand">{item.tag}</span>
-                <p className="col-span-2 text-body text-slate">{item.description}</p>
+                <span className="absolute top-4 right-4 rounded-control bg-brand/10 px-2 py-0.5 text-caption font-medium text-brand">
+                  {item.tag}
+                </span>
+                <h4 className="pr-20 text-subtitle">{item.title}</h4>
+                <p className="mt-2 text-label text-slate">{item.description}</p>
               </li>
             ))}
           </ul>
