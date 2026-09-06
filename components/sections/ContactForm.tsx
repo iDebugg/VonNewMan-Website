@@ -8,8 +8,9 @@ import type { EnquiryErrors, EnquiryField } from "@/lib/actions/enquiry";
 import { honeypotField, mailtoSender, readEnquiry, validateEnquiry } from "@/lib/actions/enquiry";
 import { cn } from "@/lib/utils/cn";
 
+// Fields: brand-green border with 8px corners; focus swaps the page outline for a soft green ring.
 const control =
-  "w-full rounded-control border bg-stone/70 px-3.5 py-3 text-body text-ink placeholder:text-slate focus-visible:border-brand";
+  "w-full rounded-nav border bg-paper px-4 py-3 text-body text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-slate focus-visible:border-brand focus-visible:ring-4 focus-visible:ring-brand/20 focus-visible:outline-none";
 
 function Field({ field, error }: { field: FormField; error?: string }) {
   const id = `f-${field.name}`;
@@ -19,7 +20,7 @@ function Field({ field, error }: { field: FormField; error?: string }) {
     name: field.name,
     "aria-invalid": error ? true : undefined,
     "aria-describedby": error ? errorId : undefined,
-    className: cn(control, error ? "border-error" : "border-line"),
+    className: cn(control, error ? "border-error" : "border-brand/50"),
   };
   return (
     <div className="grid gap-1.5">
