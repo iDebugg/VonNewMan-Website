@@ -11,7 +11,7 @@ export function Contact() {
   const { email, phone, visit, company } = contact.details;
   const rowLabel = "flex items-center gap-2 text-label text-paper/70";
   return (
-    <Section id="contact" ground="stone" labelledBy="contact-heading">
+    <Section id="contact" labelledBy="contact-heading">
       <div className="grid overflow-hidden rounded-nav border border-line lg:grid-cols-[2fr_3fr]">
         <div data-ground="dark" className="min-w-0 bg-forest p-7 text-paper sm:p-10 lg:p-12">
           <h2 id="contact-heading" className="font-display text-display-2">
