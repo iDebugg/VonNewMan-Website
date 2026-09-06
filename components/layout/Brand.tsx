@@ -10,10 +10,7 @@ export function Brand({ condensedAware = false }: { condensedAware?: boolean }) 
         alt=""
         width={40}
         height={40}
-        className={cn(
-          "rounded-lg",
-          condensedAware && "transition-[width,height] group-data-[condensed=true]:size-8",
-        )}
+        className={cn("rounded-lg", condensedAware && "")}
       />
       <span className="leading-none">
         <span className="block text-title-lg whitespace-nowrap text-paper group-data-[condensed=true]:text-ink">
