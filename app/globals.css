@@ -13,6 +13,8 @@
   --color-stone: #f2f3f1;
   --color-brand: #1e763a;
   --color-forest: #0f3d22;
+  /* Label green for dark grounds: brand green fails contrast on forest, this passes at 7:1 */
+  --color-mint: #9fd3b0;
   /* Derived rules, not separate roles */
   --color-line: color-mix(in srgb, #141414 14%, transparent);
   --color-line-dark: color-mix(in srgb, #ffffff 22%, transparent);
