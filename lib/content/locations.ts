@@ -8,6 +8,8 @@ export type Office = {
   title: SplitLabel;
   description: string;
   address: string;
+  /** Map pin: WGS84 longitude and latitude, and which side the label sits on. */
+  pin: { lon: number; lat: number; labelSide: "above" | "below" };
 };
 
 export const locations = {
@@ -24,6 +26,7 @@ export const offices: Office[] = [
     title: { primary: "Lagos", secondary: "Headquarters" },
     description: "Product engineering, our learning studio and client delivery for West Africa.",
     address: "No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos, Nigeria",
+    pin: { lon: 3.3792, lat: 6.5244, labelSide: "below" },
   },
   {
     id: "london",
@@ -32,5 +35,6 @@ export const offices: Office[] = [
     description:
       "Programme leadership, infrastructure and security delivery shaped by UK enterprise and public-sector standards.",
     address: "London and the South East",
+    pin: { lon: -0.1276, lat: 51.5072, labelSide: "above" },
   },
 ];

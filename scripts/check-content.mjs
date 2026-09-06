@@ -52,6 +52,8 @@ const structural = new Set([
   "oyinloluwa-bolarinwa",
   "abdulrasaq-oladapo",
   "victor-aderibigbe",
+  "above",
+  "below",
   "ownership",
   "security",
   "markets",
