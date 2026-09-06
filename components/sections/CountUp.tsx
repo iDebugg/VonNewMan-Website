@@ -32,7 +32,7 @@ export function CountUp({ value, className }: CountUpProps) {
       ([entry]) => {
         if (!entry?.isIntersecting) return;
         observer.disconnect();
-        const duration = 1200;
+        const duration = 2600;
         const start = performance.now();
         const tick = (now: number) => {
           const t = Math.min(1, (now - start) / duration);

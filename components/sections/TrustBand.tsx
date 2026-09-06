@@ -12,28 +12,31 @@ export function TrustBand() {
   return (
     <>
       <Section ground="stone" labelledBy="trust-heading" className="py-[clamp(3rem,6vw,5rem)]">
-        <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-center lg:gap-14 lg:text-left">
-          <h2 id="trust-heading" className="max-w-[30ch] text-title-lg text-ink">
+        {/* Trust line on the left, partner marks in a ruled grid on the right, greyscale until
+          hovered, names beneath (client reference, 6 September 2026). */}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-16">
+          <h2 id="trust-heading" className="max-w-[24ch] text-title-lg text-ink">
             {trust.title}
           </h2>
-          <ul className="grid list-none grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:gap-x-10">
+          <ul className="grid list-none grid-cols-2 divide-x divide-line border-l border-line sm:grid-cols-4 [&>li:nth-child(n+3)]:border-t [&>li:nth-child(n+3)]:border-line sm:[&>li:nth-child(n+3)]:border-t-0">
             {partners.map((partner) => (
-              <li key={partner.slug} className="flex flex-col items-center gap-3 text-center">
+              <li
+                key={partner.slug}
+                className="flex flex-col items-center gap-4 px-4 py-10 text-center lg:py-12"
+              >
                 {partner.logo ? (
-                  <span className="grid h-20 w-28 shrink-0 place-items-center overflow-hidden rounded-nav border border-line bg-paper p-2.5">
-                    <Image
-                      src={partner.logo.src}
-                      alt=""
-                      width={partner.logo.width}
-                      height={partner.logo.height}
-                      sizes="112px"
-                      className="h-full w-full object-contain"
-                    />
-                  </span>
+                  <Image
+                    src={partner.logo.src}
+                    alt=""
+                    width={partner.logo.width}
+                    height={partner.logo.height}
+                    sizes="160px"
+                    className="h-20 w-auto max-w-[9rem] object-contain grayscale transition-[filter] duration-200 hover:grayscale-0 lg:h-24"
+                  />
                 ) : (
                   <span
                     aria-hidden="true"
-                    className="grid h-20 w-28 shrink-0 place-items-center rounded-nav border border-line text-caption text-slate"
+                    className="grid h-20 w-28 place-items-center border border-line text-caption text-slate"
                   >
                     {partner.name.charAt(0)}
                   </span>
