@@ -1,4 +1,4 @@
-import type { LinkItem, SplitLabel } from "@/types/content";
+import type { ImageAsset, LinkItem, SplitLabel } from "@/types/content";
 
 export type SectorTag = "Atlas" | "Software" | "Sonar" | "Delivery";
 
@@ -14,6 +14,8 @@ export type SectorPanel = {
   heading: string;
   lede: string;
   cta: LinkItem;
+  /** Product screen shown with the sector (placed 7 September 2026 at the client's instruction). */
+  image: ImageAsset;
   items: SectorItem[];
 };
 
@@ -44,6 +46,12 @@ export const sectorPanels: SectorPanel[] = [
     heading: "Ministries, agencies and local government.",
     lede: "Public institutions need platforms that respect procurement, policy and accountability, and that work for staff in every office, not just headquarters. We design for all of that from the start.",
     cta: { label: "Discuss a public sector programme", href: "#contact" },
+    image: {
+      src: "/assets/atlas-catalogue.jpg",
+      alt: "Atlas catalogue showing public sector learning pathways for revenue and tax administration, and governance, ethics and anti-corruption",
+      width: 1400,
+      height: 525,
+    },
     items: [
       {
         title: "Workforce learning at scale",
@@ -77,6 +85,12 @@ export const sectorPanels: SectorPanel[] = [
     heading: "Banks, insurers and growing enterprises.",
     lede: "Private organisations need speed without losing control: compliance that holds up to examiners, cloud spend that makes sense in naira, and software that gives them an edge rather than a template.",
     cta: { label: "Discuss an enterprise engagement", href: "#contact" },
+    image: {
+      src: "/assets/sonar-terraform.jpg",
+      alt: "Sonar importing an unmanaged AWS resource into Terraform with suggested tag values",
+      width: 1400,
+      height: 1131,
+    },
     items: [
       {
         title: "Compliance and conduct learning",

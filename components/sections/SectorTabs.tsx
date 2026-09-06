@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { SectorPanel } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 
 type SectorTabsProps = {
@@ -83,20 +84,27 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
           aria-labelledby={`tab-${panel.id}`}
           hidden={panel.id !== active}
           tabIndex={0}
-          className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16"
+          data-ground="dark"
+          className="mt-8 grid gap-10 rounded-nav bg-forest p-7 text-paper sm:p-9 lg:grid-cols-[2fr_3fr] lg:gap-12 lg:p-10"
         >
           <div>
             <h3 className="text-title-lg">{panel.heading}</h3>
-            <p className="mt-4 text-lede text-slate">{panel.lede}</p>
-            <ButtonLink item={panel.cta} className="mt-7" />
+            <p className="mt-4 text-lede text-paper/80">{panel.lede}</p>
+            <ButtonLink item={panel.cta} variant="paper-brand" size="nav" className="mt-7" />
+            <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-nav border border-paper/15">
+              <Image
+                src={panel.image.src}
+                alt={panel.image.alt}
+                fill
+                sizes="(min-width: 1024px) 36vw, 100vw"
+                className="object-cover object-left-top"
+              />
+            </div>
           </div>
-          {/* The four items as compact tiles, the Atlas / Software / Sonar / Delivery tag in the corner. */}
-          <ul className="grid list-none gap-4 sm:grid-cols-2">
+          {/* The four items as white tiles, the Atlas / Software / Sonar / Delivery tag in the corner. */}
+          <ul className="grid list-none content-start gap-4 sm:grid-cols-2">
             {panel.items.map((item) => (
-              <li
-                key={item.title}
-                className="relative border border-ink/20 bg-paper p-5 pt-6 transition-colors duration-200 ease-out-quiet hover:border-brand"
-              >
+              <li key={item.title} className="relative rounded-control bg-paper p-5 pt-6 text-ink">
                 <span className="absolute top-4 right-4 rounded-control bg-brand/10 px-2 py-0.5 text-caption font-medium text-brand">
                   {item.tag}
                 </span>

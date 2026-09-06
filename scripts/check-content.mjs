@@ -78,6 +78,11 @@ const structural = new Set([
   "team-victor-2026.jpg",
   // New Sonar screenshot supplied by the client, 5 September 2026.
   "/assets/sonar-home.png",
+  // The two set-aside screenshots placed in the sector card, 7 September 2026 (client).
+  "/assets/atlas-catalogue.jpg",
+  "/assets/sonar-terraform.jpg",
+  "Atlas catalogue showing public sector learning pathways for revenue and tax administration, and governance, ethics and anti-corruption",
+  "Sonar importing an unmanaged AWS resource into Terraform with suggested tag values",
   "Von Newman Sonar homepage: find what isn't in Terraform, import it in a few steps, with a scan listing unmanaged AWS resources",
 ]);
 

@@ -318,8 +318,8 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
 | `team-oyin.jpg` | 520×520 | `#team` |
 | `team-abdulrasaq.jpg` | 520×520 | `#team` |
 | `team-victor.jpg` | 520×520 | `#team` |
-| `atlas-catalogue.jpg` | 1400×525 | **not referenced anywhere** |
-| `sonar-terraform.jpg` | 1400×1131 | **not referenced anywhere** |
+| `atlas-catalogue.jpg` | 1400×525 | not referenced in the source; placed in the public sector card on 7 September 2026 (client) |
+| `sonar-terraform.jpg` | 1400×1131 | not referenced in the source; placed in the private sector card on 7 September 2026 (client) |
 | `vn-logo-white.png` | 1135×252 | **not referenced anywhere** (white wordmark for dark grounds) |
 
 ## 5. Anchors
