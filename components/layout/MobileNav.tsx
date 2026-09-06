@@ -40,7 +40,7 @@ export function MobileNav({ groups, cta }: MobileNavProps) {
         aria-controls="mobile-menu"
         aria-label={menuButtonLabels.open}
         onClick={() => setOpen(true)}
-        className="inline-grid size-11 place-items-center rounded-nav border border-paper/20 text-paper"
+        className="inline-grid size-11 place-items-center rounded-nav border border-paper/20 text-paper group-data-[condensed=true]:border-line group-data-[condensed=true]:text-ink"
       >
         <MenuIcon />
       </button>

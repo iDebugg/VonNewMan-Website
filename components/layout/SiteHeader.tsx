@@ -16,13 +16,12 @@ export function SiteHeader() {
     <header
       data-site-header
       data-condensed="false"
-      data-ground="dark"
-      className="group fixed inset-x-0 top-0 z-50 px-gutter-narrow pt-header-inset sm:px-gutter lg:px-gutter-wide"
+      className="group fixed inset-x-0 top-0 z-50 px-gutter-narrow pt-header-inset transition-[padding] duration-200 ease-out-quiet data-[condensed=true]:px-0 data-[condensed=true]:pt-0 sm:px-gutter lg:px-gutter-wide"
     >
-      {/* Sits straight on the hero at the top of the page; once scrolled it becomes the dark glass
-          bar so the white text stays legible over light sections. */}
-      <div className="rounded-bar border border-transparent text-paper transition-[background-color,border-color,box-shadow] duration-200 ease-out-quiet group-data-[condensed=true]:border-paper/10 group-data-[condensed=true]:bg-ink/85 group-data-[condensed=true]:shadow-header group-data-[condensed=true]:backdrop-blur-xl">
-        <div className="flex h-header items-center justify-between gap-6 px-2 transition-[height] duration-200 ease-out-quiet group-data-[condensed=true]:h-header-condensed sm:px-4 lg:px-6">
+      {/* Sits straight on the hero at the top of the page; once scrolled it becomes a full-width
+          white bar with dark text (client direction, 7 September 2026). */}
+      <div className="rounded-bar text-paper transition-[background-color,box-shadow,border-radius] duration-200 ease-out-quiet group-data-[condensed=true]:rounded-none group-data-[condensed=true]:bg-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:shadow-header">
+        <div className="flex h-header items-center justify-between gap-6 px-2 transition-[height,padding] duration-200 ease-out-quiet group-data-[condensed=true]:h-header-condensed group-data-[condensed=true]:px-gutter-narrow sm:px-4 sm:group-data-[condensed=true]:px-gutter lg:px-6 lg:group-data-[condensed=true]:px-gutter-wide">
           <Brand condensedAware />
           <div className="ml-auto hidden items-center gap-8 lg:flex xl:gap-10">
             <nav aria-label="Primary">
@@ -38,7 +37,7 @@ export function SiteHeader() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="inline-flex rounded-control py-2 text-lede font-semibold whitespace-nowrap text-paper/90 transition-colors duration-150 hover:text-paper"
+                      className="inline-flex rounded-control py-2 text-lede font-semibold whitespace-nowrap text-paper/90 transition-colors duration-150 hover:text-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:hover:text-brand"
                     >
                       {link.label}
                     </a>
@@ -46,7 +45,12 @@ export function SiteHeader() {
                 ))}
               </ul>
             </nav>
-            <ButtonLink item={talkToUs} variant="paper-brand" size="nav" />
+            <ButtonLink
+              item={talkToUs}
+              variant="paper-brand"
+              size="nav"
+              className="group-data-[condensed=true]:bg-brand group-data-[condensed=true]:text-paper group-data-[condensed=true]:hover:bg-forest"
+            />
           </div>
           <MobileNav groups={mobileMenu} cta={talkToUs} />
         </div>

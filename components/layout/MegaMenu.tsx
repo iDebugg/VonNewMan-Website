@@ -107,8 +107,9 @@ export function MegaMenu({
         onClick={() => setOpen((value) => !value)}
         className={cn(
           "inline-flex items-center gap-2 text-lede font-semibold whitespace-nowrap transition-colors duration-150",
-          appearance === "link" && "rounded-control py-2 text-paper/90 hover:text-paper",
-          appearance === "link" && open && "text-paper",
+          appearance === "link" &&
+            "rounded-control py-2 text-paper/90 hover:text-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:hover:text-brand",
+          appearance === "link" && open && "text-paper group-data-[condensed=true]:text-brand",
           appearance === "tinted" &&
             "rounded-nav bg-paper/10 px-4 py-2.5 text-paper hover:bg-paper/20 xl:px-5 xl:py-3",
           appearance === "tinted" && open && "bg-paper/20",
@@ -120,7 +121,9 @@ export function MegaMenu({
           size={16}
           className={cn(
             "transition-transform duration-150",
-            appearance === "link" && !open && "text-paper/60",
+            appearance === "link" &&
+              !open &&
+              "text-paper/60 group-data-[condensed=true]:text-slate",
             open && "rotate-180",
           )}
         />

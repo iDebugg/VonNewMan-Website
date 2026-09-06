@@ -16,8 +16,10 @@ export function Brand({ condensedAware = false }: { condensedAware?: boolean }) 
         )}
       />
       <span className="leading-none">
-        <span className="block text-title-lg whitespace-nowrap text-paper">{site.brand.name}</span>{" "}
-        <span className="mt-0.5 block text-caption whitespace-nowrap text-paper/70">
+        <span className="block text-title-lg whitespace-nowrap text-paper group-data-[condensed=true]:text-ink">
+          {site.brand.name}
+        </span>{" "}
+        <span className="mt-0.5 block text-caption whitespace-nowrap text-paper/70 group-data-[condensed=true]:text-slate">
           {site.brand.descriptor}
         </span>
       </span>
