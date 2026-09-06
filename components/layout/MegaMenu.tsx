@@ -77,8 +77,28 @@ export function MegaMenu({
     if (!rootRef.current?.contains(event.relatedTarget as Node)) setOpen(false);
   };
 
+  // Opens on hover for mouse users (client request, 7 September 2026); click and keyboard still
+  // work. A short delay on leave stops the panel snapping shut while crossing the gap.
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onPointerEnter = (event: React.PointerEvent) => {
+    if (event.pointerType !== "mouse") return;
+    if (leaveTimer.current) clearTimeout(leaveTimer.current);
+    setOpen(true);
+  };
+  const onPointerLeave = (event: React.PointerEvent) => {
+    if (event.pointerType !== "mouse") return;
+    leaveTimer.current = setTimeout(() => setOpen(false), 160);
+  };
+
   return (
-    <div ref={rootRef} className="relative" onKeyDown={onKeyDown} onBlur={onBlur}>
+    <div
+      ref={rootRef}
+      className="relative"
+      onKeyDown={onKeyDown}
+      onBlur={onBlur}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
+    >
       <button
         ref={buttonRef}
         type="button"
@@ -86,8 +106,8 @@ export function MegaMenu({
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex items-center gap-2 text-label font-medium whitespace-nowrap transition-colors duration-150 xl:text-body",
-          appearance === "link" && "rounded-control py-2 text-paper/85 hover:text-paper",
+          "inline-flex items-center gap-2 text-lede font-semibold whitespace-nowrap transition-colors duration-150",
+          appearance === "link" && "rounded-control py-2 text-paper/90 hover:text-paper",
           appearance === "link" && open && "text-paper",
           appearance === "tinted" &&
             "rounded-nav bg-paper/10 px-4 py-2.5 text-paper hover:bg-paper/20 xl:px-5 xl:py-3",

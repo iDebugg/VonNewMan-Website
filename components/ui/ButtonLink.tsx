@@ -30,7 +30,7 @@ const variants: Record<Variant, string> = {
 const sizes: Record<Size, string> = {
   md: "px-5 py-3",
   sm: "px-4 py-2",
-  nav: "rounded-nav px-4 py-2.5 font-medium xl:px-5 xl:py-3 xl:text-body",
+  nav: "rounded-nav px-5 py-3 text-body font-semibold",
 };
 
 type ButtonLinkProps = {
