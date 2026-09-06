@@ -24,6 +24,41 @@ export function ChevronIcon({ size = 14, ...props }: IconProps) {
   );
 }
 
+export function MailIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </svg>
+  );
+}
+
+export function PhoneIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)}>
+      <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+    </svg>
+  );
+}
+
+export function PinIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)}>
+      <path d="M12 21s-7-6.5-7-11.5a7 7 0 0114 0C19 14.5 12 21 12 21z" />
+      <circle cx="12" cy="9.5" r="2.5" />
+    </svg>
+  );
+}
+
+export function BuildingIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)}>
+      <rect x="5" y="3" width="14" height="18" rx="1.5" />
+      <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3" />
+    </svg>
+  );
+}
+
 export function ExternalIcon({ size = 14, ...props }: IconProps) {
   return (
     <svg {...base(size, props)}>

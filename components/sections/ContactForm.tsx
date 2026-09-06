@@ -9,7 +9,7 @@ import { honeypotField, mailtoSender, readEnquiry, validateEnquiry } from "@/lib
 import { cn } from "@/lib/utils/cn";
 
 const control =
-  "w-full rounded-control border bg-paper px-3 py-2.5 text-body text-ink placeholder:text-slate focus-visible:border-brand";
+  "w-full rounded-control border bg-stone/70 px-3.5 py-3 text-body text-ink placeholder:text-slate focus-visible:border-brand";
 
 function Field({ field, error }: { field: FormField; error?: string }) {
   const id = `f-${field.name}`;
@@ -19,7 +19,7 @@ function Field({ field, error }: { field: FormField; error?: string }) {
     name: field.name,
     "aria-invalid": error ? true : undefined,
     "aria-describedby": error ? errorId : undefined,
-    className: cn(control, error ? "border-error" : "border-ink/40"),
+    className: cn(control, error ? "border-error" : "border-line"),
   };
   return (
     <div className="grid gap-1.5">
@@ -91,12 +91,7 @@ export function ContactForm() {
   const [name, org, email, sector, interest, message] = formFields;
 
   return (
-    <form
-      id="contact-form"
-      noValidate
-      onSubmit={onSubmit}
-      className="relative grid gap-5 border border-ink bg-paper p-6 sm:p-8"
-    >
+    <form id="contact-form" noValidate onSubmit={onSubmit} className="relative grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         {name ? <Field field={name} error={errors.name} /> : null}
         {org ? <Field field={org} /> : null}
@@ -118,16 +113,16 @@ export function ContactForm() {
           autoComplete="off"
         />
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
-        <p id="form-note" className="max-w-[36ch] text-caption text-slate" aria-live="polite">
-          {note}
-        </p>
+      <div className="grid gap-4 pt-1">
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-control bg-forest px-5 py-3 text-label font-semibold text-paper transition-colors duration-150 hover:bg-ink"
+          className="inline-flex w-full items-center justify-center rounded-nav bg-forest px-5 py-3.5 text-body font-semibold text-paper transition-colors duration-150 hover:bg-brand"
         >
           {contact.submitLabel}
         </button>
+        <p id="form-note" className="text-caption text-slate" aria-live="polite">
+          {note}
+        </p>
       </div>
     </form>
   );
