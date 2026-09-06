@@ -267,8 +267,8 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
 - [ ] Lede `A conversation, a demonstration of Atlas and Sonar with your context in mind, and a 90-day pilot shaped around your goals. That's all it takes to see the difference a product partner makes.`
 - [ ] Detail `Email` → `mailto:info@vonnewmanconsulting.com.ng`, text `info@vonnewmanconsulting.com.ng`
 - [ ] Detail `Phone` → `tel:+2349029534228`, text `+234 902 953 4228`
-- [ ] Detail `Visit`: `No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos · United Kingdom`
-- [ ] Detail `Company`: `Von Newman Technology Consultants Ltd · RC 8840592, Nigeria`
+- [ ] Detail `Visit`: `No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos · United Kingdom` **(the `Visit` label and the `Lagos` row label were removed from view on 6 September 2026 at the client's instruction; the label survives for screen readers only; each location now carries a pin icon)**
+- [ ] Detail `Company`: `Von Newman Technology Consultants Ltd · RC 8840592, Nigeria` **(the `Company` label was removed from view on 6 September 2026 at the client's instruction; it survives for screen readers only)**
 - [ ] Form `#contact-form`
   - [ ] `Your name` (text, `name`, autocomplete `name`, required)
   - [ ] `Organisation` (text, `org`, autocomplete `organization`)

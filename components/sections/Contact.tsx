@@ -1,6 +1,6 @@
 import { contact } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
-import { BuildingIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/Icon";
+import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/Icon";
 import { ContactForm } from "./ContactForm";
 
 /**
@@ -42,27 +42,22 @@ export function Contact() {
                 </a>
               </dd>
             </div>
+            {/* Visit and Company: labels removed at the client's instruction (6 September 2026).
+                Each location carries a pin icon; the company lines stand on their own. */}
             <div>
-              <dt className={rowLabel}>
-                <PinIcon />
-                {visit.label}
-              </dt>
-              {/* Two locations, two rows: a place label and, where the source has one, an address. */}
-              <dd className="mt-1.5 grid gap-1 text-body">
+              <dt className="sr-only">{visit.label}</dt>
+              <dd className="grid gap-2.5 text-body">
                 {visit.rows.map((row) => (
-                  <span key={row.place} className="grid gap-x-4 sm:grid-cols-[9rem_1fr]">
-                    <span className="text-label text-paper/70 sm:pt-0.5">{row.place}</span>
-                    {row.value ? <span>{row.value}</span> : null}
+                  <span key={row.place} className="flex items-start gap-2.5">
+                    <PinIcon className="mt-1 shrink-0 text-paper/70" />
+                    <span>{row.value || row.place}</span>
                   </span>
                 ))}
               </dd>
             </div>
             <div>
-              <dt className={rowLabel}>
-                <BuildingIcon />
-                {company.label}
-              </dt>
-              <dd className="mt-1.5 text-body">
+              <dt className="sr-only">{company.label}</dt>
+              <dd className="text-body">
                 <span className="block">{company.primary}</span>
                 <span className="block text-paper/70">{company.secondary}</span>
               </dd>
