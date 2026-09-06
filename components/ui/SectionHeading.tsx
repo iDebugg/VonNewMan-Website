@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils/cn";
+import { reveal } from "@/lib/utils/reveal";
 
 type SectionHeadingProps = {
   id: string;
@@ -11,7 +12,7 @@ type SectionHeadingProps = {
 /** Section-level heading: serif h2, optional sentence-case kicker, optional lede. */
 export function SectionHeading({ id, kicker, title, lede, className }: SectionHeadingProps) {
   return (
-    <div className={cn("max-w-[46rem]", className)}>
+    <div className={cn("max-w-[46rem]", className)} {...reveal()}>
       {kicker ? <p className="mb-3 text-label text-brand">{kicker}</p> : null}
       <h2 id={id} className="font-display text-display-2">
         {title}

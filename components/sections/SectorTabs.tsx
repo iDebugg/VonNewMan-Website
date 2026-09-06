@@ -6,6 +6,7 @@ import type { SectorPanel } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { reveal } from "@/lib/utils/reveal";
 
 type SectorTabsProps = {
   label: string;
@@ -108,8 +109,12 @@ export function SectorTabs({ label, panels }: SectorTabsProps) {
           </div>
           {/* The four items as white tiles, the Atlas / Software / Sonar / Delivery tag in the corner. */}
           <ul className="grid min-w-0 list-none content-start gap-4 sm:grid-cols-2">
-            {panel.items.map((item) => (
-              <li key={item.title} className="relative rounded-control bg-paper p-5 pt-6 text-ink">
+            {panel.items.map((item, index) => (
+              <li
+                key={item.title}
+                {...reveal(index)}
+                className="relative rounded-control bg-paper p-5 pt-6 text-ink"
+              >
                 <span className="absolute top-4 right-4 rounded-control bg-brand/10 px-2 py-0.5 text-caption font-medium text-brand">
                   {item.tag}
                 </span>

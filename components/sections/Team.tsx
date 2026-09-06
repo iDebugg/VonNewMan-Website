@@ -3,6 +3,7 @@ import type { Person } from "@/lib/content";
 import { people, team } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { reveal } from "@/lib/utils/reveal";
 
 /** The titles state the hierarchy: directors lead, the leads follow. */
 const isDirector = (person: Person) => /\bDirector\b/.test(person.title);
@@ -22,9 +23,10 @@ export function Team() {
 
       {/* Directors: large portraits in a row of three. */}
       <ul className="mt-12 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-        {directors.map((person) => (
+        {directors.map((person, index) => (
           <li
             key={person.slug}
+            {...reveal(index)}
             className="group rounded-nav border border-line bg-paper p-3 transition-colors duration-200 ease-out-quiet hover:border-brand"
           >
             <Image
@@ -45,9 +47,10 @@ export function Team() {
 
       {/* Leads: compact cards, portrait beside the name. */}
       <ul className="mt-6 grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {leads.map((person) => (
+        {leads.map((person, index) => (
           <li
             key={person.slug}
+            {...reveal(index)}
             className="group flex items-center gap-4 rounded-nav border border-line bg-paper p-3 transition-colors duration-200 ease-out-quiet hover:border-brand"
           >
             <Image

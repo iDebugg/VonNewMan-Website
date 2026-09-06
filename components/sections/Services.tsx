@@ -2,6 +2,7 @@ import { engagementPanels, practices, services } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PracticeIcon } from "@/components/ui/PracticeIcon";
+import { reveal } from "@/lib/utils/reveal";
 
 /**
  * Eight practice areas as compact outlined tiles, then the two engagement panels as one forest
@@ -19,9 +20,10 @@ export function Services() {
 
       {/* Practice areas as a two-column list: icon square, title and text, hairline between rows. */}
       <ul className="mt-10 grid list-none border-t border-line md:grid-cols-2 md:gap-x-12 lg:mt-14">
-        {practices.map((practice) => (
+        {practices.map((practice, index) => (
           <li
             key={practice.slug}
+            {...reveal(index, 70)}
             className="group flex gap-5 border-b border-line py-6 lg:gap-6 lg:py-7"
           >
             <span className="grid size-14 shrink-0 place-items-center rounded-nav bg-brand/10 text-brand transition-colors duration-200 group-hover:bg-brand group-hover:text-paper">
@@ -39,8 +41,8 @@ export function Services() {
         data-ground="dark"
         className="mt-10 grid overflow-hidden rounded-nav bg-forest text-paper md:grid-cols-2 md:divide-x md:divide-line-dark lg:mt-12"
       >
-        {engagementPanels.map((panel) => (
-          <div key={panel.title} className="p-8 lg:p-10">
+        {engagementPanels.map((panel, index) => (
+          <div key={panel.title} className="p-8 lg:p-10" {...reveal(index)}>
             <h3 className="text-title-lg">{panel.title}</h3>
             <p className="mt-3 text-body text-paper/80">{panel.description}</p>
             <ul className="mt-6 flex list-none flex-wrap gap-2">

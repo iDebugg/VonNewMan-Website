@@ -3,6 +3,7 @@ import { partners, stats, trust } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { CountUp } from "./CountUp";
+import { reveal } from "@/lib/utils/reveal";
 
 /**
  * Dark band after the Difference cards: trust line and partner marks on top, the five stats
@@ -15,13 +16,14 @@ export function TrustBand() {
         {/* Trust line on the left, partner marks in a ruled grid on the right, greyscale until
           hovered, names beneath (client reference, 6 September 2026). */}
         <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-16">
-          <h2 id="trust-heading" className="max-w-[24ch] text-title-lg text-ink">
+          <h2 id="trust-heading" className="max-w-[24ch] text-title-lg text-ink" {...reveal()}>
             {trust.title}
           </h2>
           <ul className="grid list-none grid-cols-2 divide-x divide-line border-l border-line sm:grid-cols-4 [&>li:nth-child(n+3)]:border-t [&>li:nth-child(n+3)]:border-line sm:[&>li:nth-child(n+3)]:border-t-0">
-            {partners.map((partner) => (
+            {partners.map((partner, index) => (
               <li
                 key={partner.slug}
+                {...reveal(index)}
                 className="flex flex-col items-center gap-4 px-4 py-10 text-center lg:py-12"
               >
                 {partner.logo ? (
@@ -51,9 +53,10 @@ export function TrustBand() {
       <div data-ground="dark" className="bg-forest py-10 text-paper lg:py-12">
         <Container>
           <dl className="grid grid-cols-2 gap-y-8 lg:grid-cols-5 lg:gap-y-0">
-            {stats.map((stat) => (
+            {stats.map((stat, index) => (
               <div
                 key={stat.label}
+                {...reveal(index)}
                 className="flex flex-col items-center border-line-dark px-4 text-center even:border-l lg:border-l lg:px-6 lg:first:border-l-0"
               >
                 <dd className="order-1 font-display text-figure font-bold text-paper tabular">

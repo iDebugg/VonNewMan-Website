@@ -2,11 +2,12 @@ import { locations, offices } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { LocalClock } from "./LocalClock";
 import { WorldMap } from "@/components/ui/WorldMap";
+import { reveal } from "@/lib/utils/reveal";
 
 export function Locations() {
   return (
     <Section id="company" ground="forest" labelledBy="company-heading">
-      <div className="mx-auto max-w-[46rem] text-center">
+      <div className="mx-auto max-w-[46rem] text-center" {...reveal()}>
         <h2 id="company-heading" className="font-display text-display-2">
           {locations.headline}
         </h2>
@@ -24,8 +25,8 @@ export function Locations() {
         }))}
       />
       <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-16 lg:mt-12">
-        {offices.map((office) => (
-          <div key={office.id} className="border-t border-line-dark pt-6">
+        {offices.map((office, index) => (
+          <div key={office.id} className="border-t border-line-dark pt-6" {...reveal(index)}>
             <LocalClock timeZone={office.timeZone} zoneLabel={office.zoneLabel} />
             <h3 className="mt-6 flex flex-wrap items-baseline gap-x-4">
               <span className="text-title-lg">{office.title.primary}</span>

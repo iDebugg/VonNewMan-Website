@@ -5,6 +5,7 @@ import { site } from "@/lib/content";
 import { siteUrl } from "@/lib/utils/site-url";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { BackToTop } from "@/components/layout/BackToTop";
+import { RevealObserver } from "@/components/layout/RevealObserver";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         {children}
         <BackToTop />
+        <RevealObserver />
         <JsonLd />
       </body>
     </html>

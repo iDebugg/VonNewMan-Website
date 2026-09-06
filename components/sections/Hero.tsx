@@ -3,6 +3,7 @@ import { hero } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { HeroVideo } from "./HeroVideo";
+import { reveal } from "@/lib/utils/reveal";
 
 export function Hero() {
   return (
@@ -30,7 +31,11 @@ export function Hero() {
 
       <Container className="relative flex flex-1 flex-col justify-center pt-[calc(var(--spacing-header)+2*var(--spacing-header-inset)+3rem)] pb-[clamp(4rem,10vw,8rem)] text-center">
         {/* The locator lines were removed from the hero at the client's instruction (7 September 2026). */}
-        <h1 id="hero-heading" className="mx-auto font-display text-display-1 text-paper">
+        <h1
+          id="hero-heading"
+          className="mx-auto font-display text-display-1 text-paper"
+          {...reveal(0)}
+        >
           {/* Each sentence holds its own line from 640px up. That is the emphasis. */}
           {hero.headline.map((sentence) => (
             <span key={sentence} className="block sm:whitespace-nowrap">
@@ -38,8 +43,10 @@ export function Hero() {
             </span>
           ))}
         </h1>
-        <p className="mx-auto mt-7 max-w-[38rem] text-lede text-paper/85">{hero.lede}</p>
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <p className="mx-auto mt-7 max-w-[38rem] text-lede text-paper/85" {...reveal(1)}>
+          {hero.lede}
+        </p>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3" {...reveal(2)}>
           {/* Order swapped at the client's request, 5 September 2026: the solid action leads. */}
           <ButtonLink item={hero.secondaryCta} variant="inverse" size="lg" />
           <ButtonLink item={hero.primaryCta} variant="inverse-outline" size="lg" />
@@ -48,9 +55,10 @@ export function Hero() {
 
       <Container className="relative">
         <ul className="grid list-none border-t border-line-dark sm:grid-cols-3 sm:divide-x sm:divide-line-dark">
-          {hero.trustPoints.map((point) => (
+          {hero.trustPoints.map((point, index) => (
             <li
               key={point}
+              {...reveal(index)}
               className="border-b border-line-dark py-4 text-center text-label font-medium text-paper sm:border-b-0 sm:py-6"
             >
               {point}

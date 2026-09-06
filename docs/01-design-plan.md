@@ -268,6 +268,8 @@ Also out: pill buttons (3px now), arrows glued to button text, green-tinted neut
 
 - Header became a floating glass bar on 5 September 2026 at the client's instruction: fixed at the top with a 12px inset, 16px corners, a 45% ink ground with a blurred backdrop over the hero video (85% once scrolled, so white text keeps contrast over light sections), white text, a translucent Sign in and a brand-green Talk to us. The mega-menu panels match in dark glass. Section scroll margins and the hero's top padding account for the bar plus its inset.
 
+- Scroll reveal added on 7 September 2026 at the client's instruction, overriding the plan's no-ambient-motion rule: headings, cards and rows fade and rise into place as they enter the viewport, staggered left to right within a row (90ms per item). One observer handles the whole page; the hidden state exists only after JavaScript mounts, so crawlers and no-JS readers see everything; reduced motion disables it entirely.
+
 ## 10. Self-review
 
 I asked what I would have produced for any consultancy site and compared.

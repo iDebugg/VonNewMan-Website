@@ -11,6 +11,7 @@ import { Section } from "@/components/ui/Section";
 import { FinancialIcon } from "@/components/ui/FinancialIcon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SectorTabs } from "./SectorTabs";
+import { reveal } from "@/lib/utils/reveal";
 
 const totalWeeks = pilotPhases.reduce((sum, phase) => sum + phase.duration, 0);
 
@@ -32,9 +33,10 @@ export function Sectors() {
 
         {/* Four blocks as tiles with the tinted icon square. */}
         <dl className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {financialBlocks.map((block) => (
+          {financialBlocks.map((block, index) => (
             <div
               key={block.label}
+              {...reveal(index)}
               className="group border border-ink/20 bg-paper p-6 transition-colors duration-200 ease-out-quiet hover:border-brand"
             >
               <span className="grid size-12 place-items-center rounded-nav bg-brand/10 text-brand transition-colors duration-200 group-hover:bg-brand group-hover:text-paper">
@@ -57,8 +59,11 @@ export function Sectors() {
           {pilotPhases.map((phase, index) => (
             <li
               key={phase.title}
+              data-reveal=""
               className="sm:[grid-column:span_var(--span)]"
-              style={{ "--span": phase.duration } as CSSProperties}
+              style={
+                { "--span": phase.duration, "--reveal-delay": `${index * 120}ms` } as CSSProperties
+              }
             >
               <p className="text-label font-medium text-ink">{phase.weeks}</p>
               <div

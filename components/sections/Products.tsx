@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils/cn";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { reveal } from "@/lib/utils/reveal";
 
 const actionVariants = ["primary", "secondary", "link"] as const;
 
@@ -19,7 +20,7 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
       aria-labelledby={`${product.id}-name`}
       className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] items-center gap-10 lg:grid-cols-5 lg:gap-16"
     >
-      <figure className={cn("lg:col-span-3", flip && "lg:order-2")}>
+      <figure className={cn("lg:col-span-3", flip && "lg:order-2")} {...reveal(0)}>
         {/* The frame takes the screenshot's own aspect ratio so nothing is cropped away. */}
         <div
           className="relative overflow-hidden rounded-nav border border-line"
@@ -35,7 +36,7 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
         </div>
       </figure>
 
-      <div className={cn("lg:col-span-2", flip && "lg:order-1")}>
+      <div className={cn("lg:col-span-2", flip && "lg:order-1")} {...reveal(1)}>
         <p className="text-label text-brand">{product.badge}</p>
         <h3 id={`${product.id}-name`} className="mt-3 font-display text-product">
           {product.name}

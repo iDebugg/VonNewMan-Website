@@ -2,6 +2,7 @@ import { difference, pillars } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
 import { Section } from "@/components/ui/Section";
 import { PillarIllustration } from "@/components/ui/PillarIllustration";
+import { reveal } from "@/lib/utils/reveal";
 
 /** Each card sits a step lower than the previous one from lg, as in the client's reference. */
 const stepOffsets = ["", "lg:mt-10", "lg:mt-20", "lg:mt-30"];
@@ -9,7 +10,7 @@ const stepOffsets = ["", "lg:mt-10", "lg:mt-20", "lg:mt-30"];
 export function Difference() {
   return (
     <Section id="difference" ground="stone" labelledBy="difference-heading">
-      <div className="max-w-[46rem]">
+      <div className="max-w-[46rem]" {...reveal()}>
         <h2 id="difference-heading" className="font-display text-display-2">
           {difference.headline.map((sentence) => (
             <span key={sentence} className="block">
@@ -27,6 +28,7 @@ export function Difference() {
         {pillars.map((pillar, index) => (
           <li
             key={pillar.slug}
+            {...reveal(index)}
             className={cn(
               "border border-ink/30 bg-paper p-8 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-9",
               stepOffsets[index],

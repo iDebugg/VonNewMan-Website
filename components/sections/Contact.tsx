@@ -2,6 +2,7 @@ import { contact } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/Icon";
 import { ContactForm } from "./ContactForm";
+import { reveal } from "@/lib/utils/reveal";
 
 /**
  * Two-panel card: the ways to reach the firm on a forest panel, the form on paper beside it
@@ -12,7 +13,10 @@ export function Contact() {
   const rowLabel = "flex items-center gap-2 text-label text-paper/70";
   return (
     <Section id="contact" labelledBy="contact-heading">
-      <div className="grid overflow-hidden rounded-nav border border-line lg:grid-cols-[2fr_3fr]">
+      <div
+        className="grid overflow-hidden rounded-nav border border-line lg:grid-cols-[2fr_3fr]"
+        {...reveal()}
+      >
         <div data-ground="dark" className="min-w-0 bg-forest p-7 text-paper sm:p-10 lg:p-12">
           <h2 id="contact-heading" className="font-display text-display-2">
             {contact.headline}

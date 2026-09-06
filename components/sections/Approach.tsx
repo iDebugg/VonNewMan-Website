@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils/cn";
 import { Section } from "@/components/ui/Section";
 import { OwnershipIcon } from "@/components/ui/OwnershipIcon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { reveal } from "@/lib/utils/reveal";
 
 /** Each card sits a step lower than the previous one from lg, as in the client's reference. */
 const stepOffsets = ["", "lg:mt-10", "lg:mt-20", "lg:mt-30"];
@@ -18,6 +19,7 @@ export function Approach() {
         {stages.map((stage, index) => (
           <li
             key={stage.slug}
+            {...reveal(index)}
             className="relative flex gap-5 pb-10 last:pb-0 before:absolute before:top-10 before:bottom-0 before:left-5 before:w-px before:bg-line [&:last-child]:before:hidden lg:block lg:pb-0 lg:before:hidden lg:after:absolute lg:after:top-5 lg:after:left-12 lg:after:-right-8 lg:after:h-px lg:after:bg-line lg:after:content-[''] lg:[&:last-child]:after:hidden"
           >
             <span
@@ -35,7 +37,7 @@ export function Approach() {
       </ol>
 
       {/* The quote as a centred statement, the four ownership points as cards beneath it. */}
-      <figure className="mx-auto mt-20 max-w-[52rem] text-center lg:mt-24">
+      <figure className="mx-auto mt-20 max-w-[52rem] text-center lg:mt-24" {...reveal()}>
         <blockquote className="font-display text-display-2">{approach.quote}</blockquote>
         <figcaption className="mt-6 text-label text-brand">{approach.quoteCaption}</figcaption>
       </figure>
@@ -46,6 +48,7 @@ export function Approach() {
         {ownershipPoints.map((point, index) => (
           <li
             key={point.slug}
+            {...reveal(index)}
             className={cn(
               "border border-ink/30 bg-paper p-8 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-9",
               stepOffsets[index],
