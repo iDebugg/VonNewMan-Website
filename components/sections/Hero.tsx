@@ -29,11 +29,8 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 bg-ink/65" />
 
       <Container className="relative flex flex-1 flex-col justify-center pt-[calc(var(--spacing-header)+2*var(--spacing-header-inset)+3rem)] pb-[clamp(4rem,10vw,8rem)] text-center">
-        <p className="text-label text-paper/80">
-          <span className="block">{hero.locator.primary}</span>
-          <span className="block">{hero.locator.secondary}</span>
-        </p>
-        <h1 id="hero-heading" className="mx-auto mt-6 font-display text-display-1 text-paper">
+        {/* The locator lines were removed from the hero at the client's instruction (7 September 2026). */}
+        <h1 id="hero-heading" className="mx-auto font-display text-display-1 text-paper">
           {/* Each sentence holds its own line from 640px up. That is the emphasis. */}
           {hero.headline.map((sentence) => (
             <span key={sentence} className="block sm:whitespace-nowrap">
@@ -44,8 +41,8 @@ export function Hero() {
         <p className="mx-auto mt-7 max-w-[38rem] text-lede text-paper/85">{hero.lede}</p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           {/* Order swapped at the client's request, 5 September 2026: the solid action leads. */}
-          <ButtonLink item={hero.secondaryCta} variant="inverse" />
-          <ButtonLink item={hero.primaryCta} variant="inverse-outline" />
+          <ButtonLink item={hero.secondaryCta} variant="inverse" size="lg" />
+          <ButtonLink item={hero.primaryCta} variant="inverse-outline" size="lg" />
         </div>
       </Container>
 

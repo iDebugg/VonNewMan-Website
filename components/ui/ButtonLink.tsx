@@ -13,7 +13,7 @@ type Variant =
   | "inverse"
   | "inverse-outline"
   | "link";
-type Size = "md" | "sm" | "nav";
+type Size = "md" | "sm" | "nav" | "lg";
 
 const variants: Record<Variant, string> = {
   primary: "bg-forest text-paper hover:bg-ink",
@@ -31,6 +31,7 @@ const sizes: Record<Size, string> = {
   md: "px-5 py-3",
   sm: "px-4 py-2",
   nav: "rounded-nav px-5 py-3 text-body font-semibold",
+  lg: "rounded-nav px-7 py-4 text-lede font-semibold",
 };
 
 type ButtonLinkProps = {
@@ -51,7 +52,7 @@ export function ButtonLink({ item, variant = "primary", size = "md", className }
         "inline-flex items-center justify-center gap-2 rounded-control text-label font-semibold whitespace-nowrap transition-colors duration-150 ease-out-quiet",
         variants[variant],
         variant === "link" ? "py-3" : sizes[size],
-        size === "nav" && "rounded-nav",
+        (size === "nav" || size === "lg") && "rounded-nav",
         className,
       )}
     >

@@ -55,7 +55,7 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
 
 ### 2.1 Hero (no id)
 
-- [ ] Locator: `Lagos and London · Public and private sector`
+- [ ] Locator: `Lagos and London · Public and private sector` **(removed from the hero on 7 September 2026 at the client's instruction)**
 - [ ] h1: `Technology adapted to you. Never off the shelf.` (source wraps the second sentence in `<em>`; treatment changes, words do not)
 - [ ] Lede: `We build software, learning platforms and infrastructure intelligence for banks, ministries, agencies and enterprises. Every engagement starts with your problem, not our product list.`
 - [ ] CTA primary `Start a conversation` → `#contact`
