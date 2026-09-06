@@ -25,7 +25,7 @@ export function Contact() {
                 <MailIcon />
                 {email.label}
               </dt>
-              <dd className="mt-1.5 text-title break-all sm:text-title-lg">
+              <dd className="mt-1.5 text-body break-all">
                 <a href={email.href} className="underline-offset-4 hover:underline">
                   {email.value}
                 </a>
@@ -36,7 +36,7 @@ export function Contact() {
                 <PhoneIcon />
                 {phone.label}
               </dt>
-              <dd className="mt-1.5 text-title-lg">
+              <dd className="mt-1.5 text-body">
                 <a href={phone.href} className="tabular underline-offset-4 hover:underline">
                   {phone.value}
                 </a>
