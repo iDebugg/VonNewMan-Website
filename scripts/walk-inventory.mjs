@@ -76,6 +76,8 @@ const removed = new Set([
   "Sonar console",
   "Learners and administrators.",
   "Access is issued per organisation. Request yours.",
+  // Contact label "Visit" renamed "Address", 6 September 2026 (client).
+  "Visit",
   // Product actions removed 5 September 2026 (client); the footer keeps the same destinations.
   "Browse the catalogue",
   "Request console access",

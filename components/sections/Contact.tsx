@@ -45,12 +45,14 @@ export function Contact() {
             {/* Visit and Company: labels removed at the client's instruction (6 September 2026).
                 Each location carries a pin icon; the company lines stand on their own. */}
             <div>
-              <dt className="sr-only">{visit.label}</dt>
-              <dd className="grid gap-2.5 text-body">
+              <dt className={rowLabel}>
+                <PinIcon />
+                {visit.label}
+              </dt>
+              <dd className="mt-1.5 grid gap-1.5 text-body">
                 {visit.rows.map((row) => (
-                  <span key={row.place} className="flex items-start gap-2.5">
-                    <PinIcon className="mt-1 shrink-0 text-paper/70" />
-                    <span>{row.value || row.place}</span>
+                  <span key={row.place} className="block">
+                    {row.value || row.place}
                   </span>
                 ))}
               </dd>

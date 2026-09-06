@@ -21,8 +21,9 @@ export const contact = {
     email: { label: "Email", value: site.email, href: `mailto:${site.email}` as const },
     phone: { label: "Phone", value: site.phoneDisplay, href: site.phoneHref },
     /** Two locations, rendered as two labelled rows (design plan open decision 2a, option A). */
+    /** Label was "Visit"; "Address" at the client's instruction, 6 September 2026. */
     visit: {
-      label: "Visit",
+      label: "Address",
       rows: [
         { place: "Lagos", value: "No. 3 Jasmine Road, Ikota GRA, Lekki, Lagos" },
         { place: "United Kingdom", value: "" },

@@ -72,6 +72,8 @@ const structural = new Set([
   "/assets/hero-poster.jpg",
   // Client copy change, 5 September 2026: third hero trust point.
   "Delivered for NRS and More",
+  // Contact label "Visit" became "Address", 6 September 2026 (client).
+  "Address",
   // New portrait supplied by the client, 5 September 2026 (renamed to bypass caches).
   "team-victor-2026.jpg",
   // New Sonar screenshot supplied by the client, 5 September 2026.
