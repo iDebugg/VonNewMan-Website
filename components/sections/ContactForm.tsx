@@ -64,7 +64,9 @@ function Field({ field, error }: { field: FormField; error?: string }) {
  * a filled honeypot is dropped silently.
  */
 export function ContactForm() {
-  const [note, setNote] = useState<string>(contact.mailto.note);
+  // The resting note was removed at the client's instruction (7 September 2026); the after-submit
+  // message still appears once the email app has been handed the enquiry.
+  const [note, setNote] = useState<string | null>(null);
   const [errors, setErrors] = useState<EnquiryErrors>({});
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -122,7 +124,7 @@ export function ContactForm() {
           {contact.submitLabel}
         </button>
         <p id="form-note" className="text-caption text-slate" aria-live="polite">
-          {note}
+          {note ?? ""}
         </p>
       </div>
     </form>

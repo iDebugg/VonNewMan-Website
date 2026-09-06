@@ -276,7 +276,7 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
   - [ ] `Sector` (select, `sector`): `Public sector`, `Financial services`, `Private sector, other`, `Not sure yet`
   - [ ] `What are you interested in?` (select, `interest`): `A conversation about a problem we could solve`, `A demonstration of Atlas`, `A demonstration of Sonar`, `A custom software build`, `Cloud, network or security services`, `A 90-day pilot`
   - [ ] `Tell us a little about it` (textarea, `message`, placeholder `What's the problem, who does it affect, and what would good look like?`)
-  - [ ] Note `Sending opens your email app with the message ready to go. Or write to us directly.` (kept verbatim unless a real send provider is wired at phase 5, design plan open decision 4)
+  - [ ] Note `Sending opens your email app with the message ready to go. Or write to us directly.` **(removed from the page on 7 September 2026 at the client's instruction; the after-submit message still shows once the email app opens)**
   - [ ] Submit `Send enquiry`
   - [ ] Current behaviour: composes `mailto:` with subject `Enquiry from {org | name | website}` and a body of the fields; then sets the note to `Your email app should open with the message ready to send.`
 

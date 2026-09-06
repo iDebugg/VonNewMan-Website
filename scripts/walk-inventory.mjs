@@ -76,6 +76,8 @@ const removed = new Set([
   "Sonar console",
   "Learners and administrators.",
   "Access is issued per organisation. Request yours.",
+  // Form note removed from view, 7 September 2026 (client).
+  "Sending opens your email app with the message ready to go. Or write to us directly.",
   // Contact label "Visit" renamed "Address", 6 September 2026 (client).
   "Visit",
   // Product actions removed 5 September 2026 (client); the footer keeps the same destinations.
