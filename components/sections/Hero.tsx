@@ -26,8 +26,9 @@ export function Hero() {
         className="object-cover"
       />
       <HeroVideo src={hero.video.src} poster={hero.video.poster.src} />
-      {/* Wash: keeps AA contrast for paper text over any frame of the video. */}
-      <div aria-hidden="true" className="absolute inset-0 bg-ink/65" />
+      {/* Deep green wash (client direction, 7 September 2026): keeps AA contrast for paper text
+          over any frame of the video and ties the hero to the brand colour. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-forest/80" />
 
       <Container className="relative flex flex-1 flex-col justify-center pt-[calc(var(--spacing-header)+2*var(--spacing-header-inset)+3rem)] pb-[clamp(4rem,10vw,8rem)] text-center">
         {/* The locator lines were removed from the hero at the client's instruction (7 September 2026). */}
