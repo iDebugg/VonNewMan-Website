@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /**
- * Reveals [data-reveal] elements as they scroll into view, once each. Until this mounts the
+ * Reveals [data-reveal] elements as they scroll into view, every time. Until this mounts the
  * page renders fully visible (the hidden state is scoped to html[data-js]), so crawlers and
  * no-JS readers see everything. A leaf with no markup.
  */
@@ -13,18 +13,24 @@ export function RevealObserver() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
     root.dataset.js = "";
+    // Replays every time (client direction, 7 September 2026): an element reveals once a fifth
+    // of it is on screen, and resets only after it has left the viewport entirely, so nothing
+    // flickers at the edges.
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          (entry.target as HTMLElement).dataset.inview = "";
-          observer.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.2) el.dataset.inview = "";
+          else if (!entry.isIntersecting) delete el.dataset.inview;
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+      { threshold: [0, 0.2], rootMargin: "0px 0px -10% 0px" },
     );
+    const observed = new WeakSet<Element>();
     const observeAll = () =>
-      document.querySelectorAll<HTMLElement>("[data-reveal]:not([data-inview])").forEach((el) => {
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
+        if (observed.has(el)) return;
+        observed.add(el);
         observer.observe(el);
       });
     observeAll();
