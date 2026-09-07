@@ -6,18 +6,26 @@ export function Brand({ condensedAware = false }: { condensedAware?: boolean }) 
   return (
     <a href="#top" className="inline-flex items-center gap-3">
       <Image
-        src={site.mark.src}
+        src={site.wordmarkWhite.src}
         alt=""
-        width={40}
-        height={40}
-        className={cn("rounded-lg", condensedAware && "")}
+        width={site.wordmarkWhite.width}
+        height={site.wordmarkWhite.height}
+        className={cn("h-auto w-56", condensedAware && "group-data-[condensed=true]:hidden")}
       />
-      <span className="leading-none">
-        <span className="block text-title-lg whitespace-nowrap text-paper group-data-[condensed=true]:text-ink">
-          {site.brand.name}
-        </span>{" "}
-        <span className="mt-0.5 block text-caption whitespace-nowrap text-paper/70 group-data-[condensed=true]:text-slate">
-          {site.brand.descriptor}
+      <span
+        className={cn(
+          "hidden items-center gap-3",
+          condensedAware && "group-data-[condensed=true]:flex",
+        )}
+      >
+        <Image src={site.mark.src} alt="" width={42} height={42} className="rounded-lg" />
+        <span className="leading-none">
+          <span className="block text-title font-extrabold whitespace-nowrap text-ink">
+            {site.brand.name}
+          </span>
+          <span className="mt-1 block text-caption font-semibold whitespace-nowrap text-slate">
+            {site.brand.descriptor}
+          </span>
         </span>
       </span>
     </a>

@@ -17,12 +17,12 @@ export function SiteHeader() {
     <header
       data-site-header
       data-condensed="false"
-      className="group fixed inset-x-0 top-0 z-50 px-gutter-narrow pt-header-inset sm:px-gutter lg:px-gutter-wide"
+      className="group fixed inset-x-0 top-0 z-50 px-gutter-narrow sm:px-gutter lg:px-gutter-wide"
     >
       {/* Sits straight on the hero at the top of the page. Once scrolled the only change is a
           white ground behind it, with the text turning dark to stay legible (client direction,
           7 September 2026). Size, inset and padding stay the same. */}
-      <div className="rounded-bar text-paper transition-colors duration-200 ease-out-quiet group-data-[condensed=true]:bg-paper group-data-[condensed=true]:text-ink">
+      <div className="text-paper transition-colors duration-200 ease-out-quiet group-data-[condensed=true]:bg-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:shadow-panel">
         <div className="flex h-header items-center justify-between gap-6 px-2 sm:px-4 lg:px-6">
           <div {...reveal(0)}>
             <Brand condensedAware />
@@ -52,9 +52,9 @@ export function SiteHeader() {
             <div {...reveal(6)}>
               <ButtonLink
                 item={talkToUs}
-                variant="paper-brand"
+                variant="primary"
                 size="nav"
-                className="group-data-[condensed=true]:bg-brand group-data-[condensed=true]:text-paper group-data-[condensed=true]:hover:bg-forest"
+                className="group-data-[condensed=true]:bg-forest group-data-[condensed=true]:text-paper"
               />
             </div>
           </div>

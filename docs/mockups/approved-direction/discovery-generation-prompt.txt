@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: wide editorial website image for a premium African technology consultancy
+Primary request: a candid discovery workshop showing three Black African technology consultants and one client working together around a large printed service blueprint and an open laptop
+Scene/backdrop: a warm, contemporary meeting studio in Lagos with timber, textured plaster, daylight and a few restrained green details
+Subject: a mixed-gender group in their late 20s to early 40s, focused on the work, discussing and pointing at the blueprint; natural expressions and believable professional clothing
+Style/medium: premium documentary photography, human and editorial, realistic skin texture, subtle film grain
+Composition/framing: landscape 3:2, slightly elevated side angle, people distributed across the frame, hands and working materials visible, usable crop at desktop and mobile
+Lighting/mood: soft window light, calm concentration, warm and intelligent
+Color palette: warm neutrals, deep forest green, soft blue and muted clay accents
+Constraints: must feel distinctly different from a standing hero portrait; no posing for camera; no visible company logos; no readable interface text; no watermark
+Avoid: generic stock-photo smiles, futuristic screens, neon light, excessive staging, whiteboard text, distorted hands

@@ -7,12 +7,17 @@
 @theme {
   /* Colour: six roles, sampled from the mark and derived from it */
   --color-*: initial;
-  --color-ink: #141414;
-  --color-slate: #5b605e;
-  --color-paper: #ffffff;
-  --color-stone: #f2f3f1;
-  --color-brand: #1e763a;
-  --color-forest: #0f3d22;
+  --color-ink: #102a21;
+  --color-slate: #5e6862;
+  --color-paper: #fffef9;
+  --color-stone: #f2f4ec;
+  --color-brand: #16754b;
+  --color-forest: #062f24;
+  --color-lime: #baf442;
+  --color-sage: #e7ecd9;
+  --color-sky: #e8f1f4;
+  --color-lilac: #eee9f8;
+  --color-clay: #f4e8df;
   /* Label green for dark grounds: brand green fails contrast on forest, this passes at 7:1 */
   --color-mint: #9fd3b0;
   /* Derived rules, not separate roles */
@@ -24,19 +29,19 @@
   --font-*: initial;
   /* Headings in Helvetica (client direction, 7 September 2026). System Helvetica on Apple
      devices; Arial, the standard Helvetica fallback, elsewhere. No font file is shipped. */
-  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-public-sans), sans-serif;
   --font-sans: var(--font-public-sans), "Helvetica Neue", Arial, sans-serif;
 
   --text-*: initial;
-  --text-display-1: clamp(2.5rem, 1.25rem + 4vw, 4.25rem);
-  --text-display-1--line-height: 1.02;
-  --text-display-1--letter-spacing: -0.025em;
+  --text-display-1: clamp(2.875rem, 5.4vw, 5.25rem);
+  --text-display-1--line-height: 1;
+  --text-display-1--letter-spacing: -0.035em;
   --text-display-1--font-weight: 700;
-  --text-display-2: clamp(2rem, 1.25rem + 2.4vw, 3rem);
-  --text-display-2--line-height: 1.08;
-  --text-display-2--letter-spacing: -0.02em;
+  --text-display-2: clamp(2.25rem, 4vw, 4.125rem);
+  --text-display-2--line-height: 1.02;
+  --text-display-2--letter-spacing: -0.032em;
   --text-display-2--font-weight: 700;
-  --text-statement: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  --text-statement: clamp(1.625rem, 1rem + 1.7vw, 2.25rem);
   --text-statement--line-height: 1.1;
   --text-statement--letter-spacing: -0.01em;
   --text-statement--font-weight: 700;
@@ -73,8 +78,8 @@
   /* Shape and layout */
   --radius-*: initial;
   --radius-control: 3px;
-  --radius-nav: 0.5rem;
-  --radius-bar: 1rem;
+  --radius-nav: 1.4rem;
+  --radius-bar: 1.75rem;
   --container-site: 90rem;
   --spacing-gutter: 1.5rem;
   --spacing-gutter-wide: 2.5rem;
@@ -104,10 +109,7 @@
   }
 
   html {
-    /* Every size on the site is in rem, so this scales the whole design at once. 87.5% gives
-       the tighter look the client saw at 80% browser zoom while keeping body text at 14.9px
-       (client direction, 7 September 2026). Breakpoints are unaffected. */
-    font-size: 87.5%;
+    font-size: 100%;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
   }
@@ -121,6 +123,15 @@
     font-feature-settings: "kern", "liga";
     -webkit-font-smoothing: antialiased;
     margin: 0;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  * {
+    scrollbar-color: var(--color-brand) var(--color-stone);
   }
 
   :focus-visible {
@@ -162,10 +173,12 @@
   @keyframes reveal-in {
     from {
       opacity: 0;
-      transform: translateY(28px) scale(0.985);
+      filter: blur(4px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
+      filter: blur(0);
       transform: none;
     }
   }
@@ -173,8 +186,21 @@
     opacity: 0;
   }
   html[data-js] [data-reveal][data-inview] {
-    animation: reveal-in 0.65s var(--ease-out-quiet) both;
+    animation: reveal-in 0.78s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  @keyframes hero-settle {
+    from {
+      transform: scale(1.035);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .hero-image {
+    animation: hero-settle 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   /* Map pins: a ring that expands and fades, continuously. Reduced motion stops it below. */

@@ -10,6 +10,7 @@ import { Sectors } from "@/components/sections/Sectors";
 import { Locations } from "@/components/sections/Locations";
 import { Team } from "@/components/sections/Team";
 import { Contact } from "@/components/sections/Contact";
+import { Faq } from "@/components/sections/Faq";
 
 export default function HomePage() {
   return (
@@ -19,12 +20,13 @@ export default function HomePage() {
         <Hero />
         <Difference />
         <TrustBand />
-        <Products />
-        <Approach />
         <Services />
         <Sectors />
+        <Products />
+        <Approach />
         <Locations />
         <Team />
+        <Faq />
         <Contact />
       </main>
       <SiteFooter />

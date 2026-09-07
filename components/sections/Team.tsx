@@ -1,78 +1,50 @@
 import Image from "next/image";
-import type { Person } from "@/lib/content";
 import { people, team } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { reveal } from "@/lib/utils/reveal";
 
-/** The titles state the hierarchy: directors lead, the leads follow. */
-const isDirector = (person: Person) => /\bDirector\b/.test(person.title);
+const surfaces = ["bg-sage", "bg-sky", "bg-lilac", "bg-clay", "bg-sky", "bg-sage"];
 
 export function Team() {
-  const directors = people.filter(isDirector);
-  const leads = people.filter((person) => !isDirector(person));
-
   return (
-    <Section id="team" ground="stone" labelledBy="team-heading">
-      <SectionHeading
-        id="team-heading"
-        kicker={team.kicker}
-        title={team.headline}
-        lede={team.lede}
-      />
-
-      {/* Directors: large portraits in a row of three. */}
-      <ul className="mt-12 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-        {directors.map((person, index) => (
+    <Section id="team" labelledBy="team-heading">
+      <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+        <h2 id="team-heading" className="font-display text-display-2 lg:col-span-7" {...reveal()}>
+          {team.headline}
+        </h2>
+        <p
+          className="max-w-[42ch] text-lede text-slate lg:col-span-4 lg:col-start-9"
+          {...reveal(1)}
+        >
+          {team.lede}
+        </p>
+      </div>
+      <ul className="mt-14 grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {people.map((person, index) => (
           <li
             key={person.slug}
-            {...reveal(index)}
-            className="group rounded-nav border border-line bg-paper p-3 transition-colors duration-200 ease-out-quiet hover:border-brand"
+            {...reveal(index, 45)}
+            className={`group overflow-hidden rounded-bar border border-ink/10 ${surfaces[index]} transition-[transform,box-shadow] duration-300 ease-out-quiet hover:-translate-y-1 hover:shadow-panel`}
           >
-            <Image
-              src={person.photo.src}
-              alt={person.photo.alt}
-              width={person.photo.width}
-              height={person.photo.height}
-              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
-              className="aspect-square w-full rounded-control object-cover"
-            />
-            <div className="px-3 pt-5 pb-3">
-              <h3 className="text-title">{person.name}</h3>
-              <p className="mt-1 text-label font-medium text-brand">{person.title}</p>
+            <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+              <Image
+                src={person.photo.src}
+                alt={person.photo.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover object-top saturate-[.88] transition-[transform,filter] duration-500 ease-out-quiet group-hover:scale-[1.02] group-hover:saturate-100"
+              />
+            </div>
+            <div className="min-h-32 p-6">
+              <h3 className="text-title font-bold">{person.name}</h3>
+              <p className="mt-2 max-w-[28ch] text-label font-semibold text-brand">
+                {person.title}
+              </p>
             </div>
           </li>
         ))}
       </ul>
-
-      {/* Leads: compact cards, portrait beside the name. */}
-      <ul className="mt-6 grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {leads.map((person, index) => (
-          <li
-            key={person.slug}
-            {...reveal(index)}
-            className="group flex items-center gap-4 rounded-nav border border-line bg-paper p-3 transition-colors duration-200 ease-out-quiet hover:border-brand"
-          >
-            <Image
-              src={person.photo.src}
-              alt={person.photo.alt}
-              width={person.photo.width}
-              height={person.photo.height}
-              sizes="96px"
-              className="size-24 shrink-0 rounded-control object-cover"
-            />
-            <div className="pr-2">
-              <h3 className="text-subtitle">{person.name}</h3>
-              <p className="mt-1 text-label font-medium text-brand">{person.title}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <p
-        className="mx-auto mt-14 max-w-[46rem] text-center text-lede text-slate lg:mt-16"
-        {...reveal()}
-      >
+      <p className="mt-12 max-w-[65ch] border-t border-ink/15 pt-7 text-body text-slate">
         {team.bench}
       </p>
     </Section>

@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: wide desktop homepage hero photograph for Von Newman Technology Consultants
+Primary request: a cinematic documentary photograph of a contemporary African technology consulting and engineering team collaborating in a sophisticated Lagos workspace
+Scene/backdrop: modern Lagos office with exposed concrete, warm timber, large windows, daylight and subtle greenery
+Subject: three adult Black technology professionals in an authentic working session; a female engineer with glasses in the right foreground concentrating on a large off-frame display, a male colleague midground discussing a technical decision, a third colleague further back
+Style/medium: premium editorial corporate photography, natural skin texture, realistic hands, restrained color grading, human and credible
+Composition/framing: 16:9 landscape, people concentrated in the right 60 percent, generous darker negative space across the left 40 percent for large white headline, faces unobstructed, candid rather than posed
+Lighting/mood: warm natural daylight with deep forest-toned shadows, confident, thoughtful, collaborative
+Constraints: no logos, no visible company names, no text, no watermark, no handshakes, no one looking at camera, no sci-fi interface overlays, no generic server room, no uncanny hands, no excessive blur

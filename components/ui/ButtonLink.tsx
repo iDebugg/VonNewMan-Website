@@ -16,15 +16,15 @@ type Variant =
 type Size = "md" | "sm" | "nav" | "lg";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-forest text-paper hover:bg-ink",
+  primary: "bg-lime text-ink hover:bg-paper",
   secondary: "border border-ink text-ink hover:bg-stone",
   tinted: "bg-brand/10 text-brand hover:bg-brand/15",
-  brand: "bg-brand text-paper hover:bg-paper hover:text-ink",
+  brand: "bg-lime text-ink hover:bg-paper",
   "paper-brand": "bg-paper text-brand hover:bg-brand hover:text-paper",
   glass: "bg-paper/10 text-paper hover:bg-paper/20",
   inverse: "bg-paper text-ink hover:bg-stone",
   "inverse-outline": "border border-paper/70 text-paper hover:border-paper hover:bg-paper/10",
-  link: "px-0 text-brand underline-offset-4 hover:underline",
+  link: "border border-brand/35 bg-brand/8 text-brand hover:border-brand hover:bg-brand hover:text-paper",
 };
 
 const sizes: Record<Size, string> = {
@@ -49,9 +49,9 @@ export function ButtonLink({ item, variant = "primary", size = "md", className }
       href={item.href}
       {...(item.external ? externalLinkProps : {})}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-control text-label font-semibold whitespace-nowrap transition-colors duration-150 ease-out-quiet",
+        "inline-flex items-center justify-center gap-2 rounded-full text-label font-bold whitespace-nowrap transition-[background-color,color,transform] duration-150 ease-out-quiet hover:-translate-y-0.5",
         variants[variant],
-        variant === "link" ? "py-3" : sizes[size],
+        sizes[size],
         (size === "nav" || size === "lg") && "rounded-nav",
         className,
       )}

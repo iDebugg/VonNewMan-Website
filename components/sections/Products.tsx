@@ -1,113 +1,109 @@
 import Image from "next/image";
-import type { Product } from "@/lib/content";
-import { products, productsIntro } from "@/lib/content";
-import { cn } from "@/lib/utils/cn";
-import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { atlas, sonar } from "@/lib/content";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Section } from "@/components/ui/Section";
 import { reveal } from "@/lib/utils/reveal";
-
-const actionVariants = ["primary", "secondary", "link"] as const;
-
-/**
- * Showcase row: a large screenshot beside the product's copy. Rows alternate sides, Atlas with
- * the image on the left and Sonar on the right (client direction, 5 September 2026).
- */
-function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
-  return (
-    <article
-      id={product.id}
-      aria-labelledby={`${product.id}-name`}
-      className="grid scroll-mt-[calc(var(--spacing-header)+2*var(--spacing-header-inset))] items-center gap-10 lg:grid-cols-5 lg:gap-16"
-    >
-      <figure className={cn("lg:col-span-3", flip && "lg:order-2")} {...reveal(0)}>
-        {/* The frame takes the screenshot's own aspect ratio so nothing is cropped away. */}
-        <div
-          className="relative overflow-hidden rounded-nav border border-line"
-          style={{ aspectRatio: `${product.image.width} / ${product.image.height}` }}
-        >
-          <Image
-            src={product.image.src}
-            alt={product.image.alt}
-            fill
-            sizes="(min-width: 1024px) 60vw, 100vw"
-            className="object-cover object-left-top"
-          />
-        </div>
-      </figure>
-
-      <div className={cn("lg:col-span-2", flip && "lg:order-1")} {...reveal(1)}>
-        <p className="text-label text-brand">{product.badge}</p>
-        <h3 id={`${product.id}-name`} className="mt-3 font-display text-product">
-          {product.name}
-        </h3>
-        <p className="mt-2 flex flex-wrap gap-x-4 text-label text-slate">
-          <span>{product.subline.primary}</span>
-          <span>{product.subline.secondary}</span>
-        </p>
-        <p className="mt-6 text-body text-slate">
-          <strong className="font-semibold text-ink">{product.positioning}</strong>{" "}
-          {product.description}
-        </p>
-
-        {product.figures ? (
-          <dl className="mt-7 grid grid-cols-3 gap-4 border-t border-line pt-6">
-            {product.figures.map((figure) => (
-              <div key={figure.label} className="flex flex-col">
-                <dd className="order-1 font-display text-figure font-semibold tabular">
-                  {figure.value}
-                </dd>
-                <dt className="order-2 mt-2 text-caption text-slate">{figure.label}</dt>
-              </div>
-            ))}
-          </dl>
-        ) : null}
-        {product.platforms ? (
-          <ul
-            aria-label={product.platformsLabel}
-            className="mt-7 flex list-none flex-wrap gap-x-5 gap-y-2 border-t border-line pt-6 text-body font-medium text-ink"
-          >
-            {product.platforms.map((platform) => (
-              <li key={platform}>{platform}</li>
-            ))}
-          </ul>
-        ) : null}
-
-        <ul className="mt-7 grid list-none gap-x-6 gap-y-3 border-t border-line pt-6 sm:grid-cols-2">
-          {product.features.map((feature) => (
-            <li key={feature.lead} className="text-body text-slate">
-              <strong className="font-semibold text-ink">{feature.lead}</strong> {feature.text}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          {product.actions.map((action, index) => (
-            <ButtonLink
-              key={action.label}
-              item={action}
-              variant={actionVariants[index] ?? "link"}
-            />
-          ))}
-        </div>
-      </div>
-    </article>
-  );
-}
 
 export function Products() {
   return (
-    <Section id="products" labelledBy="products-heading">
-      <SectionHeading
-        id="products-heading"
-        title={productsIntro.headline}
-        lede={productsIntro.lede}
-      />
-      <div className="mt-14 grid gap-20 lg:mt-20 lg:gap-28">
-        {products.map((product, index) => (
-          <ProductRow key={product.id} product={product} flip={index % 2 === 1} />
-        ))}
-      </div>
-    </Section>
+    <section id="products" aria-labelledby="products-heading" className="scroll-mt-24">
+      <Section labelledBy="products-heading" className="overflow-hidden">
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <h2
+            id="products-heading"
+            className="font-display text-display-2 lg:col-span-8"
+            {...reveal()}
+          >
+            Products that prove how we engineer.
+          </h2>
+          <p className="text-lede text-slate lg:col-span-4" {...reveal(1)}>
+            We own Atlas and Sonar end to end, so the product can move with the organisation.
+          </p>
+        </div>
+        <article id="atlas" className="mt-20 scroll-mt-24">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-4" {...reveal()}>
+              <p className="text-label font-bold tracking-[.12em] text-brand">VON NEWMAN ATLAS</p>
+              <h3 className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]">
+                Learning that moves people forward.
+              </h3>
+              <p className="mt-6 text-lede text-slate">{atlas.description}</p>
+              <dl className="mt-8 flex gap-8">
+                <div>
+                  <dd className="text-figure font-bold">25</dd>
+                  <dt className="text-label text-slate">pathways</dt>
+                </div>
+                <div>
+                  <dd className="text-figure font-bold">109+</dd>
+                  <dt className="text-label text-slate">courses</dt>
+                </div>
+              </dl>
+              <ButtonLink item={atlas.actions[0]!} className="mt-8" />
+            </div>
+            <div className="relative lg:col-span-8" {...reveal(1)}>
+              <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-[#ece8ff]" />
+              <Image
+                src={atlas.image.src}
+                alt={atlas.image.alt}
+                width={atlas.image.width}
+                height={atlas.image.height}
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                className="w-full rounded-bar shadow-panel"
+              />
+            </div>
+          </div>
+        </article>
+      </Section>
+      <Section ground="forest" labelledBy="sonar-heading" className="overflow-hidden">
+        <article id="sonar" className="scroll-mt-24">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5" {...reveal()}>
+              <p className="text-label font-bold tracking-[.12em] text-lime">VON NEWMAN SONAR</p>
+              <h3
+                id="sonar-heading"
+                className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]"
+              >
+                See your entire estate. Control every naira.
+              </h3>
+              <p className="mt-6 text-lede text-paper/75">{sonar.description}</p>
+              <ol className="mt-10 grid list-none gap-5 border-l border-lime/40 pl-6">
+                <li>
+                  <strong className="block text-title">Discover resources</strong>
+                  <span className="text-body text-paper/65">
+                    Continuously map infrastructure across accounts and regions.
+                  </span>
+                </li>
+                <li>
+                  <strong className="block text-title">Assign ownership</strong>
+                  <span className="text-body text-paper/65">
+                    Connect assets to teams, services and policy.
+                  </span>
+                </li>
+                <li>
+                  <strong className="block text-title">Review configuration</strong>
+                  <span className="text-body text-paper/65">
+                    Turn unmanaged resources into reviewed Terraform.
+                  </span>
+                </li>
+              </ol>
+              <ButtonLink item={sonar.actions[0]!} className="mt-9" />
+            </div>
+            <div className="lg:col-span-7" {...reveal(1)}>
+              <Image
+                src="/assets/sonar-terraform.jpg"
+                alt="Sonar workflow for reviewing and importing an infrastructure resource to Terraform"
+                width={1400}
+                height={1131}
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                className="w-full rounded-bar bg-paper shadow-panel"
+              />
+              <p className="mt-4 text-caption text-paper/55">
+                Sonar interface: importing an unmanaged AWS resource into Terraform.
+              </p>
+            </div>
+          </div>
+        </article>
+      </Section>
+    </section>
   );
 }

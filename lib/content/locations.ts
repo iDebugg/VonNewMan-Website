@@ -13,9 +13,9 @@ export type Office = {
 };
 
 export const locations = {
-  headline: "Engineered between Lagos and London.",
+  headline: "Based in Lagos. Delivering across the United Kingdom.",
   intro:
-    "A consultancy with its own products, and a product team that consults. We operate across Nigeria and the United Kingdom, with delivery experience in both public and private sectors in each market.",
+    "Our headquarters and product teams are in Lagos. Our UK delivery team works with enterprise and public-sector organisations across London and the South East.",
 } as const;
 
 export const offices: Office[] = [

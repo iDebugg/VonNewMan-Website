@@ -2,7 +2,6 @@ import Image from "next/image";
 import { hero } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { HeroVideo } from "./HeroVideo";
 import { reveal } from "@/lib/utils/reveal";
 
 export function Hero() {
@@ -10,12 +9,12 @@ export function Hero() {
     <section
       aria-labelledby="hero-heading"
       data-ground="dark"
-      className="relative isolate flex min-h-svh flex-col overflow-hidden bg-forest text-paper"
+      className="relative isolate flex min-h-[52rem] flex-col overflow-hidden bg-forest text-paper lg:min-h-svh"
     >
       {/* Poster first: it is the LCP and paints before the video's first frame decodes. */}
       <Image
-        src={hero.video.poster.src}
-        alt=""
+        src="/assets/consulting-hero.jpg"
+        alt="A technology consulting team collaborating in a contemporary workspace"
         fill
         preload
         loading="eager"
@@ -23,38 +22,37 @@ export function Hero() {
         decoding="sync"
         sizes="100vw"
         aria-hidden="true"
-        className="object-cover"
+        className="hero-image object-cover object-[67%_center]"
       />
-      <HeroVideo src={hero.video.src} poster={hero.video.poster.src} />
-      {/* Deep green wash (client direction, 7 September 2026): keeps AA contrast for paper text
-          over any frame of the video and ties the hero to the brand colour. */}
-      <div aria-hidden="true" className="absolute inset-0 bg-forest/92" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,27,20,.96)_0%,rgba(3,27,20,.8)_42%,rgba(3,27,20,.18)_72%,rgba(3,27,20,.08)_100%)]"
+      />
 
-      <Container className="relative flex flex-1 flex-col justify-center pt-[calc(var(--spacing-header)+2*var(--spacing-header-inset)+3rem)] pb-[clamp(4rem,10vw,8rem)] text-center">
+      <Container className="relative flex flex-1 flex-col justify-center pt-40 pb-16 text-left lg:pt-48">
         {/* The locator lines were removed from the hero at the client's instruction (7 September 2026). */}
         <h1
           id="hero-heading"
-          className="mx-auto font-display text-display-1 text-paper"
+          className="max-w-[11ch] font-display text-display-1 text-paper"
           {...reveal(0)}
         >
           {/* Each sentence holds its own line from 640px up. That is the emphasis. */}
-          {hero.headline.map((sentence) => (
-            <span key={sentence} className="block sm:whitespace-nowrap">
-              {sentence}
-            </span>
-          ))}
+          <span className="block">Built around</span>
+          <span className="block">your people.</span>
+          <span className="block text-lime">Engineered</span>
+          <span className="block text-lime">for progress.</span>
         </h1>
-        <p className="mx-auto mt-7 max-w-[38rem] text-lede text-paper/85" {...reveal(1)}>
-          {hero.lede}
+        <p className="mt-9 max-w-[34rem] text-lede text-paper/85" {...reveal(1)}>
+          Software, learning and infrastructure — shaped around the way your organisation works.
         </p>
         <div
-          className="mx-auto mt-9 flex w-full max-w-sm flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row"
+          className="mt-9 flex w-full max-w-sm flex-col items-start gap-3 sm:max-w-none sm:flex-row"
           {...reveal(2)}
         >
           {/* Order swapped at the client's request, 5 September 2026: the solid action leads. */}
           <ButtonLink
             item={hero.secondaryCta}
-            variant="inverse"
+            variant="primary"
             size="lg"
             className="w-full sm:w-auto"
           />
@@ -67,18 +65,9 @@ export function Hero() {
         </div>
       </Container>
 
-      <Container className="relative">
-        <ul className="grid list-none border-t border-line-dark sm:grid-cols-3 sm:divide-x sm:divide-line-dark">
-          {hero.trustPoints.map((point, index) => (
-            <li
-              key={point}
-              {...reveal(index)}
-              className="border-b border-line-dark py-4 text-center text-label font-medium text-paper sm:border-b-0 sm:py-6"
-            >
-              {point}
-            </li>
-          ))}
-        </ul>
+      <Container className="relative flex flex-wrap justify-between gap-4 border-t border-paper/20 py-6 text-caption font-bold tracking-[.12em] text-paper/75">
+        <span>BORN IN LAGOS. WORKING INTERNATIONALLY.</span>
+        <span>LAGOS / LONDON</span>
       </Container>
     </section>
   );

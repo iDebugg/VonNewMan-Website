@@ -1,46 +1,69 @@
-import { difference, pillars } from "@/lib/content";
-import { cn } from "@/lib/utils/cn";
+import Image from "next/image";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Section } from "@/components/ui/Section";
-import { PillarIllustration } from "@/components/ui/PillarIllustration";
 import { reveal } from "@/lib/utils/reveal";
-
-/** Each card sits a step lower than the previous one from lg, as in the client's reference. */
-const stepOffsets = ["", "lg:mt-10", "lg:mt-20", "lg:mt-30"];
 
 export function Difference() {
   return (
     <Section id="difference" ground="stone" labelledBy="difference-heading">
-      <div className="max-w-[46rem]" {...reveal()}>
-        <h2 id="difference-heading" className="font-display text-display-2">
-          {difference.headline.map((sentence) => (
-            <span key={sentence} className="block">
-              {sentence}
-            </span>
-          ))}
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <h2
+          id="difference-heading"
+          className="font-display text-display-2 lg:col-span-7"
+          {...reveal()}
+        >
+          The people who build it. The people you work with.
         </h2>
-        <p className="mt-6 text-lede text-slate">{difference.lede}</p>
+        <div className="lg:col-span-4 lg:col-start-9" {...reveal(1)}>
+          <p className="text-lede text-slate">
+            Our consultants and engineers build Atlas and Sonar in-house. The same team shapes every
+            engagement around your workflows, policies and people.
+          </p>
+          <ButtonLink
+            item={{ label: "How we work", href: "#approach" }}
+            variant="primary"
+            className="mt-6"
+          />
+        </div>
       </div>
-
-      {/* Four pillars as outlined cards, matching the ownership cards in the Approach section:
-          square corners, an outline illustration, a tracked capitals title over a thin rule,
-          border turning brand green on hover, each card stepped a little lower than the last. */}
-      <ul className="mt-12 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-start">
-        {pillars.map((pillar, index) => (
-          <li
-            key={pillar.slug}
-            {...reveal(index)}
-            className={cn(
-              "border border-ink/30 bg-paper p-8 transition-colors duration-200 ease-out-quiet hover:border-brand lg:p-9",
-              stepOffsets[index],
-            )}
-          >
-            <PillarIllustration slug={pillar.slug} size={44} className="text-slate" />
-            <h3 className="mt-8 text-subtitle uppercase tracking-[0.12em]">{pillar.title}</h3>
-            <div className="mt-5 h-px bg-ink/50" aria-hidden="true" />
-            <p className="mt-5 text-body text-slate">{pillar.description}</p>
-          </li>
-        ))}
-      </ul>
+      <div
+        className="mt-14 overflow-hidden rounded-bar bg-paper lg:grid lg:grid-cols-2"
+        {...reveal()}
+      >
+        <div className="relative min-h-[24rem] lg:min-h-[36rem]">
+          <Image
+            src="/assets/consulting-discovery.jpg"
+            alt="A consulting team reviewing a service blueprint together in Lagos"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="flex flex-col justify-between bg-sage p-8 sm:p-12 lg:p-14">
+          <div>
+            <p className="text-label font-bold tracking-[.12em] text-brand">
+              CONSULTING, WITH ENGINEERING INSIDE
+            </p>
+            <h3 className="mt-5 font-display text-[clamp(2rem,3.25vw,3.5rem)] leading-[1.02] font-bold tracking-[-.032em]">
+              Your organisation is the starting point.
+            </h3>
+          </div>
+          <ul className="mt-12 grid list-none divide-y divide-ink/15 border-y border-ink/15 text-title font-bold">
+            <li className="flex items-center justify-between py-5">
+              <span>Understand the operating model</span>
+              <span aria-hidden="true">→</span>
+            </li>
+            <li className="flex items-center justify-between py-5">
+              <span>Design around real constraints</span>
+              <span aria-hidden="true">→</span>
+            </li>
+            <li className="flex items-center justify-between py-5">
+              <span>Stay accountable after go-live</span>
+              <span aria-hidden="true">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </Section>
   );
 }

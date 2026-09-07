@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils/cn";
 
 // Fields: brand-green border with 8px corners; focus swaps the page outline for a soft green ring.
 const control =
-  "w-full rounded-nav border bg-paper px-4 py-3 text-body text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-slate focus-visible:border-brand focus-visible:ring-4 focus-visible:ring-brand/20 focus-visible:outline-none";
+  "w-full rounded-[.65rem] border bg-paper px-4 py-3.5 text-body text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-slate focus-visible:border-brand focus-visible:ring-4 focus-visible:ring-brand/20 focus-visible:outline-none";
 
 function Field({ field, error }: { field: FormField; error?: string }) {
   const id = `f-${field.name}`;
@@ -119,12 +119,12 @@ export function ContactForm() {
       <div className="grid gap-4 pt-1">
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center rounded-nav bg-forest px-5 py-3.5 text-body font-semibold text-paper transition-colors duration-150 hover:bg-brand"
+          className="inline-flex w-full items-center justify-center rounded-full bg-lime px-5 py-4 text-body font-bold text-ink transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-brand hover:text-paper"
         >
-          {contact.submitLabel}
+          {contact.submitLabel} →
         </button>
         <p id="form-note" className="text-caption text-slate" aria-live="polite">
-          {note ?? ""}
+          {note ?? "Opens your email app with the enquiry ready to send."}
         </p>
       </div>
     </form>

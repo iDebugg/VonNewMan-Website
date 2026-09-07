@@ -9,8 +9,8 @@ export type Person = {
 
 export const team = {
   kicker: "Leadership team",
-  headline: "The people behind the platforms.",
-  lede: "Engineers, architects and delivery leaders working between Lagos and London. The same people who build our products sit across the table on your engagement.",
+  headline: "Meet the people you will work with.",
+  lede: "Consultants, engineers and delivery leaders based in Lagos and the United Kingdom. Our senior team stays close to every engagement.",
   bench:
     "A multi-disciplinary bench across product strategy, software engineering, AI, learning design, cloud, networks and security, with a proven record delivering enterprise solutions in Nigeria and the UK.",
 } as const;

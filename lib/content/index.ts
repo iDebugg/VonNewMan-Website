@@ -11,3 +11,4 @@ export * from "./team";
 export * from "./contact";
 export * from "./footer";
 export * from "./trust";
+export * from "./faq";
