@@ -46,10 +46,23 @@ export function Hero() {
         <p className="mx-auto mt-7 max-w-[38rem] text-lede text-paper/85" {...reveal(1)}>
           {hero.lede}
         </p>
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-3" {...reveal(2)}>
+        <div
+          className="mx-auto mt-9 flex w-full max-w-sm flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row"
+          {...reveal(2)}
+        >
           {/* Order swapped at the client's request, 5 September 2026: the solid action leads. */}
-          <ButtonLink item={hero.secondaryCta} variant="inverse" size="lg" />
-          <ButtonLink item={hero.primaryCta} variant="inverse-outline" size="lg" />
+          <ButtonLink
+            item={hero.secondaryCta}
+            variant="inverse"
+            size="lg"
+            className="w-full sm:w-auto"
+          />
+          <ButtonLink
+            item={hero.primaryCta}
+            variant="inverse-outline"
+            size="lg"
+            className="w-full sm:w-auto"
+          />
         </div>
       </Container>
 

@@ -57,7 +57,7 @@ export function TrustBand() {
               <div
                 key={stat.label}
                 {...reveal(index)}
-                className="flex flex-col items-center border-line-dark px-4 text-center even:border-l lg:border-l lg:px-6 lg:first:border-l-0"
+                className="flex flex-col items-center border-line-dark px-4 text-center even:border-l last:col-span-2 lg:border-l lg:px-6 lg:first:border-l-0 lg:last:col-span-1"
               >
                 <dd className="order-1 font-display text-figure font-bold text-paper tabular">
                   <CountUp value={stat.value} />

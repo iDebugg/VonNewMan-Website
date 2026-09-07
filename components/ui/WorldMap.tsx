@@ -58,7 +58,7 @@ export function WorldMap({
             style={toPercent(pin.lon, pin.lat)}
             className="absolute -translate-x-1/2 -translate-y-1/2"
           >
-            <span className="relative block size-3.5">
+            <span className="relative block size-2.5 sm:size-3.5">
               <span
                 aria-hidden="true"
                 className="absolute inset-0 animate-[breathe_2.6s_ease-out_infinite] rounded-full bg-paper/60"
@@ -71,8 +71,10 @@ export function WorldMap({
             </span>
             <span
               className={cn(
-                "absolute left-1/2 -translate-x-1/2 rounded-control bg-ink/85 px-3.5 py-1.5 text-label font-semibold whitespace-nowrap text-paper lg:px-4 lg:py-2 lg:text-body",
-                pin.labelSide === "above" ? "bottom-full mb-3.5" : "top-full mt-3.5",
+                "absolute left-1/2 -translate-x-1/2 rounded-control bg-ink/85 px-2.5 py-1 text-caption font-semibold whitespace-nowrap text-paper sm:px-3.5 sm:py-1.5 sm:text-label lg:px-4 lg:py-2 lg:text-body",
+                pin.labelSide === "above"
+                  ? "bottom-full mb-2 sm:mb-3.5"
+                  : "top-full mt-2 sm:mt-3.5",
               )}
             >
               {pin.label}
