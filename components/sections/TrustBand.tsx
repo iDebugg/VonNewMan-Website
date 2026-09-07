@@ -46,7 +46,7 @@ export function TrustBand() {
           </div>
           <div>
             <dd className="text-title font-bold">8 practice areas</dd>
-            <dt className="mt-1 text-label text-slate">Consulting and engineering</dt>
+            <dt className="mt-1 text-label text-slate">From product design to cloud delivery</dt>
           </div>
           <div>
             <dd className="text-title font-bold">Nigeria and the UK</dd>
