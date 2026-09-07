@@ -14,16 +14,11 @@ import { reveal } from "@/lib/utils/reveal";
 
 export function SiteHeader() {
   return (
-    <header
-      data-site-header
-      data-condensed="false"
-      className="group fixed inset-x-0 top-0 z-50 px-gutter-narrow sm:px-gutter lg:px-gutter-wide"
-    >
-      {/* Sits straight on the hero at the top of the page. Once scrolled the only change is a
-          white ground behind it, with the text turning dark to stay legible (client direction,
-          7 September 2026). Size, inset and padding stay the same. */}
-      <div className="text-paper transition-colors duration-200 ease-out-quiet group-data-[condensed=true]:bg-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:shadow-panel">
-        <div className="flex h-header items-center justify-between gap-6 px-2 sm:px-4 lg:px-6">
+    <header data-site-header data-condensed="false" className="group fixed inset-x-0 top-0 z-50">
+      {/* The top state sits directly on the hero. On scroll, a full-width translucent surface
+          keeps the navigation legible while preserving some continuity with the page beneath. */}
+      <div className="border-b border-transparent text-paper transition-[background-color,color,box-shadow,backdrop-filter,border-color] duration-300 ease-out-quiet group-data-[condensed=true]:border-ink/10 group-data-[condensed=true]:bg-paper/88 group-data-[condensed=true]:text-ink group-data-[condensed=true]:shadow-panel group-data-[condensed=true]:backdrop-blur-xl">
+        <div className="flex h-header items-center justify-between gap-6 px-gutter-narrow sm:px-gutter lg:px-gutter-wide">
           <div {...reveal(0)}>
             <Brand condensedAware />
           </div>

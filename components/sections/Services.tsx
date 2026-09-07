@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { practices } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { PracticeIcon } from "@/components/ui/PracticeIcon";
@@ -14,7 +15,58 @@ const summaries: Record<string, string> = {
   "advanced-technology": "Applied AI, data platforms and specialist engineering.",
 };
 
-const accents = ["bg-sage", "bg-sky", "bg-lilac", "bg-clay"];
+const serviceMeta = [
+  {
+    label: "In-house engineering",
+    surface: "bg-ink text-paper",
+    icon: "bg-lime text-ink",
+    muted: "text-paper/70",
+  },
+  {
+    label: "Atlas capability",
+    surface: "bg-lilac text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "Content studio",
+    surface: "bg-clay text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "Workforce systems",
+    surface: "bg-sky text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "Cloud practice",
+    surface: "bg-sage text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "Managed infrastructure",
+    surface: "bg-forest text-paper",
+    icon: "bg-lime text-ink",
+    muted: "text-paper/70",
+  },
+  {
+    label: "Security practice",
+    surface: "bg-sky text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "Applied innovation",
+    surface: "bg-lilac text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+];
+
+const engagementModels = ["Fixed scope", "Managed services", "Licensing", "Team augmentation"];
 
 export function Services() {
   return (
@@ -28,31 +80,62 @@ export function Services() {
             Strategy, software, learning and infrastructure delivered as one joined-up practice.
           </p>
         </div>
-        <ul className="grid list-none gap-px overflow-hidden rounded-bar bg-ink/15 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
-          {practices.map((practice, index) => (
-            <li
-              key={practice.slug}
-              {...reveal(index, 45)}
-              className="group min-h-52 bg-paper p-7 transition-colors duration-300 hover:bg-stone"
-            >
-              <span
-                className={`grid size-14 place-items-center rounded-full ${accents[index % accents.length]} text-brand`}
+
+        <ul className="grid list-none gap-4 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
+          {practices.map((practice, index) => {
+            const meta = serviceMeta[index]!;
+            return (
+              <li
+                key={practice.slug}
+                {...reveal(index, 45)}
+                className={`group flex min-h-64 flex-col overflow-hidden rounded-bar p-7 transition-[transform,box-shadow] duration-300 ease-out-quiet hover:-translate-y-1 hover:shadow-panel ${meta.surface}`}
               >
-                <PracticeIcon slug={practice.slug} size={28} />
-              </span>
-              <h3 className="mt-8 text-title font-bold">{practice.title}</h3>
-              <p className="mt-2 max-w-[34ch] text-body text-slate">{summaries[practice.slug]}</p>
-            </li>
-          ))}
+                <div className="flex items-center justify-between gap-4">
+                  <span className={`grid size-12 place-items-center rounded-nav ${meta.icon}`}>
+                    <PracticeIcon slug={practice.slug} size={27} />
+                  </span>
+                  <span className={`text-caption font-bold ${meta.muted}`}>{meta.label}</span>
+                </div>
+                <div className="mt-auto pt-10">
+                  <h3 className="text-title font-bold">{practice.title}</h3>
+                  <p className={`mt-3 max-w-[34ch] text-body ${meta.muted}`}>
+                    {summaries[practice.slug]}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
-      <div className="mt-16 flex flex-wrap gap-3 border-t border-ink/15 pt-7 text-label font-bold">
-        {["Fixed scope", "Managed services", "Licensing", "Team augmentation"].map((item) => (
-          <span key={item} className="rounded-full bg-stone px-4 py-2">
-            {item}
-          </span>
-        ))}
-      </div>
+
+      <figure className="relative mt-16 min-h-[28rem] overflow-hidden rounded-bar" {...reveal()}>
+        <Image
+          src="/assets/capabilities-consulting.jpg"
+          alt="Engineers and a client reviewing enterprise infrastructure together"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,20,17,.92)_0%,rgba(6,20,17,.64)_42%,rgba(6,20,17,.08)_72%)]"
+        />
+        <figcaption className="absolute inset-x-0 bottom-0 p-7 text-paper sm:p-10 lg:max-w-[42rem] lg:p-12">
+          <p className="font-display text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.03] font-bold tracking-[-.03em]">
+            We advise, build and operate the systems your organisation depends on.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {engagementModels.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-paper/30 bg-ink/25 px-4 py-2 text-caption font-bold"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </figcaption>
+      </figure>
     </Section>
   );
 }

@@ -21,7 +21,7 @@ export function TrustBand() {
               <li
                 key={partner.slug}
                 {...reveal(index)}
-                className="flex min-h-24 items-center justify-center"
+                className="group flex min-h-24 items-center justify-center"
               >
                 {partner.logo ? (
                   <Image
@@ -30,7 +30,7 @@ export function TrustBand() {
                     width={partner.logo.width}
                     height={partner.logo.height}
                     sizes="160px"
-                    className="max-h-20 w-auto max-w-36 object-contain grayscale"
+                    className="max-h-20 w-auto max-w-36 object-contain grayscale opacity-60 transition-[filter,opacity,transform] duration-300 ease-out-quiet group-hover:scale-[1.035] group-hover:grayscale-0 group-hover:opacity-100"
                   />
                 ) : (
                   <span className="font-bold">{partner.name}</span>

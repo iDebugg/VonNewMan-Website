@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: wide editorial image beneath the capabilities section of a premium African technology consultancy website
+Primary request: a candid on-site technology review showing two Black African engineers and one client walking through a modern enterprise infrastructure environment while reviewing a tablet and discussing the system
+Scene/backdrop: contemporary data-centre operations corridor connected to a bright control room, clean and credible rather than futuristic
+Subject: mixed-gender professionals in smart practical clothing, focused on the infrastructure and one another, natural working expressions
+Style/medium: premium documentary photography, human-centred technology editorial, realistic skin and materials, subtle film grain
+Composition/framing: extra-wide landscape composition, people grouped on the right half with visible infrastructure extending across the frame; suitable for a shallow website banner and responsive crops
+Lighting/mood: controlled daylight and soft practical light, calm, precise and capable
+Color palette: warm off-white, charcoal, deep forest green, subtle blue-grey and restrained lime details
+Constraints: no visible logos, no readable text, no hard hats unless naturally required, no posing, no watermark
+Avoid: cyberpunk, neon, holograms, sci-fi data centres, generic stock handshakes, exaggerated smiles, distorted hands

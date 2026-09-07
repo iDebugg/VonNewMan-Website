@@ -28,13 +28,29 @@ function Field({ field, error }: { field: FormField; error?: string }) {
         {field.label}
       </label>
       {field.kind === "select" ? (
-        <select {...shared}>
-          {field.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select {...shared} className={cn(shared.className, "appearance-none pr-12")}>
+            {field.options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-brand"
+          >
+            <path
+              d="m5 7.5 5 5 5-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       ) : field.kind === "textarea" ? (
         <textarea
           {...shared}
