@@ -92,7 +92,7 @@ export function Services() {
               >
                 <div className="flex items-center justify-between gap-4">
                   <span
-                    className={`grid size-12 place-items-center rounded-nav transition-transform duration-300 ease-out-quiet group-hover:-rotate-6 ${meta.icon}`}
+                    className={`grid size-12 place-items-center rounded-nav transition-transform duration-300 ease-out-quiet group-hover:-rotate-12 group-hover:scale-110 ${meta.icon}`}
                   >
                     <PracticeIcon slug={practice.slug} size={27} />
                   </span>
