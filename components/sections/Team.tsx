@@ -32,9 +32,9 @@ export function Team() {
         >
           {row.map((person, i) => {
             const index = rowIndex === 0 ? i : DIRECTORS + i;
-            // The CEO carries the green featured card; the other directors stay in full colour.
-            const featured = index === 0;
-            const inColour = featured || index < DIRECTORS;
+            // No green featured card (client, 8 September 2026); directors stay in full colour.
+            const featured = false;
+            const inColour = index < DIRECTORS;
 
             return (
               <li
