@@ -91,7 +91,9 @@ export function Services() {
                 className={`group flex min-h-64 flex-col overflow-hidden rounded-bar p-7 transition-[transform,box-shadow] duration-300 ease-out-quiet hover:-translate-y-1 hover:shadow-panel ${meta.surface}`}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <span className={`grid size-12 place-items-center rounded-nav ${meta.icon}`}>
+                  <span
+                    className={`grid size-12 place-items-center rounded-nav transition-transform duration-300 ease-out-quiet group-hover:-rotate-6 ${meta.icon}`}
+                  >
                     <PracticeIcon slug={practice.slug} size={27} />
                   </span>
                   <span className={`text-caption font-bold ${meta.muted}`}>{meta.label}</span>
