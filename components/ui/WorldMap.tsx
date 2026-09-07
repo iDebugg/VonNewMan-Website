@@ -6,7 +6,8 @@ export type MapPin = {
   label: string;
   lon: number;
   lat: number;
-  labelSide: "above" | "below";
+  labelSide: "above" | "below" | "left" | "right";
+  minor?: boolean;
 };
 
 /**
@@ -71,10 +72,12 @@ export function WorldMap({
             </span>
             <span
               className={cn(
-                "absolute left-1/2 -translate-x-1/2 rounded-control bg-ink/85 px-2.5 py-1 text-caption font-semibold whitespace-nowrap text-paper sm:px-3.5 sm:py-1.5 sm:text-label lg:px-4 lg:py-2 lg:text-body",
-                pin.labelSide === "above"
-                  ? "bottom-full mb-2 sm:mb-3.5"
-                  : "top-full mt-2 sm:mt-3.5",
+                "absolute rounded-control bg-ink/85 px-2.5 py-1 text-caption font-semibold whitespace-nowrap text-paper sm:px-3.5 sm:py-1.5 sm:text-label lg:px-4 lg:py-2 lg:text-body",
+                pin.labelSide === "above" && "bottom-full left-1/2 mb-2 -translate-x-1/2 sm:mb-3.5",
+                pin.labelSide === "below" && "top-full left-1/2 mt-2 -translate-x-1/2 sm:mt-3.5",
+                pin.labelSide === "left" && "top-1/2 right-full mr-2.5 -translate-y-1/2 sm:mr-4",
+                pin.labelSide === "right" && "top-1/2 left-full ml-2.5 -translate-y-1/2 sm:ml-4",
+                pin.minor && "hidden sm:block",
               )}
             >
               {pin.label}

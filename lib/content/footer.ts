@@ -9,6 +9,8 @@ export type FooterColumn = {
 export const footer = {
   descriptor:
     "Enterprise technology built around your organisation. Learning platforms, infrastructure intelligence and consulting, engineered between Lagos and London and adapted to each client we serve.",
+  /** Footer contact line for the offices (client wording, 8 September 2026). */
+  locationsLine: "Lagos, Abuja, Calabar, London",
   /** Rendered as separate items, not a dot-joined string. */
   places: ["Lagos", "London"] as const,
   legalLinks: [

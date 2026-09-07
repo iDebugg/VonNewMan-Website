@@ -38,3 +38,21 @@ export const offices: Office[] = [
     pin: { lon: -0.1276, lat: 51.5072, labelSide: "above" },
   },
 ];
+
+export type MapPinPlace = {
+  id: string;
+  label: string;
+  lon: number;
+  lat: number;
+  labelSide: "above" | "below" | "left" | "right";
+  /** Secondary pins keep their dot on phones but hide the label, so a tight cluster stays legible. */
+  minor?: boolean;
+};
+
+/** Pins on the world map (client direction, 8 September 2026): Lagos, Abuja, Calabar and London. */
+export const mapPins: MapPinPlace[] = [
+  { id: "lagos", label: "Lagos", lon: 3.3792, lat: 6.5244, labelSide: "left" },
+  { id: "abuja", label: "Abuja", lon: 7.3986, lat: 9.0765, labelSide: "above", minor: true },
+  { id: "calabar", label: "Calabar", lon: 8.3417, lat: 4.9757, labelSide: "right", minor: true },
+  { id: "london", label: "London", lon: -0.1276, lat: 51.5072, labelSide: "above" },
+];

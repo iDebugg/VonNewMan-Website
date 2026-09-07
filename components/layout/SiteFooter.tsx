@@ -87,7 +87,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-2.5">
                 <PinIcon className="mt-1 shrink-0 text-mint" />
-                <span>{site.address.street}</span>
+                <span>{footer.locationsLine}</span>
               </li>
             </ul>
           </div>
