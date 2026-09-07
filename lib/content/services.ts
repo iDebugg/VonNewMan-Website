@@ -11,7 +11,8 @@ export type EngagementPanel = {
 };
 
 export const services = {
-  kicker: "Consulting and engineering",
+  /** Client wording, 8 September 2026. */
+  kicker: "From product design to cloud delivery",
   headline: "Beyond the products: end-to-end capability.",
   lede: "From in-house software engineering to zero-trust networks, we deliver across every layer of your digital estate. As a full build, a managed service, or an extension of your own teams.",
 } as const;
