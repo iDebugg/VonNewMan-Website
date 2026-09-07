@@ -41,8 +41,8 @@ export function TrustBand() {
         </div>
         <dl className="mt-12 grid gap-4 border-t border-ink/15 pt-7 text-center sm:grid-cols-3">
           <div>
-            <dd className="text-title font-bold">2 in-house platforms</dd>
-            <dt className="mt-1 text-label text-slate">Atlas and Sonar</dt>
+            <dd className="text-title font-bold">Multiple platforms</dd>
+            <dt className="mt-1 text-label text-slate">Custom built</dt>
           </div>
           <div>
             <dd className="text-title font-bold">8 practice areas</dd>
