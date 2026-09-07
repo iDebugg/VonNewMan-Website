@@ -70,6 +70,11 @@ const structural = new Set([
   // Client-supplied hero background video, 5 September 2026.
   "/assets/hero-bg.mp4",
   "/assets/hero-poster.jpg",
+  // Team member added by the client, 7 September 2026.
+  "anthonia-osekhale",
+  "Anthonia Osekhale",
+  "Project Manager",
+  "/assets/team-anthonia.jpg",
   // Client copy change, 5 September 2026: third hero trust point.
   "Delivered for NRS and More",
   // Contact label "Visit" became "Address", 6 September 2026 (client).

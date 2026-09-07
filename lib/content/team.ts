@@ -59,4 +59,15 @@ export const people: Person[] = [
     title: "Lead Frontend Developer",
     photo: portrait("team-victor-2026.jpg", "Victor Aderibigbe"),
   },
+  {
+    slug: "anthonia-osekhale",
+    name: "Anthonia Osekhale",
+    title: "Project Manager",
+    photo: {
+      src: "/assets/team-anthonia.jpg",
+      alt: "Anthonia Osekhale",
+      width: 780,
+      height: 1040,
+    },
+  },
 ];
