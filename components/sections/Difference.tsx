@@ -58,7 +58,7 @@ export function Difference() {
               <span aria-hidden="true">→</span>
             </li>
             <li className="flex items-center justify-between py-5">
-              <span>Stay accountable after go-live</span>
+              <span>We provide support after go-live</span>
               <span aria-hidden="true">→</span>
             </li>
           </ul>
