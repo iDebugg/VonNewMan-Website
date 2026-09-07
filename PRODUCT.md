@@ -32,7 +32,7 @@ Use the supplied Von Newman logo assets. The visual direction is human, bold and
 
 ## Evidence on Hand
 
-Real product interface captures for Atlas and Sonar, four supplied organisation identities, six leadership portraits, 25 Atlas pathways, 109+ Atlas courses, eight practice areas and two markets. No approved case studies, testimonials or client-outcome metrics are currently available.
+Real product interface captures for Atlas and Sonar, four supplied organisation identities, six leadership portraits, 25 Atlas pathways, 209 Atlas courses, eight practice areas and two markets. No approved case studies, testimonials or client-outcome metrics are currently available.
 
 ## Product Principles
 

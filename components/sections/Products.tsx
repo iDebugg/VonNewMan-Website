@@ -3,6 +3,7 @@ import { atlas, sonar } from "@/lib/content";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Section } from "@/components/ui/Section";
 import { reveal } from "@/lib/utils/reveal";
+import { CountUp } from "./CountUp";
 
 export function Products() {
   return (
@@ -22,32 +23,36 @@ export function Products() {
         </div>
         <article id="atlas" className="mt-20 scroll-mt-24">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-4" {...reveal()}>
+            <div className="lg:col-span-6 xl:col-span-7" {...reveal()}>
               <p className="text-label font-bold tracking-[.12em] text-brand">VON NEWMAN ATLAS</p>
               <h3 className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]">
                 Learning that moves people forward.
               </h3>
-              <p className="mt-6 text-lede text-slate">{atlas.description}</p>
-              <dl className="mt-8 flex gap-8">
+              <p className="mt-6 max-w-[48rem] text-lede text-slate">{atlas.description}</p>
+              <dl className="mt-9 flex gap-10">
                 <div>
-                  <dd className="text-figure font-bold">25</dd>
+                  <dd>
+                    <CountUp value="25" className="text-figure font-bold tabular" />
+                  </dd>
                   <dt className="text-label text-slate">pathways</dt>
                 </div>
                 <div>
-                  <dd className="text-figure font-bold">109+</dd>
+                  <dd>
+                    <CountUp value="209" className="text-figure font-bold tabular" />
+                  </dd>
                   <dt className="text-label text-slate">courses</dt>
                 </div>
               </dl>
               <ButtonLink item={atlas.actions[0]!} className="mt-8" />
             </div>
-            <div className="relative lg:col-span-8" {...reveal(1)}>
-              <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-[#ece8ff]" />
+            <div className="relative lg:col-span-6 xl:col-span-5" {...reveal(1)}>
+              <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-lilac" />
               <Image
                 src={atlas.image.src}
                 alt={atlas.image.alt}
                 width={atlas.image.width}
                 height={atlas.image.height}
-                sizes="(min-width: 1024px) 66vw, 100vw"
+                sizes="(min-width: 1280px) 42vw, (min-width: 1024px) 50vw, 100vw"
                 className="w-full rounded-bar shadow-panel"
               />
             </div>

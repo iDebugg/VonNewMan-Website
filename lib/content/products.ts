@@ -42,7 +42,7 @@ export const atlas: Product = {
     "Onboarding, upskilling, compliance and certification for public and private sector teams, measured in one place and localised for Nigerian organisations.",
   figures: [
     { value: "25", label: "Structured pathways" },
-    { value: "109+", label: "Courses, growing quarterly" },
+    { value: "209", label: "Courses" },
     { value: "NG", label: "Localised content" },
   ],
   features: [

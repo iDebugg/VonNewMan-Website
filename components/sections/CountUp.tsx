@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 type CountUpProps = {
-  /** The final value as written in the content, e.g. "109+" or "90". */
+  /** The final value as written in the content, e.g. "209" or "90". */
   value: string;
   className?: string;
 };

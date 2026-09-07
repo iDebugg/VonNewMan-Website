@@ -1,5 +1,6 @@
 import { faq, faqItems } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { reveal } from "@/lib/utils/reveal";
 
 export function Faq() {
@@ -11,12 +12,7 @@ export function Faq() {
             {faq.headline}
           </h2>
           <p className="mt-6 text-lede text-slate">{faq.intro}</p>
-          <a
-            href="#contact"
-            className="mt-6 inline-block font-bold text-brand underline-offset-4 hover:underline"
-          >
-            Ask the team →
-          </a>
+          <ButtonLink item={{ label: "Ask the team", href: "#contact" }} className="mt-6" />
         </div>
         <div className="border-t border-ink/20 lg:col-span-7 lg:col-start-6">
           {faqItems.map((item, index) => (

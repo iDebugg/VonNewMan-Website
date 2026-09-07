@@ -36,7 +36,7 @@ export const hero = {
         width: 1400,
         height: 875,
       } satisfies ImageAsset,
-      caption: { primary: "Atlas", secondary: "109+ courses" } satisfies HeroCaption,
+      caption: { primary: "Atlas", secondary: "209 courses" } satisfies HeroCaption,
     },
     {
       image: {

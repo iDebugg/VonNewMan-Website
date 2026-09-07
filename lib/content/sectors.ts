@@ -14,7 +14,7 @@ export type SectorPanel = {
   heading: string;
   lede: string;
   cta: LinkItem;
-  /** Product screen shown with the sector (placed 7 September 2026 at the client's instruction). */
+  /** Human-centred editorial image representing the sector. */
   image: ImageAsset;
   items: SectorItem[];
 };
@@ -47,10 +47,10 @@ export const sectorPanels: SectorPanel[] = [
     lede: "Public institutions need platforms that respect procurement, policy and accountability, and that work for staff in every office, not just headquarters. We design for all of that from the start.",
     cta: { label: "Discuss a public sector programme", href: "#contact" },
     image: {
-      src: "/assets/atlas-catalogue.jpg",
-      alt: "Atlas catalogue showing public sector learning pathways for revenue and tax administration, and governance, ethics and anti-corruption",
-      width: 1400,
-      height: 525,
+      src: "/assets/public-sector-consulting.jpg",
+      alt: "Public-sector leaders and technology consultants reviewing a service workflow together",
+      width: 1672,
+      height: 941,
     },
     items: [
       {
@@ -86,10 +86,10 @@ export const sectorPanels: SectorPanel[] = [
     lede: "Private organisations need speed without losing control: compliance that holds up to examiners, cloud spend that makes sense in naira, and software that gives them an edge rather than a template.",
     cta: { label: "Discuss an enterprise engagement", href: "#contact" },
     image: {
-      src: "/assets/sonar-terraform.jpg",
-      alt: "Sonar importing an unmanaged AWS resource into Terraform with suggested tag values",
-      width: 1400,
-      height: 1131,
+      src: "/assets/private-sector-consulting.jpg",
+      alt: "Banking and enterprise leaders reviewing operational data with a technology consultant",
+      width: 1672,
+      height: 941,
     },
     items: [
       {

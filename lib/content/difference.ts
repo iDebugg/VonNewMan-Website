@@ -46,6 +46,6 @@ export const stats: Stat[] = [
   { value: "2", label: "Markets: Nigeria and the UK" },
   { value: "8", label: "Practice areas" },
   { value: "2", label: "In-house products" },
-  { value: "109+", label: "Courses live on Atlas" },
+  { value: "209", label: "Courses live on Atlas" },
   { value: "90", label: "Days to a measurable first result" },
 ];
