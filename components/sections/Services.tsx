@@ -122,9 +122,13 @@ export function Services() {
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,20,17,.92)_0%,rgba(6,20,17,.64)_42%,rgba(6,20,17,.08)_72%)]"
         />
-        <figcaption className="absolute inset-x-0 bottom-0 p-7 text-paper sm:p-10 lg:max-w-[42rem] lg:p-12">
-          <p className="font-display text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.03] font-bold tracking-[-.03em]">
-            We advise, build and operate the systems your organisation depends on.
+        <figcaption className="absolute inset-x-0 bottom-0 p-7 text-paper sm:p-10 lg:max-w-[46rem] lg:p-12">
+          {/* Client wording, 8 September 2026, in the site's British spelling. Longer sentence,
+              so the size steps down from the previous statement. */}
+          <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-[1.15] font-bold tracking-[-.02em]">
+            We design and build digital platforms, software products, learning systems, and
+            technology solutions that help organisations digitise their operations, training, and
+            service delivery.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {engagementModels.map((item) => (
