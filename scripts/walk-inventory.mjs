@@ -123,7 +123,7 @@ const assets = [
   "team-kate.jpg",
   "team-oyin-2026.jpg",
   "team-abdulrasaq.jpg",
-  "team-victor-2026.jpg",
+  "team-victor-3x4.jpg",
   "vn-logo-white.png",
 ].map((f) => [f, raw.includes(encodeURIComponent("/assets/" + f)) || raw.includes("/assets/" + f)]);
 const anchors = [
