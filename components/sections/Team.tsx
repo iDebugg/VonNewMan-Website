@@ -32,7 +32,9 @@ export function Team() {
         >
           {row.map((person, i) => {
             const index = rowIndex === 0 ? i : DIRECTORS + i;
-            const featured = index === 2;
+            // The CEO carries the green featured card; the other directors stay in full colour.
+            const featured = index === 0;
+            const inColour = featured || index < DIRECTORS;
 
             return (
               <li
@@ -45,7 +47,7 @@ export function Team() {
                   alt={person.photo.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className={`object-cover object-top transition-[transform,filter] duration-700 ease-out-quiet group-hover:scale-[1.025] ${featured ? "saturate-100" : "grayscale saturate-0 group-hover:grayscale-0 group-hover:saturate-100"}`}
+                  className={`object-cover object-top transition-[transform,filter] duration-700 ease-out-quiet group-hover:scale-[1.025] ${inColour ? "saturate-100" : "grayscale saturate-0 group-hover:grayscale-0 group-hover:saturate-100"}`}
                 />
                 <div
                   aria-hidden="true"
