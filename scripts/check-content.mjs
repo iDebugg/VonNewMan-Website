@@ -51,6 +51,7 @@ const structural = new Set([
   "kate-welling",
   "oyinloluwa-bolarinwa",
   "abdulrasaq-oladapo",
+  "abdulrazaq-oladapo",
   "victor-aderibigbe",
   "above",
   "below",
@@ -70,6 +71,9 @@ const structural = new Set([
   // Client-supplied hero background video, 5 September 2026.
   "/assets/hero-bg.mp4",
   "/assets/hero-poster.jpg",
+  // Name spelling corrected and a new portrait supplied by the client, 7 September 2026.
+  "Abdulrazaq Oladapo",
+  "/assets/team-oyin-2026.jpg",
   // Team member added by the client, 7 September 2026.
   "anthonia-osekhale",
   "Anthonia Osekhale",

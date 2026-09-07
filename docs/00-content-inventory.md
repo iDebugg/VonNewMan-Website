@@ -255,8 +255,8 @@ Legend: `→` link target. `(new tab)` = `target="_blank" rel="noopener"`. Bold 
 - [ ] `Wilfred Babatope Achom` / `Managing Director, CEO and Founder` / `assets/team-wilfred.jpg` 520×520
 - [ ] `Vijay Gadhia` / `Director, Infrastructure and LMS` / `assets/team-vijay.jpg` 520×520
 - [ ] `Kate Welling` / `Director, Architecture and AI` / `assets/team-kate.jpg` 520×520
-- [ ] `Oyinloluwa Bolarinwa` / `Lead UI/UX Designer` / `assets/team-oyin.jpg` 520×520
-- [ ] `Abdulrasaq Oladapo` / `Team Lead and Software Developer` / `assets/team-abdulrasaq.jpg` 520×520
+- [ ] `Oyinloluwa Bolarinwa` / `Lead UI/UX Designer` / `assets/team-oyin.jpg` 520×520 **(portrait replaced with `assets/team-oyin-2026.jpg` on 7 September 2026 at the client's instruction)**
+- [ ] `Abdulrasaq Oladapo` / `Team Lead and Software Developer` / `assets/team-abdulrasaq.jpg` 520×520 **(spelling corrected to `Abdulrazaq Oladapo` on 7 September 2026 at the client's instruction)**
 - [ ] `Victor Aderibigbe` / `Lead Frontend Developer` / `assets/team-victor.jpg` 520×520
 - [ ] Bench paragraph `A multi-disciplinary bench across product strategy, software engineering, AI, learning design, cloud, networks and security, with a proven record delivering enterprise solutions in Nigeria and the UK.`
 

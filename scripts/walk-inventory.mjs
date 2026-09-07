@@ -83,6 +83,8 @@ const removed = new Set([
   // Product actions removed 5 September 2026 (client); the footer keeps the same destinations.
   "Browse the catalogue",
   "Request console access",
+  // Spelling corrected to "Abdulrazaq Oladapo", 7 September 2026 (client).
+  "Abdulrasaq Oladapo",
   // Hero locator lines removed, 7 September 2026 (client).
   "Lagos and London",
   "Public and private sector",
@@ -119,7 +121,7 @@ const assets = [
   "team-wilfred.jpg",
   "team-vijay.jpg",
   "team-kate.jpg",
-  "team-oyin.jpg",
+  "team-oyin-2026.jpg",
   "team-abdulrasaq.jpg",
   "team-victor-2026.jpg",
   "vn-logo-white.png",

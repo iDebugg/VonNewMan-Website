@@ -45,13 +45,20 @@ export const people: Person[] = [
     slug: "oyinloluwa-bolarinwa",
     name: "Oyinloluwa Bolarinwa",
     title: "Lead UI/UX Designer",
-    photo: portrait("team-oyin.jpg", "Oyinloluwa Bolarinwa"),
+    /** New portrait supplied by the client, 7 September 2026. */
+    photo: {
+      src: "/assets/team-oyin-2026.jpg",
+      alt: "Oyinloluwa Bolarinwa",
+      width: 780,
+      height: 1040,
+    },
   },
   {
-    slug: "abdulrasaq-oladapo",
-    name: "Abdulrasaq Oladapo",
+    /** Spelling corrected from "Abdulrasaq" at the client's instruction, 7 September 2026. */
+    slug: "abdulrazaq-oladapo",
+    name: "Abdulrazaq Oladapo",
     title: "Team Lead and Software Developer",
-    photo: portrait("team-abdulrasaq.jpg", "Abdulrasaq Oladapo"),
+    photo: portrait("team-abdulrasaq.jpg", "Abdulrazaq Oladapo"),
   },
   {
     slug: "victor-aderibigbe",
