@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Public_Sans, Source_Serif_4 } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { site } from "@/lib/content";
 import { siteUrl } from "@/lib/utils/site-url";
@@ -7,13 +7,6 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { RevealObserver } from "@/components/layout/RevealObserver";
 import "./globals.css";
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["opsz"],
-  variable: "--font-source-serif",
-});
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -44,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-GB" className={`${sourceSerif.variable} ${publicSans.variable}`}>
+    <html lang="en-GB" className={publicSans.variable}>
       <body className="flex min-h-svh flex-col">
         <a
           href="#top"

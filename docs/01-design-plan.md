@@ -270,6 +270,8 @@ Also out: pill buttons (3px now), arrows glued to button text, green-tinted neut
 
 - Scroll reveal added on 7 September 2026 at the client's instruction, overriding the plan's no-ambient-motion rule: headings, cards and rows fade and rise into place as they enter the viewport, staggered left to right within a row (90ms per item). One observer handles the whole page; the hidden state exists only after JavaScript mounts, so crawlers and no-JS readers see everything; reduced motion disables it entirely.
 
+- Headings switched from Source Serif 4 to Helvetica on 7 September 2026 at the client's instruction: the display stack is "Helvetica Neue", Helvetica, Arial, weight 700, with tighter tracking. Nothing is self-hosted for it; Apple devices render Helvetica Neue and everything else renders Arial. The hero wash is forest at 92%.
+
 ## 10. Self-review
 
 I asked what I would have produced for any consultancy site and compared.

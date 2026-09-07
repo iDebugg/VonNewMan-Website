@@ -10,23 +10,9 @@ const ink = "#141414";
 const paper = "#ffffff";
 const brand = "#1e763a";
 const slate = "#5b605e";
-
-async function loadSourceSerif(): Promise<ArrayBuffer | undefined> {
-  try {
-    const css = await fetch(
-      "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500&display=swap",
-      { headers: { "User-Agent": "Mozilla/5.0" } },
-    ).then((res) => res.text());
-    const url = css.match(/src: url\((.+?)\) format\('(?:truetype|opentype|woff)'\)/)?.[1];
-    if (!url) return undefined;
-    return await fetch(url).then((res) => res.arrayBuffer());
-  } catch {
-    return undefined;
-  }
-}
+// Headings are Helvetica on the site; the OG renderer uses its built-in sans, so no font is loaded.
 
 export default async function OpenGraphImage() {
-  const serif = await loadSourceSerif();
   const [first, second] = ["Technology adapted to you.", "Never off the shelf."];
   return new ImageResponse(
     <div
@@ -39,7 +25,7 @@ export default async function OpenGraphImage() {
         padding: "64px 72px",
         background: paper,
         color: ink,
-        fontFamily: serif ? "Source Serif 4" : "Georgia, serif",
+        fontFamily: "Helvetica, Arial, sans-serif",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
@@ -71,7 +57,15 @@ export default async function OpenGraphImage() {
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", fontSize: 74, lineHeight: 1.05 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          fontSize: 74,
+          lineHeight: 1.05,
+          fontWeight: 700,
+        }}
+      >
         <div>{first}</div>
         <div>{second}</div>
       </div>
@@ -86,13 +80,11 @@ export default async function OpenGraphImage() {
           fontFamily: "Helvetica, Arial, sans-serif",
         }}
       >
-        <span>Lagos and London</span>
-        <span>Public and private sector</span>
+        <span>{site.name}</span>
       </div>
     </div>,
     {
       ...size,
-      fonts: serif ? [{ name: "Source Serif 4", data: serif, weight: 500, style: "normal" }] : [],
     },
   );
 }
