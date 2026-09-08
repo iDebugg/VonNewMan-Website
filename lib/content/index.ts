@@ -6,6 +6,7 @@ export * from "./products";
 export * from "./approach";
 export * from "./services";
 export * from "./sectors";
+export * from "./systems";
 export * from "./locations";
 export * from "./team";
 export * from "./contact";

@@ -1,7 +1,7 @@
 import type { SplitLabel } from "@/types/content";
 
 export type Office = {
-  id: "lagos" | "london";
+  id: "lagos" | "abuja" | "calabar" | "london";
   timeZone: "Africa/Lagos" | "Europe/London";
   /** Fixed zone label, or undefined to derive GMT/BST from Intl. */
   zoneLabel?: string;
@@ -9,13 +9,13 @@ export type Office = {
   description: string;
   address: string;
   /** Map pin: WGS84 longitude and latitude, and which side the label sits on. */
-  pin: { lon: number; lat: number; labelSide: "above" | "below" };
+  pin: { lon: number; lat: number; labelSide: "above" | "below" | "left" | "right" };
 };
 
 export const locations = {
-  headline: "Based in Lagos. Delivering across the United Kingdom.",
+  headline: "Working from Lagos, Abuja, Calabar and London.",
   intro:
-    "Our headquarters and product teams are in Lagos. Our UK delivery team works with enterprise and public-sector organisations across London and the South East.",
+    "Our Nigerian teams work across three cities, with UK delivery based in London. Together, they support public- and private-sector organisations across both markets.",
 } as const;
 
 export const offices: Office[] = [
@@ -29,9 +29,27 @@ export const offices: Office[] = [
     pin: { lon: 3.3792, lat: 6.5244, labelSide: "below" },
   },
   {
+    id: "abuja",
+    timeZone: "Africa/Lagos",
+    zoneLabel: "WAT",
+    title: { primary: "Abuja", secondary: "Nigeria" },
+    description: "Client engagement and programme delivery in Nigeria’s capital.",
+    address: "Abuja, Nigeria",
+    pin: { lon: 7.3986, lat: 9.0765, labelSide: "above" },
+  },
+  {
+    id: "calabar",
+    timeZone: "Africa/Lagos",
+    zoneLabel: "WAT",
+    title: { primary: "Calabar", secondary: "Cross River State" },
+    description: "Regional delivery and partnerships in Cross River State.",
+    address: "Calabar, Cross River State, Nigeria",
+    pin: { lon: 8.3417, lat: 4.9757, labelSide: "right" },
+  },
+  {
     id: "london",
     timeZone: "Europe/London",
-    title: { primary: "United Kingdom", secondary: "Delivery" },
+    title: { primary: "London", secondary: "United Kingdom" },
     description:
       "Programme leadership, infrastructure and security delivery shaped by UK enterprise and public-sector standards.",
     address: "London and the South East",
@@ -47,12 +65,29 @@ export type MapPinPlace = {
   labelSide: "above" | "below" | "left" | "right";
   /** Secondary pins keep their dot on phones but hide the label, so a tight cluster stays legible. */
   minor?: boolean;
+  tone: "lime" | "coral" | "cyan" | "violet";
 };
 
 /** Pins on the world map (client direction, 8 September 2026): Lagos, Abuja, Calabar and London. */
 export const mapPins: MapPinPlace[] = [
-  { id: "lagos", label: "Lagos", lon: 3.3792, lat: 6.5244, labelSide: "left" },
-  { id: "abuja", label: "Abuja", lon: 7.3986, lat: 9.0765, labelSide: "above", minor: true },
-  { id: "calabar", label: "Calabar", lon: 8.3417, lat: 4.9757, labelSide: "right", minor: true },
-  { id: "london", label: "London", lon: -0.1276, lat: 51.5072, labelSide: "above" },
+  { id: "lagos", label: "Lagos", lon: 3.3792, lat: 6.5244, labelSide: "left", tone: "lime" },
+  {
+    id: "abuja",
+    label: "Abuja",
+    lon: 7.3986,
+    lat: 9.0765,
+    labelSide: "above",
+    minor: true,
+    tone: "coral",
+  },
+  {
+    id: "calabar",
+    label: "Calabar",
+    lon: 8.3417,
+    lat: 4.9757,
+    labelSide: "right",
+    minor: true,
+    tone: "cyan",
+  },
+  { id: "london", label: "London", lon: -0.1276, lat: 51.5072, labelSide: "above", tone: "violet" },
 ];

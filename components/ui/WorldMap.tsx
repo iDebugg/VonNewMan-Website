@@ -8,7 +8,15 @@ export type MapPin = {
   lat: number;
   labelSide: "above" | "below" | "left" | "right";
   minor?: boolean;
+  tone?: "lime" | "coral" | "cyan" | "violet";
 };
+
+const pinTones = {
+  lime: { ring: "bg-lime/65", dot: "border-lime bg-brand", marker: "bg-lime" },
+  coral: { ring: "bg-coral/60", dot: "border-coral bg-coral", marker: "bg-coral" },
+  cyan: { ring: "bg-cyan/60", dot: "border-cyan bg-cyan", marker: "bg-cyan" },
+  violet: { ring: "bg-violet/60", dot: "border-violet bg-violet", marker: "bg-violet" },
+} as const;
 
 /**
  * The map is cropped to latitudes 80°N to 60°S: Antarctica and the polar cap add height and
@@ -53,37 +61,48 @@ export function WorldMap({
         <path d={WORLD_MAP_PATH} fill="currentColor" />
       </svg>
       <ul className="absolute inset-0 list-none">
-        {pins.map((pin) => (
-          <li
-            key={pin.id}
-            style={toPercent(pin.lon, pin.lat)}
-            className="absolute -translate-x-1/2 -translate-y-1/2"
-          >
-            <span className="relative block size-2.5 sm:size-3.5">
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 animate-[breathe_2.6s_ease-out_infinite] rounded-full bg-paper/60"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 animate-[breathe_2.6s_ease-out_1.3s_infinite] rounded-full bg-paper/60"
-              />
-              <span className="absolute inset-0 rounded-full border-2 border-paper bg-brand" />
-            </span>
-            <span
-              className={cn(
-                "absolute rounded-control bg-ink/85 px-2.5 py-1 text-caption font-semibold whitespace-nowrap text-paper sm:px-3.5 sm:py-1.5 sm:text-label lg:px-4 lg:py-2 lg:text-body",
-                pin.labelSide === "above" && "bottom-full left-1/2 mb-2 -translate-x-1/2 sm:mb-3.5",
-                pin.labelSide === "below" && "top-full left-1/2 mt-2 -translate-x-1/2 sm:mt-3.5",
-                pin.labelSide === "left" && "top-1/2 right-full mr-2.5 -translate-y-1/2 sm:mr-4",
-                pin.labelSide === "right" && "top-1/2 left-full ml-2.5 -translate-y-1/2 sm:ml-4",
-                pin.minor && "hidden sm:block",
-              )}
+        {pins.map((pin) => {
+          const tone = pinTones[pin.tone ?? "lime"];
+          return (
+            <li
+              key={pin.id}
+              style={toPercent(pin.lon, pin.lat)}
+              className="absolute -translate-x-1/2 -translate-y-1/2"
             >
-              {pin.label}
-            </span>
-          </li>
-        ))}
+              <span className="relative block size-2.5 sm:size-3.5">
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute inset-0 animate-[breathe_2.6s_ease-out_infinite] rounded-full",
+                    tone.ring,
+                  )}
+                />
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute inset-0 animate-[breathe_2.6s_ease-out_1.3s_infinite] rounded-full",
+                    tone.ring,
+                  )}
+                />
+                <span className={cn("absolute inset-0 rounded-full border-2", tone.dot)} />
+              </span>
+              <span
+                className={cn(
+                  "absolute items-center gap-2 rounded-control bg-ink/85 px-2.5 py-1 text-caption font-semibold whitespace-nowrap text-paper sm:px-3.5 sm:py-1.5 sm:text-label lg:px-4 lg:py-2 lg:text-body",
+                  pin.labelSide === "above" &&
+                    "bottom-full left-1/2 mb-2 -translate-x-1/2 sm:mb-3.5",
+                  pin.labelSide === "below" && "top-full left-1/2 mt-2 -translate-x-1/2 sm:mt-3.5",
+                  pin.labelSide === "left" && "top-1/2 right-full mr-2.5 -translate-y-1/2 sm:mr-4",
+                  pin.labelSide === "right" && "top-1/2 left-full ml-2.5 -translate-y-1/2 sm:ml-4",
+                  pin.minor ? "hidden sm:inline-flex" : "inline-flex",
+                )}
+              >
+                <span aria-hidden="true" className={cn("size-2 rounded-full", tone.marker)} />
+                {pin.label}
+              </span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

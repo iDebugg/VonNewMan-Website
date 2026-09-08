@@ -18,6 +18,9 @@
   --color-sky: #e8f1f4;
   --color-lilac: #eee9f8;
   --color-clay: #f4e8df;
+  --color-cyan: #58d6cf;
+  --color-coral: #ff8f70;
+  --color-violet: #a990ff;
   /* Label green for dark grounds: brand green fails contrast on forest, this passes at 7:1 */
   --color-mint: #9fd3b0;
   /* Derived rules, not separate roles */
@@ -52,7 +55,7 @@
   --text-figure: 2.75rem;
   --text-figure--line-height: 1;
   --text-figure--font-weight: 700;
-  --text-clock: clamp(3.5rem, 8vw, 6.5rem);
+  --text-clock: clamp(2.75rem, 4vw, 4.75rem);
   --text-clock--line-height: 1;
   --text-clock--letter-spacing: -0.02em;
   --text-clock--font-weight: 700;
