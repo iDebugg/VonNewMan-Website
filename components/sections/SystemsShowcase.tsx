@@ -4,7 +4,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { systems, systemsShowcase } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
+
+const cardTones = {
+  "atlas-cms": { shell: "bg-lilac", link: "bg-paper text-brand" },
+  "atlas-lms": { shell: "bg-sage", link: "bg-paper text-brand" },
+  compass: { shell: "bg-clay", link: "bg-paper text-brand" },
+  "hr-performance": { shell: "bg-sky", link: "bg-paper text-brand" },
+  sonar: { shell: "bg-forest text-paper", link: "bg-lime text-ink" },
+} as const;
 
 export function SystemsShowcase() {
   const railRef = useRef<HTMLUListElement>(null);
@@ -26,7 +35,11 @@ export function SystemsShowcase() {
   }, [active, moveTo, paused]);
 
   return (
-    <div className="mt-20 border-t border-ink pt-12" aria-labelledby="systems-heading">
+    <div
+      id="systems"
+      className="scroll-mt-28 mt-20 border-t border-ink pt-12"
+      aria-labelledby="systems-heading"
+    >
       <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7" {...reveal()}>
           <p className="flex items-center gap-3 text-label font-bold tracking-[0.12em] uppercase">
@@ -66,20 +79,27 @@ export function SystemsShowcase() {
               className="w-[86%] shrink-0 snap-start sm:w-[62%] lg:w-[38%]"
               {...reveal(index, 45)}
             >
-              <article className="group h-full overflow-hidden border border-ink/10 bg-paper">
+              <article
+                className={cn(
+                  "group h-full overflow-hidden rounded-bar border border-ink/10 p-2 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-panel",
+                  cardTones[system.slug].shell,
+                )}
+              >
                 <SystemVisual
                   system={system}
-                  className="aspect-[16/8]"
-                  imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  className="aspect-[16/8] rounded-[1.2rem]"
+                  imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 />
-                <div className="px-5 py-5 sm:px-6">
+                <div className="flex min-h-24 flex-col items-start justify-between gap-4 px-4 py-4 sm:flex-row sm:items-center sm:px-5">
                   <h4 className="text-title-lg">{system.title}</h4>
                   <Link
                     href={`/case-studies#${system.slug}`}
-                    className="mt-4 inline-flex items-center gap-2 text-label font-bold text-brand underline-offset-4 hover:underline"
+                    className={cn(
+                      "inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-label font-bold transition-transform hover:-translate-y-0.5",
+                      cardTones[system.slug].link,
+                    )}
                   >
-                    <span aria-hidden="true" className="size-2 rounded-full border border-brand" />
-                    View Project <span aria-hidden="true">→</span>
+                    View Project <span aria-hidden="true">↗</span>
                   </Link>
                 </div>
               </article>

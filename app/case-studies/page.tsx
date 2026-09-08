@@ -4,7 +4,16 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { systems } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
+
+const studyTones = {
+  "atlas-cms": "bg-lilac",
+  "atlas-lms": "bg-sage",
+  compass: "bg-clay",
+  "hr-performance": "bg-sky",
+  sonar: "bg-forest text-paper",
+} as const;
 
 export const metadata: Metadata = {
   title: "Case studies | Von Newman Technology Consultants",
@@ -84,20 +93,61 @@ export default function CaseStudiesPage() {
                   className={`scroll-mt-28 ${index % 2 ? "md:mt-24" : ""}`}
                   {...reveal(index)}
                 >
-                  <article>
-                    <div className="min-h-64">
-                      <p className="text-caption font-bold text-brand">{system.category}</p>
-                      <h3 className="mt-3 text-title-lg">{system.title}</h3>
-                      <p className="mt-4 max-w-[56ch] text-body text-slate">{system.description}</p>
+                  <article
+                    className={cn(
+                      "group overflow-hidden rounded-bar border border-ink/10 p-2",
+                      studyTones[system.slug],
+                    )}
+                  >
+                    <div className="flex min-h-72 flex-col p-6 sm:p-8">
+                      <div className="flex items-start justify-between gap-4">
+                        <p
+                          className={cn(
+                            "text-caption font-bold tracking-[0.1em] uppercase",
+                            system.slug === "sonar" ? "text-mint" : "text-brand",
+                          )}
+                        >
+                          {system.category}
+                        </p>
+                        <span
+                          aria-hidden="true"
+                          className={cn(
+                            "text-caption tabular",
+                            system.slug === "sonar" ? "text-paper/50" : "text-ink/40",
+                          )}
+                        >
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <h3 className="mt-5 font-display text-[clamp(1.75rem,2.7vw,2.75rem)] leading-[1.05] font-bold tracking-[-.025em]">
+                        {system.title}
+                      </h3>
+                      <p
+                        className={cn(
+                          "mt-5 max-w-[52ch] text-body",
+                          system.slug === "sonar" ? "text-paper/72" : "text-slate",
+                        )}
+                      >
+                        {system.description}
+                      </p>
                       <Link
                         href={`/case-studies/${system.slug}`}
-                        className="mt-6 inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3 text-label font-bold text-ink transition-transform hover:-translate-y-0.5"
+                        className={cn(
+                          "mt-auto inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-label font-bold transition-transform hover:-translate-y-0.5",
+                          system.slug === "sonar"
+                            ? "bg-lime text-ink"
+                            : "bg-forest text-paper hover:bg-brand",
+                        )}
                       >
                         Learn more <span aria-hidden="true">→</span>
                       </Link>
                     </div>
-                    <div className="mt-8 border-t border-brand/70 pt-8">
-                      <SystemVisual system={system} className="aspect-[4/3] rounded-bar" />
+                    <div className="relative overflow-hidden rounded-[1.2rem] bg-paper shadow-[0_20px_55px_-32px_rgba(16,42,33,.55)]">
+                      <SystemVisual
+                        system={system}
+                        className="aspect-[4/3]"
+                        imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                      />
                     </div>
                   </article>
                 </li>
