@@ -68,12 +68,6 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             />
 
             <div className="relative z-10 mx-auto w-full max-w-site">
-              <Link
-                href="/case-studies"
-                className="absolute -top-16 left-0 inline-flex items-center gap-2 text-label font-bold text-mint hover:text-paper hover:underline"
-              >
-                ← All case studies
-              </Link>
               <div className="case-hero-copy mx-auto max-w-[62rem] text-center">
                 <p className="text-label font-bold tracking-[0.14em] text-mint uppercase">
                   {system.category} · {system.product}
