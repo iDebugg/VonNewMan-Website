@@ -86,9 +86,9 @@ export function SystemsShowcase() {
                 )}
               >
                 <SystemVisual
-                  system={system}
+                  system={{ ...system, image: system.carouselImage ?? system.image }}
                   className="aspect-[16/8] rounded-[1.2rem]"
-                  imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                  imageClassName="object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 />
                 <div className="flex min-h-24 flex-col items-start justify-between gap-4 px-4 py-4 sm:flex-row sm:items-center sm:px-5">
                   <h4 className="text-title-lg">{system.title}</h4>

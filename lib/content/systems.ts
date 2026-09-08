@@ -11,6 +11,7 @@ export type SystemShowcaseItem = {
   capabilities: string[];
   objectives: string[];
   image?: ImageAsset;
+  carouselImage?: ImageAsset;
   visual?: "compass" | "performance";
 };
 
@@ -43,6 +44,12 @@ export const systems: SystemShowcaseItem[] = [
       width: 1400,
       height: 525,
     },
+    carouselImage: {
+      src: "/assets/atlas-cms-selected-work.png",
+      alt: "Von Newman Atlas course management system visual",
+      width: 1672,
+      height: 941,
+    },
   },
   {
     slug: "atlas-lms",
@@ -65,6 +72,12 @@ export const systems: SystemShowcaseItem[] = [
       alt: "Atlas multi-organisation learning management dashboard",
       width: 1400,
       height: 875,
+    },
+    carouselImage: {
+      src: "/assets/atlas-lms-selected-work.png",
+      alt: "Von Newman Atlas learning management system visual",
+      width: 1672,
+      height: 941,
     },
   },
   {
