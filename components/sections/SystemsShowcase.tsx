@@ -58,7 +58,7 @@ export function SystemsShowcase() {
         <ul
           ref={railRef}
           aria-label="Selected systems"
-          className="-mx-gutter-narrow flex snap-x snap-mandatory list-none gap-5 overflow-x-auto px-gutter-narrow pb-5 [scrollbar-width:none] sm:-mx-gutter sm:px-gutter lg:-mx-gutter-wide lg:px-gutter-wide [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory list-none gap-5 overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {systems.map((system, index) => (
             <li
@@ -87,8 +87,8 @@ export function SystemsShowcase() {
           ))}
         </ul>
 
-        <div className="mt-2 flex items-center justify-between gap-6">
-          <div className="flex gap-2" aria-label="Choose a system">
+        <div className="mt-2 flex justify-center">
+          <div className="flex items-center gap-2" aria-label="Choose a system">
             {systems.map((system, index) => (
               <button
                 key={system.slug}
@@ -101,24 +101,6 @@ export function SystemsShowcase() {
                 }`}
               />
             ))}
-          </div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Previous system"
-              onClick={() => moveTo((active - 1 + systems.length) % systems.length)}
-              className="inline-grid size-11 place-items-center rounded-full border border-ink/20 text-title hover:border-brand hover:text-brand"
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              aria-label="Next system"
-              onClick={() => moveTo((active + 1) % systems.length)}
-              className="inline-grid size-11 place-items-center rounded-full bg-forest text-title text-paper hover:bg-brand"
-            >
-              →
-            </button>
           </div>
         </div>
       </div>

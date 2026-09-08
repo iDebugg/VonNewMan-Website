@@ -32,11 +32,12 @@ export function RevealObserver() {
         observer.observe(el);
       });
     observeAll();
-    // Elements inside tab panels that open later are picked up when they appear.
+    // Elements mounted by tabs or client-side route changes are picked up when they appear.
     const mutations = new MutationObserver(observeAll);
     mutations.observe(document.body, {
       attributes: true,
       attributeFilter: ["hidden"],
+      childList: true,
       subtree: true,
     });
     return () => {
