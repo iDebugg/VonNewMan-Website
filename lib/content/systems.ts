@@ -9,6 +9,7 @@ export type SystemShowcaseItem = {
   overview: string;
   role: string;
   capabilities: string[];
+  objectives: string[];
   image?: ImageAsset;
   visual?: "compass" | "performance";
 };
@@ -31,6 +32,11 @@ export const systems: SystemShowcaseItem[] = [
       "Atlas CMS gives content teams a structured place to organise courses before they reach learners. It supports the publishing relationship between course operations and the Atlas learning environment.",
     role: "Content-system design, product engineering and integration with Atlas LMS.",
     capabilities: ["Course catalogue management", "Content publishing", "LMS integration"],
+    objectives: [
+      "Give content teams one structured course catalogue.",
+      "Keep content operations connected to learning delivery.",
+      "Publish approved course material into Atlas LMS.",
+    ],
     image: {
       src: "/assets/atlas-catalogue.jpg",
       alt: "Atlas course catalogue and content management interface",
@@ -49,6 +55,11 @@ export const systems: SystemShowcaseItem[] = [
       "Atlas LMS is built for organisations that need one learning platform while preserving the structure of their individual teams and programmes. Learners access courses while administrators coordinate delivery and track participation.",
     role: "Learning-platform strategy, product design, engineering and ongoing development.",
     capabilities: ["Multi-organisation delivery", "Learning pathways", "Progress visibility"],
+    objectives: [
+      "Support learning across multiple organisations.",
+      "Bring courses and pathways into one learner experience.",
+      "Give administrators clearer participation and progress visibility.",
+    ],
     image: {
       src: "/assets/atlas-home.jpg",
       alt: "Atlas multi-organisation learning management dashboard",
@@ -67,6 +78,11 @@ export const systems: SystemShowcaseItem[] = [
       "Von Newman Compass brings election operations and monitoring into a shared digital environment. It is intended to help authorised teams coordinate activity and maintain a clearer operational picture.",
     role: "Application consulting, workflow design and system delivery.",
     capabilities: ["Election operations", "Activity monitoring", "Shared operational visibility"],
+    objectives: [
+      "Bring election activity into a shared operational environment.",
+      "Help authorised teams monitor progress as work unfolds.",
+      "Create a clearer view for coordination and decision-making.",
+    ],
     visual: "compass",
   },
   {
@@ -80,6 +96,11 @@ export const systems: SystemShowcaseItem[] = [
       "These performance systems organise workforce information for different levels of an organisation. Staff, administrators and executives can work from views suited to their responsibilities and decisions.",
     role: "Performance-workflow consulting, interface design and application engineering.",
     capabilities: ["Staff-level views", "Administrative reporting", "Executive visibility"],
+    objectives: [
+      "Organise workforce information around each level of responsibility.",
+      "Make staff and team statistics easier to interpret.",
+      "Support administrative and executive performance decisions.",
+    ],
     visual: "performance",
   },
   {
@@ -93,6 +114,11 @@ export const systems: SystemShowcaseItem[] = [
       "Von Newman Sonar is designed to make an organisation’s technology estate easier to understand. It brings infrastructure, ownership and code-related resources into a clearer operational view.",
     role: "Technology-estate modelling, product engineering and infrastructure consulting.",
     capabilities: ["Asset discovery", "Ownership visibility", "Infrastructure and code context"],
+    objectives: [
+      "Create one view of infrastructure and code-related resources.",
+      "Make technology ownership and operating context easier to understand.",
+      "Help teams see the estate they are responsible for.",
+    ],
     image: {
       src: "/assets/sonar-inventory.jpg",
       alt: "Sonar inventory interface showing technology assets across an organisation",

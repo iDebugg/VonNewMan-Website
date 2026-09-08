@@ -1,13 +1,38 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { systems } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+const detailStages = {
+  "atlas-cms": "bg-lilac",
+  "atlas-lms": "bg-sage",
+  compass: "bg-clay",
+  "hr-performance": "bg-sky",
+  sonar: "bg-lime",
+} as const;
+
+const deliverySteps = [
+  {
+    title: "Understand the environment",
+    text: "Map the operating model, users, constraints and decisions the system must support.",
+  },
+  {
+    title: "Shape the workflow",
+    text: "Turn real responsibilities and information needs into a clear product structure.",
+  },
+  {
+    title: "Engineer and evolve",
+    text: "Build the system, connect it to the surrounding estate and improve it through use.",
+  },
+] as const;
 
 export function generateStaticParams() {
   return systems.map((system) => ({ slug: system.slug }));
@@ -28,6 +53,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   const system = systems.find((item) => item.slug === slug);
   if (!system) notFound();
   const currentIndex = systems.findIndex((item) => item.slug === system.slug);
+  const previousSystem = systems[(currentIndex - 1 + systems.length) % systems.length]!;
   const nextSystem = systems[(currentIndex + 1) % systems.length]!;
 
   return (
@@ -35,90 +61,203 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
       <SiteHeader subpage />
       <main id="top" className="flex-1 pt-header">
         <article>
-          <header className="bg-stone px-gutter-narrow pt-20 pb-14 sm:px-gutter lg:px-gutter-wide lg:pt-28 lg:pb-20">
+          <header className="bg-forest px-gutter-narrow pt-14 pb-20 text-paper sm:px-gutter lg:px-gutter-wide lg:pt-16 lg:pb-24">
             <div className="mx-auto max-w-site">
               <Link
                 href="/case-studies"
-                className="inline-flex items-center gap-2 text-label font-bold text-brand hover:underline"
+                className="inline-flex items-center gap-2 text-label font-bold text-mint hover:text-paper hover:underline"
               >
                 ← All case studies
               </Link>
-              <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:items-end">
-                <div className="lg:col-span-7" {...reveal()}>
-                  <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
-                    {system.category} · {system.product}
-                  </p>
-                  <h1 className="mt-5 max-w-[12ch] font-display text-display-1">{system.title}</h1>
-                </div>
-                <p
-                  className="max-w-[42ch] text-lede text-slate lg:col-span-4 lg:col-start-9"
-                  {...reveal(1)}
-                >
+              <div className="mx-auto mt-16 max-w-[62rem] text-center" {...reveal()}>
+                <p className="text-label font-bold tracking-[0.14em] text-mint uppercase">
+                  {system.category} · {system.product}
+                </p>
+                <h1 className="mt-5 font-display text-display-1">{system.title}</h1>
+                <p className="mx-auto mt-7 max-w-[52rem] text-lede text-paper/75">
                   {system.description}
                 </p>
+                <Link
+                  href="/#contact"
+                  className="mt-8 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-label font-bold text-ink transition-transform hover:-translate-y-0.5"
+                >
+                  Discuss a similar system <span aria-hidden="true">↗</span>
+                </Link>
               </div>
             </div>
           </header>
 
-          <section className="bg-paper px-gutter-narrow py-14 sm:px-gutter lg:px-gutter-wide lg:py-20">
-            <div className="mx-auto max-w-site">
-              <SystemVisual
-                system={system}
-                priority
-                className="aspect-[16/8] rounded-bar shadow-panel"
-                imageClassName="object-cover object-top"
-              />
+          <section
+            className={cn(
+              "px-gutter-narrow py-14 sm:px-gutter lg:px-gutter-wide lg:py-20",
+              detailStages[system.slug],
+            )}
+          >
+            <div className="mx-auto max-w-[68rem]" {...reveal()}>
+              <div className="rounded-bar bg-paper p-2 shadow-panel">
+                <SystemVisual
+                  system={system}
+                  priority
+                  className="aspect-[16/8] rounded-[1.2rem]"
+                  imageClassName="object-cover object-top"
+                />
+              </div>
             </div>
           </section>
 
-          <section className="bg-paper px-gutter-narrow pb-20 sm:px-gutter lg:px-gutter-wide lg:pb-28">
-            <div className="mx-auto grid max-w-site gap-12 border-t border-ink pt-12 lg:grid-cols-12 lg:pt-16">
-              <div className="lg:col-span-7" {...reveal()}>
-                <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
-                  The system
-                </p>
-                <h2 className="mt-5 max-w-[14ch] font-display text-display-2">
-                  Built around the work it needs to support.
-                </h2>
-                <p className="mt-7 max-w-[62ch] text-lede text-slate">{system.overview}</p>
+          <section className="bg-brand px-gutter-narrow py-8 text-paper sm:px-gutter lg:px-gutter-wide">
+            <dl className="mx-auto grid max-w-site gap-7 sm:grid-cols-3">
+              <div>
+                <dt className="text-caption font-bold tracking-[0.12em] text-mint uppercase">
+                  System
+                </dt>
+                <dd className="mt-2 text-title">{system.product}</dd>
               </div>
-              <aside className="lg:col-span-4 lg:col-start-9" {...reveal(1)}>
-                <div className="rounded-bar bg-sage p-7">
+              <div className="sm:border-l sm:border-paper/25 sm:pl-7">
+                <dt className="text-caption font-bold tracking-[0.12em] text-mint uppercase">
+                  Focus
+                </dt>
+                <dd className="mt-2 text-title">{system.category}</dd>
+              </div>
+              <div className="sm:border-l sm:border-paper/25 sm:pl-7">
+                <dt className="text-caption font-bold tracking-[0.12em] text-mint uppercase">
+                  Engagement
+                </dt>
+                <dd className="mt-2 text-title">Consulting + engineering</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section
+            id="project-overview"
+            className="scroll-mt-header bg-paper px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28"
+          >
+            <div className="mx-auto grid max-w-site gap-12 lg:grid-cols-12">
+              <div className="lg:col-span-5" {...reveal()}>
+                <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
+                  01 · Overview
+                </p>
+                <h2 className="mt-5 max-w-[13ch] font-display text-[clamp(2rem,3.4vw,3.5rem)] leading-[1.04] font-bold tracking-[-.03em]">
+                  The system in context.
+                </h2>
+              </div>
+              <div className="lg:col-span-7" {...reveal(1)}>
+                <p className="max-w-[60ch] text-lede text-slate">{system.overview}</p>
+                <div className="mt-10 border-l-4 border-lime pl-6">
                   <p className="text-caption font-bold tracking-[0.12em] text-brand uppercase">
                     Our role
                   </p>
-                  <p className="mt-4 text-body text-ink">{system.role}</p>
+                  <p className="mt-3 max-w-[52ch] text-body text-ink">{system.role}</p>
                 </div>
-                <div className="mt-5 rounded-bar bg-forest p-7 text-paper">
-                  <p className="text-caption font-bold tracking-[0.12em] text-mint uppercase">
-                    Capability areas
-                  </p>
-                  <ul className="mt-5 list-none divide-y divide-paper/15">
-                    {system.capabilities.map((capability) => (
-                      <li key={capability} className="py-3 text-body">
-                        {capability}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </aside>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-stone px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28">
+            <div className="mx-auto grid max-w-site gap-12 lg:grid-cols-12 lg:items-center">
+              <SystemVisual system={system} className="aspect-[4/3] rounded-bar lg:col-span-5" />
+              <div className="lg:col-span-6 lg:col-start-7" {...reveal()}>
+                <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
+                  02 · Objectives
+                </p>
+                <h2 className="mt-5 font-display text-display-2">
+                  What the system needs to make possible.
+                </h2>
+                <ul className="mt-8 list-none divide-y divide-ink/15 border-y border-ink/15">
+                  {system.objectives.map((objective, index) => (
+                    <li key={objective} className="grid grid-cols-[2rem_1fr] gap-4 py-5 text-body">
+                      <span className="text-caption font-bold text-brand">0{index + 1}</span>
+                      <span>{objective}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="consulting-context"
+            className="scroll-mt-header bg-forest px-gutter-narrow py-10 sm:px-gutter lg:px-gutter-wide lg:py-14"
+          >
+            <div className="mx-auto grid max-w-site gap-6 lg:grid-cols-12 lg:items-end">
+              <div className="relative aspect-[16/7] overflow-hidden rounded-bar lg:col-span-9">
+                <Image
+                  src="/assets/case-study-consulting.jpg"
+                  alt="Technology consultants and engineers reviewing an enterprise system together"
+                  fill
+                  sizes="(min-width: 1024px) 72vw, 92vw"
+                  className="object-cover"
+                />
+              </div>
+              <p
+                className="max-w-[28ch] text-body text-paper/75 lg:col-span-3 lg:pb-2"
+                {...reveal()}
+              >
+                The technology is one part of the work. The operating model, decisions and people
+                around it matter just as much.
+              </p>
+            </div>
+          </section>
+
+          <section className="bg-paper px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28">
+            <div className="mx-auto grid max-w-site gap-10 lg:grid-cols-12">
+              <div className="lg:col-span-5" {...reveal()}>
+                <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
+                  03 · Capabilities
+                </p>
+                <h2 className="mt-5 font-display text-display-2">What sits inside the system.</h2>
+              </div>
+              <ul className="grid list-none gap-px overflow-hidden rounded-bar bg-ink/10 sm:grid-cols-3 lg:col-span-7">
+                {system.capabilities.map((capability, index) => (
+                  <li key={capability} className="bg-sage p-7 sm:min-h-48">
+                    <span className="text-caption font-bold text-brand">0{index + 1}</span>
+                    <p className="mt-8 text-title">{capability}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <section className="bg-stone px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28">
+            <div className="mx-auto max-w-site">
+              <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
+                04 · Delivery approach
+              </p>
+              <h2 className="mt-5 max-w-[14ch] font-display text-display-2">
+                From operating reality to working system.
+              </h2>
+              <ol className="mt-12 grid list-none gap-5 md:grid-cols-3">
+                {deliverySteps.map((step, index) => (
+                  <li key={step.title} className="border-t border-ink pt-6">
+                    <span className="text-caption font-bold text-brand">0{index + 1}</span>
+                    <h3 className="mt-5 text-title-lg">{step.title}</h3>
+                    <p className="mt-3 text-body text-slate">{step.text}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
           </section>
 
           <section className="bg-lime px-gutter-narrow py-16 sm:px-gutter lg:px-gutter-wide lg:py-20">
-            <div className="mx-auto flex max-w-site flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-              <div>
-                <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
-                  Next case study
-                </p>
-                <h2 className="mt-4 font-display text-display-2">{nextSystem.title}</h2>
+            <div className="mx-auto max-w-site text-center">
+              <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
+                Continue exploring
+              </p>
+              <h2 className="mt-4 font-display text-display-2">More systems, more context.</h2>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link
+                  href={`/case-studies/${previousSystem.slug}`}
+                  className="inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3.5 text-label font-bold text-ink hover:bg-paper"
+                >
+                  ← {previousSystem.title}
+                </Link>
+                <Link
+                  href={`/case-studies/${nextSystem.slug}`}
+                  className="inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
+                >
+                  {nextSystem.title} <span aria-hidden="true">→</span>
+                </Link>
               </div>
-              <Link
-                href={`/case-studies/${nextSystem.slug}`}
-                className="inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
-              >
-                Continue exploring <span aria-hidden="true">→</span>
-              </Link>
             </div>
           </section>
         </article>

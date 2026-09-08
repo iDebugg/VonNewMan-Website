@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -25,14 +26,16 @@ export default function CaseStudiesPage() {
     <>
       <SiteHeader subpage />
       <main id="top" className="flex-1 pt-header">
-        <section className="overflow-hidden bg-sky px-gutter-narrow pt-20 pb-16 sm:px-gutter lg:px-gutter-wide lg:pt-28 lg:pb-24">
-          <div className="mx-auto grid max-w-site gap-12 lg:grid-cols-12 lg:items-center">
+        <section className="flex min-h-[calc(100svh-var(--spacing-header))] items-center overflow-hidden bg-sky px-gutter-narrow py-16 sm:px-gutter lg:px-gutter-wide lg:py-20">
+          <div className="mx-auto grid w-full max-w-site gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-6" {...reveal()}>
               <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
                 Our work
               </p>
-              <h1 className="mt-5 max-w-[9ch] font-display text-display-1">Case studies.</h1>
-              <p className="mt-7 max-w-[38rem] text-lede text-slate">
+              <h1 className="mt-5 font-display text-display-1 lg:whitespace-nowrap">
+                Case studies.
+              </h1>
+              <p className="mt-7 max-w-[32rem] text-[clamp(1.25rem,1.55vw,1.45rem)] leading-[1.5] text-slate">
                 Explore the systems behind our consulting and engineering work, and how each one
                 addresses a practical organisational need.
               </p>
@@ -44,18 +47,18 @@ export default function CaseStudiesPage() {
               </a>
             </div>
             <div className="relative lg:col-span-6" {...reveal(1)}>
-              <div className="absolute top-1/2 left-1/2 size-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime" />
-              <div className="relative grid translate-y-4 grid-cols-2 gap-4">
-                <SystemVisual
-                  system={systems[0]!}
+              <div className="relative aspect-[16/11] overflow-hidden rounded-bar bg-forest shadow-panel">
+                <Image
+                  src="/assets/case-studies-hero.jpg"
+                  alt="African technology consultants reviewing system data and operational workflows"
+                  fill
                   priority
-                  className="aspect-[4/3] -rotate-2 rounded-bar shadow-panel"
+                  sizes="(min-width: 1024px) 48vw, 92vw"
+                  className="object-cover"
                 />
-                <SystemVisual
-                  system={systems[4]!}
-                  priority
-                  className="mt-16 aspect-[4/3] rotate-2 rounded-bar shadow-panel"
-                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-6 pt-16 pb-5 text-caption font-semibold text-paper sm:px-7">
+                  Consulting and engineering, considered together.
+                </div>
               </div>
             </div>
           </div>
