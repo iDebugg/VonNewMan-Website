@@ -85,21 +85,16 @@ export default function CaseStudiesPage() {
               </p>
             </div>
 
-            <ul className="grid list-none gap-x-8 gap-y-20 pt-14 md:grid-cols-2 lg:pt-20">
+            <ul className="grid list-none gap-8 pt-14 md:grid-cols-2 lg:pt-16">
               {systems.map((system, index) => (
-                <li
-                  id={system.slug}
-                  key={system.slug}
-                  className={`scroll-mt-28 ${index % 2 ? "md:mt-24" : ""}`}
-                  {...reveal(index)}
-                >
+                <li id={system.slug} key={system.slug} className="scroll-mt-28" {...reveal(index)}>
                   <article
                     className={cn(
-                      "group overflow-hidden rounded-bar border border-ink/10 p-2",
+                      "group h-full overflow-hidden rounded-bar border border-ink/10 p-2",
                       studyTones[system.slug],
                     )}
                   >
-                    <div className="flex min-h-72 flex-col p-6 sm:p-8">
+                    <div className="flex min-h-64 flex-col p-5 sm:p-6">
                       <div className="flex items-start justify-between gap-4">
                         <p
                           className={cn(
@@ -119,12 +114,12 @@ export default function CaseStudiesPage() {
                           {String(index + 1).padStart(2, "0")}
                         </span>
                       </div>
-                      <h3 className="mt-5 font-display text-[clamp(1.75rem,2.7vw,2.75rem)] leading-[1.05] font-bold tracking-[-.025em]">
+                      <h3 className="mt-4 min-h-[3.75rem] font-display text-title-lg">
                         {system.title}
                       </h3>
                       <p
                         className={cn(
-                          "mt-5 max-w-[52ch] text-body",
+                          "mt-2 line-clamp-3 max-w-[52ch] text-body",
                           system.slug === "sonar" ? "text-paper/72" : "text-slate",
                         )}
                       >
@@ -133,7 +128,7 @@ export default function CaseStudiesPage() {
                       <Link
                         href={`/case-studies/${system.slug}`}
                         className={cn(
-                          "mt-auto inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-label font-bold transition-transform hover:-translate-y-0.5",
+                          "mt-auto inline-flex w-fit items-center gap-2 rounded-full px-5 py-2.5 text-label font-bold transition-transform hover:-translate-y-0.5",
                           system.slug === "sonar"
                             ? "bg-lime text-ink"
                             : "bg-forest text-paper hover:bg-brand",
@@ -145,7 +140,7 @@ export default function CaseStudiesPage() {
                     <div className="relative overflow-hidden rounded-[1.2rem] bg-paper shadow-[0_20px_55px_-32px_rgba(16,42,33,.55)]">
                       <SystemVisual
                         system={system}
-                        className="aspect-[4/3]"
+                        className="aspect-[16/8]"
                         imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                       />
                     </div>
