@@ -206,6 +206,40 @@
     animation: hero-settle 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
+  @keyframes case-hero-rise {
+    from {
+      opacity: 0;
+      filter: blur(4px);
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: none;
+    }
+  }
+
+  .case-hero-copy > * {
+    opacity: 0;
+    animation: case-hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .case-hero-copy > :nth-child(1) {
+    animation-delay: 120ms;
+  }
+
+  .case-hero-copy > :nth-child(2) {
+    animation-delay: 220ms;
+  }
+
+  .case-hero-copy > :nth-child(3) {
+    animation-delay: 320ms;
+  }
+
+  .case-hero-copy > :nth-child(4) {
+    animation-delay: 420ms;
+  }
+
   /* Map pins: a ring that expands and fades, continuously. Reduced motion stops it below. */
   @keyframes breathe {
     0% {

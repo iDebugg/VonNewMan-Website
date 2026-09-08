@@ -6,18 +6,9 @@ import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { systems } from "@/lib/content";
-import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
 
 type PageProps = { params: Promise<{ slug: string }> };
-
-const detailStages = {
-  "atlas-cms": "bg-lilac",
-  "atlas-lms": "bg-sage",
-  compass: "bg-clay",
-  "hr-performance": "bg-sky",
-  sonar: "bg-lime",
-} as const;
 
 const deliverySteps = [
   {
@@ -61,15 +52,29 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
       <SiteHeader subpage />
       <main id="top" className="flex-1 pt-header">
         <article>
-          <header className="bg-forest px-gutter-narrow pt-14 pb-20 text-paper sm:px-gutter lg:px-gutter-wide lg:pt-16 lg:pb-24">
-            <div className="mx-auto max-w-site">
+          <header className="relative flex min-h-[calc(100svh-var(--spacing-header))] items-center overflow-hidden bg-forest px-gutter-narrow py-20 text-paper sm:px-gutter lg:px-gutter-wide">
+            <div className="absolute inset-0" aria-hidden="true">
+              <SystemVisual
+                system={system}
+                priority
+                className="size-full"
+                imageClassName="hero-image scale-[1.04] object-cover object-center"
+              />
+            </div>
+            <div className="absolute inset-0 bg-forest/95" aria-hidden="true" />
+            <div
+              className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,42,33,.62)_0%,rgba(16,42,33,.28)_48%,rgba(16,42,33,.68)_100%)]"
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10 mx-auto w-full max-w-site">
               <Link
                 href="/case-studies"
-                className="inline-flex items-center gap-2 text-label font-bold text-mint hover:text-paper hover:underline"
+                className="absolute -top-16 left-0 inline-flex items-center gap-2 text-label font-bold text-mint hover:text-paper hover:underline"
               >
                 ← All case studies
               </Link>
-              <div className="mx-auto mt-16 max-w-[62rem] text-center" {...reveal()}>
+              <div className="case-hero-copy mx-auto max-w-[62rem] text-center">
                 <p className="text-label font-bold tracking-[0.14em] text-mint uppercase">
                   {system.category} · {system.product}
                 </p>
@@ -86,24 +91,6 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               </div>
             </div>
           </header>
-
-          <section
-            className={cn(
-              "px-gutter-narrow py-14 sm:px-gutter lg:px-gutter-wide lg:py-20",
-              detailStages[system.slug],
-            )}
-          >
-            <div className="mx-auto max-w-[68rem]" {...reveal()}>
-              <div className="rounded-bar bg-paper p-2 shadow-panel">
-                <SystemVisual
-                  system={system}
-                  priority
-                  className="aspect-[16/8] rounded-[1.2rem]"
-                  imageClassName="object-cover object-top"
-                />
-              </div>
-            </div>
-          </section>
 
           <section className="bg-brand px-gutter-narrow py-8 text-paper sm:px-gutter lg:px-gutter-wide">
             <dl className="mx-auto grid max-w-site gap-7 sm:grid-cols-3">
