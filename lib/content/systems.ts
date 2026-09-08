@@ -138,5 +138,11 @@ export const systems: SystemShowcaseItem[] = [
       width: 1400,
       height: 770,
     },
+    carouselImage: {
+      src: "/assets/sonar-selected-work.png",
+      alt: "Von Newman Sonar infrastructure reconciliation visual",
+      width: 1600,
+      height: 900,
+    },
   },
 ];

@@ -55,10 +55,10 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           <header className="relative flex min-h-[calc(100svh-var(--spacing-header))] items-center overflow-hidden bg-forest px-gutter-narrow py-20 text-paper sm:px-gutter lg:px-gutter-wide">
             <div className="absolute inset-0" aria-hidden="true">
               <SystemVisual
-                system={system}
+                system={{ ...system, image: system.carouselImage ?? system.image }}
                 priority
                 className="size-full"
-                imageClassName="hero-image scale-[1.04] object-cover object-center"
+                imageClassName="hero-image scale-[1.04] object-cover object-[60%_center]"
               />
             </div>
             <div className="absolute inset-0 bg-forest/95" aria-hidden="true" />
