@@ -6,17 +6,18 @@ import { Container } from "@/components/ui/Container";
 import { ExternalHint, externalLinkProps } from "@/components/ui/ExternalHint";
 import { reveal } from "@/lib/utils/reveal";
 
-export function SiteFooter() {
+export function SiteFooter({ subpage = false }: { subpage?: boolean }) {
   const year = new Date().getFullYear();
   const [productsCol, companyCol, signInCol, followCol] = footerColumns;
   const columns = [productsCol, companyCol].filter((column) => column !== undefined);
 
+  const homeHref = (href: string) => (subpage && href.startsWith("#") ? `/${href}` : href);
   const renderLinks = (links: NonNullable<typeof productsCol>["links"]) => (
     <ul className="mt-4 grid list-none gap-2.5">
       {links.map((link) => (
         <li key={link.href + link.label}>
           <a
-            href={link.href}
+            href={homeHref(link.href)}
             {...(link.external ? externalLinkProps : {})}
             className="text-body text-paper/80 underline-offset-4 hover:text-paper hover:underline [&_svg]:ml-1.5"
           >
@@ -33,7 +34,11 @@ export function SiteFooter() {
       <Container className="pt-14 pb-8 lg:pt-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr]">
           <div className="md:col-span-2 lg:col-span-1" {...reveal(0)}>
-            <a href="#top" aria-label={site.brand.homeLabel} className="inline-block">
+            <a
+              href={subpage ? "/" : "#top"}
+              aria-label={site.brand.homeLabel}
+              className="inline-block"
+            >
               <Image
                 src={site.wordmarkWhite.src}
                 alt=""

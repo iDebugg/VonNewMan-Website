@@ -1,5 +1,6 @@
 /** Every link on the site is either a fragment on this page or one of a few external schemes. */
-export type Href = `#${string}` | `https://${string}` | `mailto:${string}` | `tel:${string}` | "#";
+export type Href =
+  `#${string}` | `/${string}` | `https://${string}` | `mailto:${string}` | `tel:${string}` | "#";
 
 export type LinkItem = {
   label: string;

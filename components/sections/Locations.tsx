@@ -1,15 +1,8 @@
-import { locations, mapPins, offices } from "@/lib/content";
+import { locations, mapPins } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
 import { LocalClock } from "./LocalClock";
 import { WorldMap } from "@/components/ui/WorldMap";
 import { reveal } from "@/lib/utils/reveal";
-
-const officeDots = {
-  lagos: "bg-lime",
-  abuja: "bg-coral",
-  calabar: "bg-cyan",
-  london: "bg-violet",
-} as const;
 
 export function Locations() {
   return (
@@ -22,22 +15,22 @@ export function Locations() {
       </div>
       {/* Lagos, Abuja, Calabar and London pinned on a world map, each pin breathing. */}
       <WorldMap {...reveal(1)} className="mt-12 text-paper/15 lg:mt-16" pins={mapPins} />
-      <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-7 lg:mt-12">
-        {offices.map((office, index) => (
-          <div key={office.id} className="border-t border-line-dark pt-6" {...reveal(index)}>
-            <LocalClock timeZone={office.timeZone} zoneLabel={office.zoneLabel} />
-            <h3 className="mt-6 flex flex-wrap items-center gap-x-3">
-              <span
-                aria-hidden="true"
-                className={`size-2.5 rounded-full ${officeDots[office.id]}`}
-              />
-              <span className="text-title-lg">{office.title.primary}</span>
-              <span className="text-label text-paper/70">{office.title.secondary}</span>
-            </h3>
-            <p className="mt-3 max-w-[44ch] text-body text-paper/80">{office.description}</p>
-            <address className="mt-4 text-caption text-paper/70">{office.address}</address>
-          </div>
-        ))}
+      <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-12 lg:mt-12">
+        <div className="border-t border-line-dark pt-6" {...reveal()}>
+          <LocalClock timeZone="Africa/Lagos" zoneLabel="WAT" />
+          <h3 className="mt-6 text-title-lg">Nigeria</h3>
+          <p className="mt-2 text-label tracking-[0.12em] text-paper/60 uppercase">
+            West Africa Time
+          </p>
+        </div>
+
+        <div className="border-t border-line-dark pt-6" {...reveal(1)}>
+          <LocalClock timeZone="Europe/London" />
+          <h3 className="mt-6 text-title-lg">London, United Kingdom</h3>
+          <p className="mt-2 text-label tracking-[0.12em] text-paper/60 uppercase">
+            United Kingdom Time
+          </p>
+        </div>
       </div>
     </Section>
   );

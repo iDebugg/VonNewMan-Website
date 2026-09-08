@@ -2,9 +2,15 @@ import Image from "next/image";
 import { site } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
 
-export function Brand({ condensedAware = false }: { condensedAware?: boolean }) {
+export function Brand({
+  condensedAware = false,
+  href = "#top",
+}: {
+  condensedAware?: boolean;
+  href?: string;
+}) {
   return (
-    <a href="#top" className="inline-flex items-center gap-3">
+    <a href={href} className="inline-flex items-center gap-3">
       <Image
         src={site.wordmarkWhite.src}
         alt=""
