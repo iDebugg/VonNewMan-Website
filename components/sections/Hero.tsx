@@ -33,14 +33,13 @@ export function Hero() {
         {/* The locator lines were removed from the hero at the client's instruction (7 September 2026). */}
         <h1
           id="hero-heading"
-          className="max-w-[11ch] font-display text-display-1 text-paper"
+          className="max-w-[14ch] font-display text-display-1 text-paper"
           {...reveal(0)}
         >
-          {/* Each sentence holds its own line from 640px up. That is the emphasis. */}
+          {/* The headline is intentionally composed as three lines. */}
           <span className="block">Technology</span>
           <span className="block">that makes</span>
-          <span className="block text-lime">work run</span>
-          <span className="block text-lime">better.</span>
+          <span className="block whitespace-nowrap text-lime">work run better.</span>
         </h1>
         <p className="mt-9 max-w-[34rem] text-lede text-paper/85" {...reveal(1)}>
           {hero.lede}
