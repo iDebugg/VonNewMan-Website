@@ -30,7 +30,7 @@ export function Contact() {
             <circle cx="332" cy="96" r="14" fill="currentColor" />
           </svg>
           <div className="relative">
-            <h2 id="contact-heading" className="max-w-[10ch] font-display text-display-2">
+            <h2 id="contact-heading" className="max-w-[15ch] font-display text-display-2">
               {contact.headline}
             </h2>
             <p className="mt-7 max-w-[34rem] text-lede text-ink/75">{contact.lede}</p>
