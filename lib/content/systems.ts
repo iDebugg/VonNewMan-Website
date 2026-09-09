@@ -81,6 +81,35 @@ export const systems: SystemShowcaseItem[] = [
     },
   },
   {
+    slug: "sonar",
+    title: "Von Newman Sonar",
+    category: "Technology estate",
+    product: "Sonar",
+    description:
+      "Asset visibility across an organisation’s infrastructure and code resources, giving technology teams one place to understand what they operate.",
+    overview:
+      "Von Newman Sonar is designed to make an organisation’s technology estate easier to understand. It brings infrastructure, ownership and code-related resources into a clearer operational view.",
+    role: "Technology-estate modelling, product engineering and infrastructure consulting.",
+    capabilities: ["Asset discovery", "Ownership visibility", "Infrastructure and code context"],
+    objectives: [
+      "Create one view of infrastructure and code-related resources.",
+      "Make technology ownership and operating context easier to understand.",
+      "Help teams see the estate they are responsible for.",
+    ],
+    image: {
+      src: "/assets/sonar-selected-work.png",
+      alt: "Von Newman Sonar infrastructure reconciliation visual",
+      width: 1600,
+      height: 900,
+    },
+    carouselImage: {
+      src: "/assets/sonar-selected-work.png",
+      alt: "Von Newman Sonar infrastructure reconciliation visual",
+      width: 1600,
+      height: 900,
+    },
+  },
+  {
     slug: "compass",
     title: "Von Newman Compass",
     category: "Election operations",
@@ -115,34 +144,5 @@ export const systems: SystemShowcaseItem[] = [
       "Support administrative and executive performance decisions.",
     ],
     visual: "performance",
-  },
-  {
-    slug: "sonar",
-    title: "Von Newman Sonar",
-    category: "Technology estate",
-    product: "Sonar",
-    description:
-      "Asset visibility across an organisation’s infrastructure and code resources, giving technology teams one place to understand what they operate.",
-    overview:
-      "Von Newman Sonar is designed to make an organisation’s technology estate easier to understand. It brings infrastructure, ownership and code-related resources into a clearer operational view.",
-    role: "Technology-estate modelling, product engineering and infrastructure consulting.",
-    capabilities: ["Asset discovery", "Ownership visibility", "Infrastructure and code context"],
-    objectives: [
-      "Create one view of infrastructure and code-related resources.",
-      "Make technology ownership and operating context easier to understand.",
-      "Help teams see the estate they are responsible for.",
-    ],
-    image: {
-      src: "/assets/sonar-selected-work.png",
-      alt: "Von Newman Sonar infrastructure reconciliation visual",
-      width: 1600,
-      height: 900,
-    },
-    carouselImage: {
-      src: "/assets/sonar-selected-work.png",
-      alt: "Von Newman Sonar infrastructure reconciliation visual",
-      width: 1600,
-      height: 900,
-    },
   },
 ];
