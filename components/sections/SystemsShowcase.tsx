@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { SystemVisual } from "@/components/case-studies/SystemVisual";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/Icon";
 import { systems, systemsShowcase } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
@@ -56,7 +57,7 @@ export function SystemsShowcase() {
             href="/case-studies"
             className="mt-6 inline-flex items-center gap-3 rounded-full bg-forest px-5 py-3 text-label font-bold text-paper transition-transform hover:-translate-y-0.5"
           >
-            Explore all projects <span aria-hidden="true">→</span>
+            Explore all projects <ArrowRightIcon />
           </Link>
         </div>
       </div>
@@ -99,7 +100,7 @@ export function SystemsShowcase() {
                       cardTones[system.slug].link,
                     )}
                   >
-                    View project <span aria-hidden="true">↗</span>
+                    View project <ArrowUpRightIcon />
                   </Link>
                 </div>
               </article>

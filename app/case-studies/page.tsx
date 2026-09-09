@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SystemVisual } from "@/components/case-studies/SystemVisual";
+import { ArrowDownIcon, ArrowRightIcon } from "@/components/ui/Icon";
 import { systems } from "@/lib/content";
 import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
@@ -43,7 +44,7 @@ export default function CaseStudiesPage() {
                 href="#all-case-studies"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
               >
-                Explore the work <span aria-hidden="true">↓</span>
+                Explore the work <ArrowDownIcon />
               </a>
             </div>
             <div className="relative lg:col-span-6" {...reveal(1)}>
@@ -137,7 +138,7 @@ export default function CaseStudiesPage() {
                             : "bg-forest text-paper hover:bg-brand",
                         )}
                       >
-                        Learn more <span aria-hidden="true">→</span>
+                        Learn more <ArrowRightIcon />
                       </Link>
                     </div>
                     <div className="relative overflow-hidden rounded-[1.2rem] bg-paper shadow-[0_20px_55px_-32px_rgba(16,42,33,.55)]">

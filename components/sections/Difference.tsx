@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Section } from "@/components/ui/Section";
 import { reveal } from "@/lib/utils/reveal";
+import { ArrowRightIcon } from "@/components/ui/Icon";
 
 export function Difference() {
   return (
@@ -52,15 +53,15 @@ export function Difference() {
           <ul className="mt-12 grid list-none divide-y divide-ink/15 border-y border-ink/15 text-title font-bold">
             <li className="flex items-center justify-between py-5">
               <span>Understand workflows, people and priorities</span>
-              <span aria-hidden="true">→</span>
+              <ArrowRightIcon />
             </li>
             <li className="flex items-center justify-between py-5">
               <span>Design for your systems, policies and constraints</span>
-              <span aria-hidden="true">→</span>
+              <ArrowRightIcon />
             </li>
             <li className="flex items-center justify-between py-5">
               <span>Support your teams after go-live</span>
-              <span aria-hidden="true">→</span>
+              <ArrowRightIcon />
             </li>
           </ul>
         </div>

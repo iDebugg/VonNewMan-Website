@@ -7,6 +7,7 @@ import { contact, formFields } from "@/lib/content";
 import type { EnquiryErrors, EnquiryField } from "@/lib/actions/enquiry";
 import { honeypotField, mailtoSender, readEnquiry, validateEnquiry } from "@/lib/actions/enquiry";
 import { cn } from "@/lib/utils/cn";
+import { ArrowRightIcon } from "@/components/ui/Icon";
 
 // Fields: brand-green border with 8px corners; focus swaps the page outline for a soft green ring.
 const control =
@@ -137,7 +138,7 @@ export function ContactForm() {
           type="submit"
           className="inline-flex w-full items-center justify-center rounded-full bg-lime px-5 py-4 text-body font-bold text-ink transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-brand hover:text-paper"
         >
-          {contact.submitLabel} <span aria-hidden="true">→</span>
+          {contact.submitLabel} <ArrowRightIcon />
         </button>
         <p id="form-note" className="text-caption text-slate" aria-live="polite">
           {note ?? contact.mailto.note}

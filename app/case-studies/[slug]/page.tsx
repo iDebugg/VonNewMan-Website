@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { SystemVisual } from "@/components/case-studies/SystemVisual";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/Icon";
 import { systems } from "@/lib/content";
 import { reveal } from "@/lib/utils/reveal";
 
@@ -80,7 +81,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   href="/#contact"
                   className="mt-8 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-label font-bold text-ink transition-transform hover:-translate-y-0.5"
                 >
-                  Discuss a similar system <span aria-hidden="true">↗</span>
+                  Discuss a similar system <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -230,13 +231,13 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   href={`/case-studies/${previousSystem.slug}`}
                   className="inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3.5 text-label font-bold text-ink hover:bg-paper"
                 >
-                  ← {previousSystem.title}
+                  <ArrowLeftIcon /> {previousSystem.title}
                 </Link>
                 <Link
                   href={`/case-studies/${nextSystem.slug}`}
                   className="inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
                 >
-                  {nextSystem.title} <span aria-hidden="true">→</span>
+                  {nextSystem.title} <ArrowRightIcon />
                 </Link>
               </div>
             </div>

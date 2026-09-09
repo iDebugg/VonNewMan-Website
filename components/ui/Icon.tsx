@@ -24,6 +24,38 @@ export function ChevronIcon({ size = 14, ...props }: IconProps) {
   );
 }
 
+export function ArrowRightIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)} strokeWidth={2}>
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+export function ArrowLeftIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)} strokeWidth={2}>
+      <path d="M19 12H5m6 6-6-6 6-6" />
+    </svg>
+  );
+}
+
+export function ArrowDownIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)} strokeWidth={2}>
+      <path d="M12 5v14m6-6-6 6-6-6" />
+    </svg>
+  );
+}
+
+export function ArrowUpRightIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg {...base(size, props)} strokeWidth={2}>
+      <path d="M7 17 17 7M9 7h8v8" />
+    </svg>
+  );
+}
+
 export function MailIcon({ size = 18, ...props }: IconProps) {
   return (
     <svg {...base(size, props)}>
