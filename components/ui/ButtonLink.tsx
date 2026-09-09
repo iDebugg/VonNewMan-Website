@@ -30,7 +30,7 @@ const variants: Record<Variant, string> = {
 const sizes: Record<Size, string> = {
   md: "px-5 py-3",
   sm: "px-4 py-2",
-  nav: "rounded-nav px-5 py-3 text-body font-semibold",
+  nav: "rounded-nav px-5 py-3 text-[0.875rem] leading-5 font-semibold",
   lg: "rounded-nav px-6 py-3.5 text-body font-semibold",
 };
 

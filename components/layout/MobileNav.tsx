@@ -77,7 +77,7 @@ export function MobileNav({ groups, cta }: MobileNavProps) {
                         href={item.href}
                         {...(item.external ? externalLinkProps : {})}
                         onClick={() => setOpen(false)}
-                        className="flex items-center gap-2 py-3.5 text-title font-medium text-ink"
+                        className="flex items-center gap-2 py-3.5 text-body font-medium text-ink"
                       >
                         {item.label}
                         {item.external ? <ExternalHint /> : null}

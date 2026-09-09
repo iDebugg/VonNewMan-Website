@@ -54,7 +54,7 @@ export function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                   <li key={link.href} {...reveal(index + 2)}>
                     <a
                       href={link.href}
-                      className="inline-flex rounded-control py-2 text-lede font-semibold whitespace-nowrap text-paper/90 transition-colors duration-150 hover:text-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:hover:text-brand"
+                      className="inline-flex rounded-control py-2 text-[0.875rem] leading-5 font-semibold whitespace-nowrap text-paper/90 transition-colors duration-150 hover:text-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:hover:text-brand"
                     >
                       {link.label}
                     </a>

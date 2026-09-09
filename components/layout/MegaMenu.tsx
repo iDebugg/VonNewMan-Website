@@ -106,7 +106,7 @@ export function MegaMenu({
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex items-center gap-2 text-lede font-semibold whitespace-nowrap transition-colors duration-150",
+          "inline-flex items-center gap-2 text-[0.875rem] leading-5 font-semibold whitespace-nowrap transition-colors duration-150",
           appearance === "link" &&
             "rounded-control py-2 text-paper/90 hover:text-paper group-data-[condensed=true]:text-ink group-data-[condensed=true]:hover:text-brand",
           appearance === "link" && open && "text-paper group-data-[condensed=true]:text-brand",
@@ -147,7 +147,7 @@ export function MegaMenu({
               onClick={() => setOpen(false)}
               className="block rounded-control px-3 py-2.5 hover:bg-paper/10"
             >
-              <span className="flex items-center gap-2 text-body font-semibold text-paper">
+              <span className="flex items-center gap-2 text-[0.875rem] leading-5 font-semibold text-paper">
                 {item.label}
                 {item.external ? <ExternalHint /> : null}
               </span>
