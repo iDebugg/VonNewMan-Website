@@ -26,7 +26,7 @@ export function Products() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-6 xl:col-span-7" {...reveal()}>
               <p className="text-label font-bold tracking-[.12em] text-brand">VON NEWMAN ATLAS</p>
-              <h3 className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]">
+              <h3 className="mt-4 font-display text-display-2">
                 Manage staff learning in one place.
               </h3>
               <p className="mt-6 max-w-[48rem] text-lede text-slate">{atlas.description}</p>
@@ -65,10 +65,7 @@ export function Products() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5" {...reveal()}>
               <p className="text-label font-bold tracking-[.12em] text-lime">VON NEWMAN SONAR</p>
-              <h3
-                id="sonar-heading"
-                className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]"
-              >
+              <h3 id="sonar-heading" className="mt-4 font-display text-display-2">
                 Know what infrastructure you run and who owns it.
               </h3>
               <p className="mt-6 text-lede text-paper/75">{sonar.description}</p>

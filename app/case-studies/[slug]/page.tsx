@@ -118,7 +118,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                 <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
                   01 · Overview
                 </p>
-                <h2 className="mt-5 max-w-[13ch] font-display text-[clamp(2rem,3.4vw,3.5rem)] leading-[1.04] font-bold tracking-[-.03em]">
+                <h2 className="mt-5 max-w-[13ch] font-display text-[clamp(1.75rem,2.7vw,2.75rem)] leading-[1.06] font-bold tracking-[-.03em]">
                   The system in context.
                 </h2>
               </div>

@@ -136,7 +136,7 @@ export function Services() {
         <figcaption className="absolute inset-x-0 bottom-0 p-7 text-paper sm:p-10 lg:max-w-[46rem] lg:p-12">
           {/* Client wording, 8 September 2026, in the site's British spelling. Longer sentence,
               so the size steps down from the previous statement. */}
-          <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-[1.15] font-bold tracking-[-.02em]">
+          <p className="font-display text-[clamp(1.25rem,2vw,1.875rem)] leading-[1.2] font-bold tracking-[-.02em]">
             Choose a defined project, ongoing support, product licensing or additional delivery
             capacity to match your procurement needs.
           </p>

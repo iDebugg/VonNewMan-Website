@@ -45,7 +45,7 @@ export function Difference() {
             <p className="text-label font-bold tracking-[.12em] text-brand">
               CONSULTING AND ENGINEERING
             </p>
-            <h3 className="mt-5 font-display text-[clamp(2rem,3.25vw,3.5rem)] leading-[1.02] font-bold tracking-[-.032em]">
+            <h3 className="mt-5 font-display text-[clamp(1.75rem,2.6vw,2.75rem)] leading-[1.06] font-bold tracking-[-.03em]">
               Start with how your organisation works.
             </h3>
           </div>

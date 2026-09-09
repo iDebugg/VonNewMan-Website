@@ -40,7 +40,7 @@ export function Approach() {
         ))}
       </ol>
       <div className="mt-20 rounded-bar bg-stone p-8 sm:p-10 lg:grid lg:grid-cols-[1.2fr_3fr_auto] lg:items-center lg:gap-12">
-        <h3 className="font-display text-[clamp(1.875rem,2.5vw,2.75rem)] leading-[1.03] font-bold tracking-[-.03em]">
+        <h3 className="font-display text-[clamp(1.625rem,2vw,2.25rem)] leading-[1.08] font-bold tracking-[-.03em]">
           Test the approach.
           <br />
           Start with a 90-day pilot.

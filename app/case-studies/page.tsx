@@ -35,7 +35,7 @@ export default function CaseStudiesPage() {
               <h1 className="mt-5 font-display text-display-1 lg:whitespace-nowrap">
                 Case studies.
               </h1>
-              <p className="mt-7 max-w-[32rem] text-[clamp(1.25rem,1.55vw,1.45rem)] leading-[1.5] text-slate">
+              <p className="mt-7 max-w-[32rem] text-[clamp(1.0625rem,1.25vw,1.25rem)] leading-[1.55] text-slate">
                 Explore the systems behind our consulting and engineering work, and how each one
                 addresses a practical organisational need.
               </p>
