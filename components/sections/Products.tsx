@@ -93,15 +93,15 @@ export function Products() {
             </div>
             <div className="lg:col-span-7" {...reveal(1)}>
               <Image
-                src="/assets/sonar-terraform.jpg"
-                alt="Sonar workflow for reviewing and importing an infrastructure resource to Terraform"
-                width={1400}
-                height={1131}
+                src={sonar.image.src}
+                alt={sonar.image.alt}
+                width={sonar.image.width}
+                height={sonar.image.height}
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="w-full rounded-bar bg-paper shadow-panel"
               />
               <p className="mt-4 text-caption text-paper/55">
-                Sonar: reviewing an unmanaged AWS resource for import into Terraform.
+                Sonar: infrastructure reconciliation across an organisation’s technology estate.
               </p>
             </div>
           </div>

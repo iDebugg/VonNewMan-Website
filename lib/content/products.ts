@@ -62,10 +62,10 @@ export const atlas: Product = {
   /** "Sign in" and "Browse the catalogue" removed 5 September 2026 (client); both remain in the footer. */
   actions: [{ label: "Explore Atlas", href: site.urls.atlas, external: true }],
   image: {
-    src: "/assets/atlas-home.jpg",
-    alt: "Atlas home page showing pathways, progress and a request-a-demo button",
-    width: 1400,
-    height: 875,
+    src: "/assets/atlas-lms-selected-work.png",
+    alt: "Von Newman Atlas learning management system visual",
+    width: 1672,
+    height: 941,
   },
 };
 
@@ -104,10 +104,10 @@ export const sonar: Product = {
   actions: [{ label: "Request a Sonar demo", href: "#contact" }],
   /** Screenshot replaced 5 September 2026 (client): the Sonar product homepage. */
   image: {
-    src: "/assets/sonar-home.png",
-    alt: "Von Newman Sonar homepage: find what isn't in Terraform, import it in a few steps, with a scan listing unmanaged AWS resources",
-    width: 1592,
-    height: 777,
+    src: "/assets/sonar-selected-work.png",
+    alt: "Von Newman Sonar infrastructure reconciliation visual",
+    width: 1600,
+    height: 900,
   },
 };
 

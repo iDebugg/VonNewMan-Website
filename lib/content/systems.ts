@@ -39,10 +39,10 @@ export const systems: SystemShowcaseItem[] = [
       "Publish approved course material into Atlas LMS.",
     ],
     image: {
-      src: "/assets/atlas-catalogue.jpg",
-      alt: "Atlas course catalogue and content management interface",
-      width: 1400,
-      height: 525,
+      src: "/assets/atlas-cms-selected-work.png",
+      alt: "Von Newman Atlas course management system visual",
+      width: 1672,
+      height: 941,
     },
     carouselImage: {
       src: "/assets/atlas-cms-selected-work.png",
@@ -68,10 +68,10 @@ export const systems: SystemShowcaseItem[] = [
       "Give administrators clearer participation and progress visibility.",
     ],
     image: {
-      src: "/assets/atlas-home.jpg",
-      alt: "Atlas multi-organisation learning management dashboard",
-      width: 1400,
-      height: 875,
+      src: "/assets/atlas-lms-selected-work.png",
+      alt: "Von Newman Atlas learning management system visual",
+      width: 1672,
+      height: 941,
     },
     carouselImage: {
       src: "/assets/atlas-lms-selected-work.png",
@@ -133,10 +133,10 @@ export const systems: SystemShowcaseItem[] = [
       "Help teams see the estate they are responsible for.",
     ],
     image: {
-      src: "/assets/sonar-inventory.jpg",
-      alt: "Sonar inventory interface showing technology assets across an organisation",
-      width: 1400,
-      height: 770,
+      src: "/assets/sonar-selected-work.png",
+      alt: "Von Newman Sonar infrastructure reconciliation visual",
+      width: 1600,
+      height: 900,
     },
     carouselImage: {
       src: "/assets/sonar-selected-work.png",
