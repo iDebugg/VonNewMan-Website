@@ -15,8 +15,8 @@ export type TextareaField = FieldBase & { kind: "textarea"; placeholder: string 
 export type FormField = TextField | SelectField | TextareaField;
 
 export const contact = {
-  headline: "Let's build something bespoke.",
-  lede: "A conversation, a demonstration of Atlas and Sonar with your context in mind, and a 90-day pilot shaped around your goals. That's all it takes to see the difference a product partner makes.",
+  headline: "What needs to work better?",
+  lede: "Tell us about the problem, the people it affects and the outcome you need. We will bring the relevant consultants and engineers into the conversation.",
   details: {
     email: { label: "Email", value: site.email, href: `mailto:${site.email}` as const },
     phone: { label: "Phone", value: site.phoneDisplay, href: site.phoneHref },
@@ -35,37 +35,40 @@ export const contact = {
       secondary: `${site.registration}, Nigeria`,
     },
   },
-  submitLabel: "Send enquiry",
+  submitLabel: "Prepare enquiry email",
   /**
    * Source strings for the mailto handoff. Kept verbatim unless a real send provider is wired
    * at phase 5 (design plan open decision 4).
    */
   mailto: {
-    note: "Sending opens your email app with the message ready to go. Or write to us directly.",
-    afterSubmit: "Your email app should open with the message ready to send.",
+    note: "Opens your email app with a draft. Review it and send it from there.",
+    afterSubmit: "Opens your email app with a draft. Review it and send it from there.",
     subjectPrefix: "Enquiry from",
     subjectFallback: "website",
   },
 } as const;
 
-const toOptions = (labels: readonly string[]): SelectOption[] =>
-  labels.map((label) => ({ value: label, label }));
+export const sectorOptions: SelectOption[] = [
+  { value: "Public sector", label: "Public sector" },
+  { value: "Financial services", label: "Financial services" },
+  { value: "Private sector, other", label: "Other private-sector organisation" },
+  { value: "Not sure yet", label: "Not sure yet" },
+];
 
-export const sectorOptions = toOptions([
-  "Public sector",
-  "Financial services",
-  "Private sector, other",
-  "Not sure yet",
-]);
-
-export const interestOptions = toOptions([
-  "A conversation about a problem we could solve",
-  "A demonstration of Atlas",
-  "A demonstration of Sonar",
-  "A custom software build",
-  "Cloud, network or security services",
-  "A 90-day pilot",
-]);
+export const interestOptions: SelectOption[] = [
+  {
+    value: "A conversation about a problem we could solve",
+    label: "Discuss a business or technology problem",
+  },
+  { value: "A demonstration of Atlas", label: "See an Atlas demo" },
+  { value: "A demonstration of Sonar", label: "See a Sonar demo" },
+  { value: "A custom software build", label: "Build custom software" },
+  {
+    value: "Cloud, network or security services",
+    label: "Discuss cloud, network or security services",
+  },
+  { value: "A 90-day pilot", label: "Discuss a 90-day pilot" },
+];
 
 export const formFields: FormField[] = [
   { kind: "text", name: "name", label: "Your name", autoComplete: "name", required: true },
@@ -75,13 +78,13 @@ export const formFields: FormField[] = [
   {
     kind: "select",
     name: "interest",
-    label: "What are you interested in?",
+    label: "How can we help?",
     options: interestOptions,
   },
   {
     kind: "textarea",
     name: "message",
-    label: "Tell us a little about it",
-    placeholder: "What's the problem, who does it affect, and what would good look like?",
+    label: "Tell us about your project",
+    placeholder: "What needs to improve, who is affected, and what outcome are you looking for?",
   },
 ];

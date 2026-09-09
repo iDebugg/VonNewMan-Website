@@ -137,10 +137,10 @@ export function ContactForm() {
           type="submit"
           className="inline-flex w-full items-center justify-center rounded-full bg-lime px-5 py-4 text-body font-bold text-ink transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-brand hover:text-paper"
         >
-          {contact.submitLabel} →
+          {contact.submitLabel} <span aria-hidden="true">→</span>
         </button>
         <p id="form-note" className="text-caption text-slate" aria-live="polite">
-          {note ?? "Opens your email app with the enquiry ready to send."}
+          {note ?? contact.mailto.note}
         </p>
       </div>
     </form>

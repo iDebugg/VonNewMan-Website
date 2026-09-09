@@ -7,7 +7,7 @@ export const site = {
   },
   description:
     "Von Newman Technology Consultants builds custom software, learning platforms and infrastructure intelligence for public and private sector organisations across Nigeria and the UK. Adapted to you, never off the shelf.",
-  tagline: "Adapted to you. Never off the shelf.",
+  tagline: "Practical technology. Clear purpose.",
   legalName: "Von Newman Technology Consultants Limited",
   shortLegalName: "Von Newman Technology Consultants Ltd",
   registration: "RC 8840592",

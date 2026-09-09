@@ -33,10 +33,7 @@ export function Contact() {
             <h2 id="contact-heading" className="max-w-[10ch] font-display text-display-2">
               {contact.headline}
             </h2>
-            <p className="mt-7 max-w-[34rem] text-lede text-ink/75">
-              Tell us what should work better. We will bring the right consultants and engineers
-              into the conversation.
-            </p>
+            <p className="mt-7 max-w-[34rem] text-lede text-ink/75">{contact.lede}</p>
             <div className="mt-10 grid gap-3 text-body font-bold">
               <a
                 href={email.href}

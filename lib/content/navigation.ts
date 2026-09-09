@@ -12,17 +12,17 @@ export const productsMenu: NavGroup = {
     {
       label: "Von Newman Atlas",
       href: "#atlas",
-      description: "Learning platform for professional training, localised for Nigeria.",
+      description: "Manage staff learning, onboarding and compliance training.",
     },
     {
       label: "Von Newman Sonar",
       href: "#sonar",
-      description: "Hybrid infrastructure management with naira-aware FinOps.",
+      description: "See infrastructure resources, ownership and configuration.",
     },
     {
-      label: "Custom builds",
+      label: "Custom solutions",
       href: "#services",
-      description: "Software, cloud, networks and security, built for you.",
+      description: "Software, cloud, networks and security for your operations.",
     },
   ],
 };
@@ -58,7 +58,7 @@ export const signInMenu: NavGroup = {
   ],
 };
 
-export const talkToUs: LinkItem = { label: "Talk to us", href: "#contact" };
+export const talkToUs: LinkItem = { label: "Discuss your project", href: "#contact" };
 
 export type MobileGroup = {
   label: string;
@@ -79,7 +79,7 @@ export const mobileMenu: MobileGroup[] = [
       { label: "Services", href: "#services" },
       { label: "Sectors", href: "#sectors" },
       { label: "How we work", href: "#approach" },
-      { label: "Team and offices", href: "#company" },
+      { label: "Team and locations", href: "#company" },
     ],
   },
 ];

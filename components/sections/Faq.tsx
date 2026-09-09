@@ -12,7 +12,7 @@ export function Faq() {
             {faq.headline}
           </h2>
           <p className="mt-6 text-lede text-slate">{faq.intro}</p>
-          <ButtonLink item={{ label: "Ask the team", href: "#contact" }} className="mt-6" />
+          <ButtonLink item={{ label: "Ask us a question", href: "#contact" }} className="mt-6" />
         </div>
         <div className="border-t border-ink/20 lg:col-span-7 lg:col-start-6">
           {faqItems.map((item, index) => (

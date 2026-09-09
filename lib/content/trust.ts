@@ -13,7 +13,7 @@ export type Partner = {
  */
 export const trust = {
   /** Client wording of 5 September 2026, with grammar corrected and British spelling. */
-  title: "Trusted by organisations that value technology and innovation",
+  title: "Our work across public service and technology.",
 } as const;
 
 export const partners: Partner[] = [

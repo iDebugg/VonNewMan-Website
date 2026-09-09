@@ -15,7 +15,7 @@ export type Office = {
 export const locations = {
   headline: "Working from Lagos, Abuja, Calabar and London.",
   intro:
-    "Our Nigerian teams work across three cities, with UK delivery based in London. Together, they support public- and private-sector organisations across both markets.",
+    "Our teams in Nigeria and the UK support public institutions and private enterprises across both markets.",
 } as const;
 
 export const offices: Office[] = [

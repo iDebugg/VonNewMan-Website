@@ -13,7 +13,7 @@ export function TrustBand() {
               {trust.title}
             </h2>
             <p className="mt-4 text-body text-slate">
-              Work shown with organisations across public service and technology.
+              Organisations associated with work by our teams.
             </p>
           </div>
           <ul className="grid list-none grid-cols-2 items-center gap-8 sm:grid-cols-4">
@@ -42,15 +42,15 @@ export function TrustBand() {
         <dl className="mt-12 grid gap-4 border-t border-ink/15 pt-7 text-center sm:grid-cols-3">
           <div>
             <dd className="text-title font-bold">Multiple platforms</dd>
-            <dt className="mt-1 text-label text-slate">Custom built</dt>
+            <dt className="mt-1 text-label text-slate">Designed and built in-house</dt>
           </div>
           <div>
             <dd className="text-title font-bold">8 practice areas</dd>
-            <dt className="mt-1 text-label text-slate">From product design to cloud delivery</dt>
+            <dt className="mt-1 text-label text-slate">Software, learning and infrastructure</dt>
           </div>
           <div>
             <dd className="text-title font-bold">Nigeria and the UK</dd>
-            <dt className="mt-1 text-label text-slate">Local depth, international delivery</dt>
+            <dt className="mt-1 text-label text-slate">Delivery across both markets</dt>
           </div>
         </dl>
       </Container>

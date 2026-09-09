@@ -20,7 +20,7 @@ export function Sectors() {
           className="max-w-[42ch] text-lede text-slate lg:col-span-4 lg:col-start-9"
           {...reveal(1)}
         >
-          We design around regulation, infrastructure and the way each institution operates.
+          {sectors.lede}
         </p>
       </div>
 

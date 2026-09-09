@@ -28,8 +28,8 @@ export type Product = {
 };
 
 export const productsIntro = {
-  headline: "Two products we own outright, and shape around you.",
-  lede: "Adopt them in full, license the content into your own systems, or let us adapt them until they feel like they were built in-house. Because for you, they were.",
+  headline: "Two products. Practical tools for your organisation.",
+  lede: "We develop Atlas for workforce learning and Sonar for infrastructure visibility, with adaptations to suit your operations.",
 } as const;
 
 export const atlas: Product = {
@@ -37,12 +37,12 @@ export const atlas: Product = {
   name: "Von Newman Atlas",
   subline: { primary: "Learning platform", secondary: "LMS and CMS" },
   badge: "Live",
-  positioning: "Learning, beautifully connected.",
+  positioning: "Manage staff learning in one place.",
   description:
-    "Onboarding, upskilling, compliance and certification for public and private sector teams, measured in one place and localised for Nigerian organisations.",
+    "Deliver onboarding, skills development, compliance and certification training. Track learning in one platform, with content localised for Nigerian organisations.",
   figures: [
-    { value: "25", label: "Structured pathways" },
-    { value: "209", label: "Courses" },
+    { value: "25", label: "learning pathways" },
+    { value: "209", label: "courses" },
     { value: "NG", label: "Localised content" },
   ],
   features: [
@@ -60,7 +60,7 @@ export const atlas: Product = {
     },
   ],
   /** "Sign in" and "Browse the catalogue" removed 5 September 2026 (client); both remain in the footer. */
-  actions: [{ label: "Visit Atlas", href: site.urls.atlas, external: true }],
+  actions: [{ label: "Explore Atlas", href: site.urls.atlas, external: true }],
   image: {
     src: "/assets/atlas-home.jpg",
     alt: "Atlas home page showing pathways, progress and a request-a-demo button",
@@ -75,20 +75,23 @@ export const sonar: Product = {
   subline: { primary: "Hybrid infrastructure management", secondary: "FinOps" },
   /** Was "Cloud inventory"; changed to "Live" on 5 September 2026 (client) with the new screenshot. */
   badge: "Live",
-  positioning: "See your entire estate, control every naira.",
+  positioning: "Know what infrastructure you run and who owns it.",
   description:
-    "Sonar continuously maps every asset you run, across every cloud and every data centre, then keeps it governed, resilient and cost-optimised.",
+    "Map infrastructure resources, connect them to responsible teams and review unmanaged configurations. Give your team a clearer basis for governance and cost decisions.",
   platformsLabel: "Works with",
   platforms: ["AWS", "Azure", "Google Cloud", "VMware", "Nutanix", "Kubernetes", "Bare metal"],
   features: [
-    { lead: "One view of everything.", text: "Continuous discovery and dependency mapping." },
     {
-      lead: "Drift and codification.",
-      text: "Unmanaged resources become clean, reviewed Terraform.",
+      lead: "Discover resources",
+      text: "Map infrastructure across supported accounts and regions.",
     },
     {
-      lead: "Guardrails and evidence.",
-      text: "Audit-ready, aligned to ISO 27001, SOC 2 and CBN IT guidance.",
+      lead: "Assign ownership",
+      text: "Link resources to teams, services and policies.",
+    },
+    {
+      lead: "Review configuration",
+      text: "Bring unmanaged resources into a reviewed Terraform configuration.",
     },
     { lead: "Resilience.", text: "Restore whole environments to last-known-good in minutes." },
     {

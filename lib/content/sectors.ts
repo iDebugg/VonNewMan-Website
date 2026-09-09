@@ -34,8 +34,8 @@ export type PilotPhase = {
 };
 
 export const sectors = {
-  headline: "Built for the realities of both sectors.",
-  lede: "We understand Nigeria's regulators, its infrastructure realities and its people, and we adapt our platforms to each institution rather than asking the institution to adapt to us.",
+  headline: "Technology for public institutions and private enterprises.",
+  lede: "We plan around your regulatory obligations, existing infrastructure and the people who use your systems.",
   tablistLabel: "Choose a sector",
 } as const;
 
@@ -45,34 +45,34 @@ export const sectorPanels: SectorPanel[] = [
     tab: "Public sector",
     heading: "Ministries, agencies and local government.",
     lede: "Public institutions need platforms that respect procurement, policy and accountability, and that work for staff in every office, not just headquarters. We design for all of that from the start.",
-    cta: { label: "Discuss a public sector programme", href: "#contact" },
+    cta: { label: "Discuss your public-sector project", href: "#contact" },
     image: {
       src: "/assets/public-sector-consulting.jpg",
-      alt: "Public-sector leaders and technology consultants reviewing a service workflow together",
+      alt: "Team reviewing a public-service workflow",
       width: 1672,
       height: 941,
     },
     items: [
       {
-        title: "Workforce learning at scale",
+        title: "Deliver workforce training across departments",
         tag: "Atlas",
         description:
           "Induction, conditions of service, governance, ethics and revenue administration pathways, delivered to every department with completion evidence.",
       },
       {
-        title: "Custom digital services",
+        title: "Digitise services and internal workflows",
         tag: "Software",
         description:
           "Citizen-facing portals, case management, records and workflow systems built around your mandates and your existing processes.",
       },
       {
-        title: "Estate visibility and cost control",
+        title: "Improve infrastructure visibility and cost oversight",
         tag: "Sonar",
         description:
           "One view across data centres, cloud and regional sites, with budgets and evidence your auditors and the public accounts committee will accept.",
       },
       {
-        title: "Standards you can point to",
+        title: "Document controls and delivery requirements",
         tag: "Delivery",
         description:
           "UK public-sector delivery discipline, WCAG accessibility and NDPA-conscious data handling as standard.",
@@ -84,34 +84,34 @@ export const sectorPanels: SectorPanel[] = [
     tab: "Private sector",
     heading: "Banks, insurers and growing enterprises.",
     lede: "Private organisations need speed without losing control: compliance that holds up to examiners, cloud spend that makes sense in naira, and software that gives them an edge rather than a template.",
-    cta: { label: "Discuss an enterprise engagement", href: "#contact" },
+    cta: { label: "Discuss your enterprise project", href: "#contact" },
     image: {
       src: "/assets/private-sector-consulting.jpg",
-      alt: "Banking and enterprise leaders reviewing operational data with a technology consultant",
+      alt: "Team reviewing enterprise operational data",
       width: 1672,
       height: 941,
     },
     items: [
       {
-        title: "Compliance and conduct learning",
+        title: "Deliver compliance and conduct training",
         tag: "Atlas",
         description:
           "AML/CFT awareness, conduct, cyber hygiene, service excellence and leadership programmes co-designed with your L&D and compliance teams.",
       },
       {
-        title: "Bespoke applications",
+        title: "Build applications for operational needs",
         tag: "Software",
         description:
           "Customer platforms, integrations and automation aligned to strategy, not off-the-shelf modules you have to work around.",
       },
       {
-        title: "Naira-aware FinOps",
+        title: "Review cloud spending in naira",
         tag: "Sonar",
         description:
           "Dollar-billed cloud against naira budgets: dual-currency reporting, FX exposure views and cost narratives your CFO will actually use.",
       },
       {
-        title: "Resilience and evidence",
+        title: "Strengthen resilience and audit evidence",
         tag: "Sonar",
         description:
           "Capacity planning for month-end and salary-day peaks, recovery drills for critical services and audit-ready evidence packs for examiners.",

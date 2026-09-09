@@ -15,10 +15,11 @@ export function Products() {
             className="font-display text-display-2 lg:col-span-8"
             {...reveal()}
           >
-            Products that prove how we engineer.
+            {"Two products. Practical tools for your organisation."}
           </h2>
           <p className="text-lede text-slate lg:col-span-4" {...reveal(1)}>
-            We own Atlas and Sonar end to end, so the product can move with the organisation.
+            We develop Atlas for workforce learning and Sonar for infrastructure visibility, with
+            adaptations to suit your operations.
           </p>
         </div>
         <article id="atlas" className="mt-20 scroll-mt-24">
@@ -26,7 +27,7 @@ export function Products() {
             <div className="lg:col-span-6 xl:col-span-7" {...reveal()}>
               <p className="text-label font-bold tracking-[.12em] text-brand">VON NEWMAN ATLAS</p>
               <h3 className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]">
-                Learning that moves people forward.
+                Manage staff learning in one place.
               </h3>
               <p className="mt-6 max-w-[48rem] text-lede text-slate">{atlas.description}</p>
               <dl className="mt-9 flex gap-10">
@@ -34,7 +35,7 @@ export function Products() {
                   <dd>
                     <CountUp value="25" className="text-figure font-bold tabular" />
                   </dd>
-                  <dt className="text-label text-slate">pathways</dt>
+                  <dt className="text-label text-slate">learning pathways</dt>
                 </div>
                 <div>
                   <dd>
@@ -68,26 +69,26 @@ export function Products() {
                 id="sonar-heading"
                 className="mt-4 font-display text-[clamp(2.5rem,4vw,4.125rem)] leading-[1] font-bold tracking-[-.032em]"
               >
-                See your entire estate. Control every naira.
+                Know what infrastructure you run and who owns it.
               </h3>
               <p className="mt-6 text-lede text-paper/75">{sonar.description}</p>
               <ol className="mt-10 grid list-none gap-5 border-l border-lime/40 pl-6">
                 <li>
                   <strong className="block text-title">Discover resources</strong>
                   <span className="text-body text-paper/65">
-                    Continuously map infrastructure across accounts and regions.
+                    Map infrastructure across supported accounts and regions.
                   </span>
                 </li>
                 <li>
                   <strong className="block text-title">Assign ownership</strong>
                   <span className="text-body text-paper/65">
-                    Connect assets to teams, services and policy.
+                    Link resources to teams, services and policies.
                   </span>
                 </li>
                 <li>
                   <strong className="block text-title">Review configuration</strong>
                   <span className="text-body text-paper/65">
-                    Turn unmanaged resources into reviewed Terraform.
+                    Bring unmanaged resources into a reviewed Terraform configuration.
                   </span>
                 </li>
               </ol>
@@ -103,7 +104,7 @@ export function Products() {
                 className="w-full rounded-bar bg-paper shadow-panel"
               />
               <p className="mt-4 text-caption text-paper/55">
-                Sonar interface: importing an unmanaged AWS resource into Terraform.
+                Sonar: reviewing an unmanaged AWS resource for import into Terraform.
               </p>
             </div>
           </div>

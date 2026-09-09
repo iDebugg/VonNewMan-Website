@@ -56,7 +56,7 @@ export function SystemsShowcase() {
             href="/case-studies"
             className="mt-6 inline-flex items-center gap-3 rounded-full bg-forest px-5 py-3 text-label font-bold text-paper transition-transform hover:-translate-y-0.5"
           >
-            View all <span aria-hidden="true">→</span>
+            Explore all projects <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
@@ -99,7 +99,7 @@ export function SystemsShowcase() {
                       cardTones[system.slug].link,
                     )}
                   >
-                    View Project <span aria-hidden="true">↗</span>
+                    View project <span aria-hidden="true">↗</span>
                   </Link>
                 </div>
               </article>

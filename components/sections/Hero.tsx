@@ -37,13 +37,13 @@ export function Hero() {
           {...reveal(0)}
         >
           {/* Each sentence holds its own line from 640px up. That is the emphasis. */}
-          <span className="block">Built around</span>
-          <span className="block">your people.</span>
-          <span className="block text-lime">Engineered</span>
-          <span className="block text-lime">for progress.</span>
+          <span className="block">Technology</span>
+          <span className="block">that makes</span>
+          <span className="block text-lime">work run</span>
+          <span className="block text-lime">better.</span>
         </h1>
         <p className="mt-9 max-w-[34rem] text-lede text-paper/85" {...reveal(1)}>
-          Software, learning and infrastructure — shaped around the way your organisation works.
+          {hero.lede}
         </p>
         <div
           className="mt-9 flex w-full max-w-sm flex-col items-start gap-3 sm:max-w-none sm:flex-row"
@@ -66,7 +66,7 @@ export function Hero() {
       </Container>
 
       <Container className="relative flex flex-wrap justify-between gap-4 border-t border-paper/20 py-6 text-caption font-bold tracking-[.12em] text-paper/75">
-        <span>BORN IN LAGOS. WORKING INTERNATIONALLY.</span>
+        <span>FOUNDED IN LAGOS. WORKING INTERNATIONALLY.</span>
         <span>LAGOS / LONDON</span>
       </Container>
     </section>

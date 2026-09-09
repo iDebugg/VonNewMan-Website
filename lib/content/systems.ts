@@ -16,9 +16,9 @@ export type SystemShowcaseItem = {
 };
 
 export const systemsShowcase = {
-  headline: "Systems our teams have worked on.",
+  headline: "Explore systems our teams have worked on.",
   intro:
-    "A view of platforms we have designed, built, evolved or advised on — across learning, people, election operations and infrastructure visibility.",
+    "Examples of our teams’ design, engineering and advisory work across learning, workforce management, election operations and infrastructure.",
 } as const;
 
 export const systems: SystemShowcaseItem[] = [

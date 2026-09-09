@@ -11,8 +11,8 @@ export type OwnershipPoint = {
 };
 
 export const approach = {
-  headline: "Four stages, in this order, on every engagement.",
-  lede: "We immerse ourselves in your operating model before a line of configuration is written, and we stay after go-live to keep the platform moving with you.",
+  headline: "A clear process from discovery to ongoing support.",
+  lede: "Understand the problem, shape the solution, help your teams adopt it and review progress against agreed measures.",
   quote:
     "If a feature would make the platform work better for your teams, we don't raise a ticket with a vendor. We build it.",
   quoteCaption: "The advantage of owning the product",
@@ -23,25 +23,23 @@ export const stages: Stage[] = [
     slug: "discover",
     title: "Discover",
     description:
-      "On site with your teams, we learn your operating model, regulatory context and what success has to look like to your board.",
+      "Review your workflows, regulatory context and priorities. Agree what success should look like.",
   },
   {
     slug: "adapt",
     title: "Adapt",
-    description:
-      "Our engineers tailor the product itself: features, dashboards, content, branding and policy logic built around how your institution actually works.",
+    description: "Shape the solution, workflows and policy rules around your organisation.",
   },
   {
     slug: "embed",
     title: "Embed",
-    description:
-      "Integration with identity, HR and core systems, plus change management, champion networks and training, so adoption sticks in every branch and team.",
+    description: "Integrate the system, train your teams and support day-to-day adoption.",
   },
   {
     slug: "evolve",
     title: "Evolve",
     description:
-      "A living roadmap shaped by your KPIs: continuous releases, tested improvements and quarterly reviews with your leadership. Not an annual upgrade bill.",
+      "Review progress against agreed measures and prioritise improvements after go-live.",
   },
 ];
 

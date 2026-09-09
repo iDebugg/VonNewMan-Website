@@ -5,68 +5,78 @@ import { PracticeIcon } from "@/components/ui/PracticeIcon";
 import { reveal } from "@/lib/utils/reveal";
 
 const summaries: Record<string, string> = {
-  "software-development": "Custom applications, integrations and workflow automation.",
-  "lms-engineering": "Learning platforms, content systems and cloud delivery.",
-  doc2video: "Policies and manuals transformed into accessible digital learning.",
-  "hr-performance": "Workforce tools that connect performance, skills and learning.",
-  cloud: "Cloud architecture, migration, operations and recovery.",
-  "network-infrastructure": "Reliable networks, identity and end-user infrastructure.",
-  cybersecurity: "Secure architecture, access control and audit-ready delivery.",
-  "advanced-technology": "Applied AI, data platforms and specialist engineering.",
+  "software-development":
+    "Build applications, connect existing systems and automate manual workflows.",
+  "lms-engineering":
+    "Build and adapt platforms to manage courses, deliver training and track learning.",
+  doc2video: "Turn policies and manuals into digital learning that staff can understand and use.",
+  "hr-performance":
+    "Connect employee performance, skills and learning in workforce management tools.",
+  cloud: "Plan cloud architecture, migrate systems and support operations and recovery.",
+  "network-infrastructure":
+    "Design and manage networks, identity systems and the technology staff use every day.",
+  cybersecurity:
+    "Strengthen system design, control access and prepare technical evidence for audits.",
+  "advanced-technology": "Apply AI and data platforms to defined business problems.",
 };
 
 const serviceMeta = [
   {
-    label: "In-house engineering",
+    label: "APPLICATIONS AND INTEGRATION",
     surface: "bg-ink text-paper",
     icon: "bg-lime text-ink",
     muted: "text-paper/70",
   },
   {
-    label: "Atlas capability",
+    label: "LEARNING PLATFORMS",
     surface: "bg-lilac text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
   {
-    label: "Content studio",
+    label: "DIGITAL LEARNING CONTENT",
     surface: "bg-clay text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
   {
-    label: "Workforce systems",
+    label: "PEOPLE AND PERFORMANCE",
     surface: "bg-sky text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
   {
-    label: "Cloud practice",
+    label: "CLOUD DELIVERY",
     surface: "bg-sage text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
   {
-    label: "Managed infrastructure",
+    label: "NETWORKS AND WORKPLACE IT",
     surface: "bg-forest text-paper",
     icon: "bg-lime text-ink",
     muted: "text-paper/70",
   },
   {
-    label: "Security practice",
+    label: "SECURITY AND ACCESS",
     surface: "bg-sky text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
   {
-    label: "Applied innovation",
+    label: "AI AND DATA",
     surface: "bg-lilac text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
 ];
 
-const engagementModels = ["Fixed scope", "Managed services", "Licensing", "Team augmentation"];
+const engagementModels = [
+  "Fixed-scope projects",
+  "Managed services",
+  "Product licensing",
+  "Team augmentation",
+];
 
 export function Services() {
   return (
@@ -74,10 +84,11 @@ export function Services() {
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start" {...reveal()}>
           <h2 id="services-heading" className="font-display text-display-2">
-            Consulting and engineering across your digital estate.
+            Technology services for day-to-day operations and long-term change.
           </h2>
           <p className="mt-6 max-w-[34rem] text-lede text-slate">
-            Strategy, software, learning and infrastructure delivered as one joined-up practice.
+            Build software, connect systems, deliver staff learning and strengthen the
+            infrastructure your organisation relies on.
           </p>
         </div>
 
@@ -113,7 +124,7 @@ export function Services() {
       <figure className="relative mt-16 min-h-[28rem] overflow-hidden rounded-bar" {...reveal()}>
         <Image
           src="/assets/capabilities-consulting.jpg"
-          alt="Engineers and a client reviewing enterprise infrastructure together"
+          alt="Team reviewing infrastructure requirements"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -126,9 +137,8 @@ export function Services() {
           {/* Client wording, 8 September 2026, in the site's British spelling. Longer sentence,
               so the size steps down from the previous statement. */}
           <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-[1.15] font-bold tracking-[-.02em]">
-            We design and build digital platforms, software products, learning systems, and
-            technology solutions that help organisations digitise their operations, training, and
-            service delivery.
+            Choose a defined project, ongoing support, product licensing or additional delivery
+            capacity to match your procurement needs.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {engagementModels.map((item) => (

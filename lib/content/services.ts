@@ -11,59 +11,55 @@ export type EngagementPanel = {
 };
 
 export const services = {
-  kicker: "Consulting and engineering",
-  headline: "Beyond the products: end-to-end capability.",
-  lede: "From in-house software engineering to zero-trust networks, we deliver across every layer of your digital estate. As a full build, a managed service, or an extension of your own teams.",
+  kicker: "Technology services",
+  headline: "Technology services for day-to-day operations and long-term change.",
+  lede: "Build software, connect systems, deliver staff learning and strengthen the infrastructure your organisation relies on.",
 } as const;
 
 export const practices: Practice[] = [
   {
     slug: "software-development",
     title: "Software development",
-    description:
-      "Custom web, mobile, AI and enterprise applications. API and systems integration. Automation and workflow tooling aligned to your strategic goals.",
+    description: "Build applications, connect existing systems and automate manual workflows.",
   },
   {
     slug: "lms-engineering",
-    title: "LMS engineering",
+    title: "Learning management systems",
     description:
-      "We don't just implement learning platforms, we build and evolve them: microservices, API-first, cloud-native, with DevSecOps in every release.",
+      "Build and adapt platforms to manage courses, deliver training and track learning.",
   },
   {
     slug: "doc2video",
-    title: "Doc2Video digitisation",
+    title: "Documents to video",
     description:
-      "Our studio converts manuals, policies and legacy materials into engaging video, interactive eLearning and microlearning. Accessible and localised.",
+      "Turn policies and manuals into digital learning that staff can understand and use.",
   },
   {
     slug: "hr-performance",
     title: "HR and performance systems",
-    description:
-      "Smart workforce tools for reviews, competency mapping and performance data that connect directly to learning outcomes.",
+    description: "Connect employee performance, skills and learning in workforce management tools.",
   },
   {
     slug: "cloud",
     title: "Cloud services",
-    description:
-      "Scalable architecture, migration and ongoing management across Azure, AWS and Google Cloud, with auto-scaling and disaster recovery built in.",
+    description: "Plan cloud architecture, migrate systems and support operations and recovery.",
   },
   {
     slug: "network-infrastructure",
-    title: "Network and infrastructure",
+    title: "Networks and infrastructure",
     description:
-      "Reliable enterprise networks, identity and access management, and end-user computing for organisations that cannot afford downtime.",
+      "Design and manage networks, identity systems and the technology staff use every day.",
   },
   {
     slug: "cybersecurity",
     title: "Cybersecurity",
     description:
-      "Secure architectures, role-based access, full audit trails and hardened delivery pipelines that protect your digital assets from modern threats.",
+      "Strengthen system design, control access and prepare technical evidence for audits.",
   },
   {
     slug: "advanced-technology",
-    title: "Advanced technology",
-    description:
-      "Applied AI, data-driven platforms and advanced engineering, including defence and space technology innovation.",
+    title: "AI, data and specialist engineering",
+    description: "Apply AI and data platforms to defined business problems.",
   },
 ];
 

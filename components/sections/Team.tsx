@@ -12,10 +12,10 @@ export function Team() {
     <Section id="team" labelledBy="team-heading">
       <div className="mx-auto max-w-[44rem] text-center" {...reveal()}>
         <h2 id="team-heading" className="font-display text-display-2">
-          Meet our team.
+          Meet the team.
         </h2>
         <p className="mt-4 text-lede text-slate">
-          Experienced consultants. Practical engineering. Accountable delivery.
+          Leadership, design, engineering and project delivery.
         </p>
       </div>
 

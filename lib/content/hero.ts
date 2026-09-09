@@ -8,10 +8,10 @@ export const hero = {
     secondary: "Public and private sector",
   } satisfies SplitLabel,
   /** Two sentences. The second is set on its own line; that is the emphasis. */
-  headline: ["Technology adapted to you.", "Never off the shelf."] as const,
-  lede: "We build software, learning platforms and infrastructure intelligence for banks, ministries, agencies and enterprises. Every engagement starts with your problem, not our product list.",
-  primaryCta: { label: "Start a conversation", href: "#contact" } satisfies LinkItem,
-  secondaryCta: { label: "Explore our products", href: "#products" } satisfies LinkItem,
+  headline: ["Technology that makes", "work run better."] as const,
+  lede: "We help organisations improve operations, train their people and manage infrastructure through technology consulting, custom software and learning platforms.",
+  primaryCta: { label: "Discuss your project", href: "#contact" } satisfies LinkItem,
+  secondaryCta: { label: "Explore Atlas and Sonar", href: "#products" } satisfies LinkItem,
   /** Third point changed from "Delivered for HP and LexisNexis" on 5 September 2026 (client). */
   trustPoints: [
     "Two in-house platforms",

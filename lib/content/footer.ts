@@ -8,7 +8,7 @@ export type FooterColumn = {
 
 export const footer = {
   descriptor:
-    "Enterprise technology built around your organisation. Learning platforms, infrastructure intelligence and consulting delivered from Lagos, Abuja, Calabar and London.",
+    "Technology consulting, custom software, learning platforms and infrastructure services. Working from Lagos, Abuja, Calabar and London.",
   /** Footer contact line for the offices (client wording, 8 September 2026). */
   locationsLine: "Lagos, Abuja, Calabar, London",
   /** Rendered as separate items, not a dot-joined string. */
@@ -24,25 +24,25 @@ export const footerColumns: FooterColumn[] = [
     title: "Products",
     links: [
       { label: "Von Newman Atlas", href: "#atlas" },
-      { label: "Atlas catalogue", href: site.urls.atlasCatalogue, external: true },
+      { label: "Atlas course catalogue", href: site.urls.atlasCatalogue, external: true },
       { label: "Von Newman Sonar", href: "#sonar" },
-      { label: "Custom builds", href: "#services" },
+      { label: "Custom solutions", href: "#services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "What makes us different", href: "#difference" },
+      { label: "Our approach to consulting", href: "#difference" },
       { label: "How we work", href: "#approach" },
       { label: "Sectors", href: "#sectors" },
-      { label: "Leadership team", href: "#team" },
+      { label: "Our team", href: "#team" },
       { label: "Contact", href: "#contact" },
     ],
   },
   {
-    title: "Sign in",
+    title: "Product access",
     links: [
-      { label: "Atlas learners and admins", href: site.urls.atlasSignIn, external: true },
+      { label: "Atlas sign in", href: site.urls.atlasSignIn, external: true },
       { label: "Request Sonar access", href: "#contact" },
     ],
   },
