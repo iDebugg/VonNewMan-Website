@@ -278,19 +278,23 @@ export const systems: SystemShowcaseItem[] = [
         items: [
           {
             title: "Learner dashboard",
-            caption: "Available, recommended and assigned courses in one view.",
+            caption: "Assigned learning, progress, certificates and current activity in one view.",
             image: {
-              src: "/assets/atlas-home.jpg",
-              alt: "Atlas learner dashboard with demonstration course data",
-              width: 1400,
-              height: 875,
+              src: "/assets/atlas-lms-dashboard.png",
+              alt: "Atlas LMS learner dashboard showing assigned learning and progress",
+              width: 2880,
+              height: 1558,
             },
           },
           {
-            title: "Atlas LMS",
-            caption:
-              "The multi-organisation learning environment for workforce learning and development.",
-            image: lmsImage,
+            title: "My learning",
+            caption: "Assigned learning experiences arranged in the learner's course view.",
+            image: {
+              src: "/assets/atlas-lms-learning.png",
+              alt: "Atlas LMS assigned-learning catalogue with course cards",
+              width: 2880,
+              height: 1558,
+            },
           },
         ],
       },
