@@ -159,19 +159,25 @@ export const systems: SystemShowcaseItem[] = [
         items: [
           {
             title: "Course catalogue",
-            caption: "The content team's view of courses and their publication status.",
+            caption:
+              "Courses, publishing status and organisational availability in one operational view.",
             image: {
-              src: "/assets/atlas-catalogue.jpg",
-              alt: "Atlas CMS course catalogue with demonstration content",
-              width: 1400,
-              height: 525,
+              src: "/assets/atlas-cms-courses.png",
+              alt: "Atlas CMS course catalogue showing publishing status and organisations",
+              width: 2880,
+              height: 1558,
             },
           },
           {
-            title: "Atlas CMS",
+            title: "Course authoring",
             caption:
-              "The course-management system used to organise learning content and publishing workflows.",
-            image: cmsImage,
+              "A focused workflow for setting up course information before content production begins.",
+            image: {
+              src: "/assets/atlas-cms-course-draft.png",
+              alt: "Atlas CMS course authoring form for creating a new draft",
+              width: 2880,
+              height: 1558,
+            },
           },
         ],
       },

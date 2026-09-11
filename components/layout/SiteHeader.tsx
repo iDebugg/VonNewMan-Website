@@ -62,7 +62,7 @@ export function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                 ))}
               </ul>
             </nav>
-            <div {...reveal(6)}>
+            <div {...reveal(primaryLinks.length + 2)}>
               <ButtonLink
                 item={headerCta}
                 variant="primary"

@@ -33,6 +33,7 @@ export const productsMenuDividerBefore = 2;
 export const primaryLinks: LinkItem[] = [
   { label: "Services", href: "#services" },
   { label: "Sectors", href: "#sectors" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "How we work", href: "#approach" },
   { label: "Company", href: "#company" },
 ];
@@ -78,6 +79,7 @@ export const mobileMenu: MobileGroup[] = [
     items: [
       { label: "Services", href: "#services" },
       { label: "Sectors", href: "#sectors" },
+      { label: "Case studies", href: "/case-studies" },
       { label: "How we work", href: "#approach" },
       { label: "Team and locations", href: "#company" },
     ],
