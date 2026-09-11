@@ -13,7 +13,13 @@ import { MobileNav } from "./MobileNav";
 import { reveal } from "@/lib/utils/reveal";
 import type { Href } from "@/types/content";
 
-export function SiteHeader({ subpage = false }: { subpage?: boolean }) {
+export function SiteHeader({
+  subpage = false,
+  darkHero = false,
+}: {
+  subpage?: boolean;
+  darkHero?: boolean;
+}) {
   const homeHref = (href: Href): Href =>
     subpage && href.startsWith("#") ? (`/${href}` as Href) : href;
   const headerProducts = {
@@ -30,7 +36,7 @@ export function SiteHeader({ subpage = false }: { subpage?: boolean }) {
   return (
     <header
       data-site-header
-      data-condensed={subpage ? "true" : "false"}
+      data-condensed={subpage && !darkHero ? "true" : "false"}
       className="group fixed inset-x-0 top-0 z-50"
     >
       {/* The top state sits directly on the hero. On scroll, a full-width translucent surface
@@ -74,7 +80,7 @@ export function SiteHeader({ subpage = false }: { subpage?: boolean }) {
           <MobileNav groups={headerMobileMenu} cta={headerCta} />
         </div>
       </div>
-      {subpage ? null : <HeaderCondense />}
+      {subpage && !darkHero ? null : <HeaderCondense />}
     </header>
   );
 }

@@ -46,43 +46,52 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <SiteHeader subpage />
-      <main id="top" className="flex-1 pt-header">
-        <section className="flex min-h-[calc(100svh-var(--spacing-header))] items-center overflow-hidden bg-sky px-gutter-narrow py-16 sm:px-gutter lg:px-gutter-wide lg:py-20">
-          <div className="mx-auto grid w-full max-w-site gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-6" {...reveal()}>
-              <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
-                Our work
-              </p>
-              <h1 className="mt-5 font-display text-display-1">
+      <SiteHeader subpage darkHero />
+      <main id="top" className="flex-1">
+        <section
+          data-ground="dark"
+          className="relative isolate flex min-h-[48rem] flex-col overflow-hidden bg-forest text-paper lg:min-h-svh"
+        >
+          <Image
+            src="/assets/case-studies-hero.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            aria-hidden="true"
+            className="object-cover object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,27,20,.97)_0%,rgba(3,27,20,.89)_43%,rgba(3,27,20,.48)_72%,rgba(3,27,20,.3)_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(186,244,66,.12),transparent_28%)]"
+          />
+
+          <div className="relative mx-auto flex w-full max-w-site flex-1 items-center px-gutter-narrow pt-36 pb-16 sm:px-gutter lg:px-gutter-wide lg:pt-44">
+            <div className="max-w-[48rem]" {...reveal()}>
+              <p className="text-label font-bold tracking-[0.14em] text-mint uppercase">Our work</p>
+              <h1 className="mt-5 max-w-[16ch] font-display text-display-1 text-paper">
                 Systems built for real organisational needs.
               </h1>
-              <p className="mt-7 max-w-[32rem] text-[clamp(1.0625rem,1.25vw,1.25rem)] leading-[1.55] text-slate">
+              <p className="mt-7 max-w-[35rem] text-lede text-paper/82">
                 Explore how we approach learning delivery, content operations, infrastructure
                 visibility, election operations and workforce performance.
               </p>
               <a
                 href="#all-case-studies"
-                className="mt-8 inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
+                className="mt-9 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-label font-bold text-ink transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-paper"
               >
                 Explore the case studies <ArrowDownIcon />
               </a>
             </div>
-            <div className="relative lg:col-span-6" {...reveal(1)}>
-              <div className="relative aspect-[16/11] overflow-hidden rounded-bar bg-forest shadow-panel">
-                <Image
-                  src="/assets/case-studies-hero.jpg"
-                  alt="African technology consultants reviewing system data and operational workflows"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 48vw, 92vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-6 pt-16 pb-5 text-caption font-semibold text-paper sm:px-7">
-                  Consulting and engineering, brought together around the way organisations work.
-                </div>
-              </div>
-            </div>
+          </div>
+
+          <div className="relative mx-auto flex w-full max-w-site flex-wrap justify-between gap-4 border-t border-paper/20 px-gutter-narrow py-6 text-caption font-bold tracking-[.12em] text-paper/75 sm:px-gutter lg:px-gutter-wide">
+            <span>CONSULTING AND ENGINEERING</span>
+            <span>LAGOS / ABUJA / CALABAR / LONDON</span>
           </div>
         </section>
 
@@ -121,7 +130,10 @@ export default function CaseStudiesPage() {
                     className="scroll-mt-28"
                     {...reveal(index)}
                   >
-                    <article className="group flex h-full flex-col overflow-hidden rounded-bar border border-ink/10 bg-paper transition-[transform,box-shadow,border-color] duration-300 ease-out-quiet hover:-translate-y-1 hover:border-ink/20 hover:shadow-panel">
+                    <Link
+                      href={`/case-studies/${system.slug}`}
+                      className="group flex h-full flex-col overflow-hidden rounded-bar border border-ink/10 bg-paper transition-[transform,box-shadow,border-color] duration-300 ease-out-quiet hover:-translate-y-1 hover:border-ink/20 hover:shadow-panel"
+                    >
                       <div
                         className={cn("relative m-2 overflow-hidden rounded-[1.2rem]", tone.media)}
                       >
@@ -166,16 +178,15 @@ export default function CaseStudiesPage() {
                           <span className="text-caption font-semibold tracking-[0.08em] text-slate uppercase">
                             Product case study
                           </span>
-                          <Link
-                            href={`/case-studies/${system.slug}`}
-                            aria-label={`Read the ${system.title} case study`}
-                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-label font-bold text-paper transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-brand"
+                          <span
+                            aria-hidden="true"
+                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-label font-bold text-paper transition-[background-color,transform] duration-150 group-hover:-translate-y-0.5 group-hover:bg-brand"
                           >
                             Read case study <ArrowRightIcon />
-                          </Link>
+                          </span>
                         </div>
                       </div>
-                    </article>
+                    </Link>
                   </li>
                 );
               })}
