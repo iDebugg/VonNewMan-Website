@@ -10,11 +10,31 @@ import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
 
 const studyTones = {
-  "atlas-cms": "bg-lilac",
-  "atlas-lms": "bg-sage",
-  compass: "bg-clay",
-  "hr-performance": "bg-sky",
-  sonar: "bg-forest text-paper",
+  "atlas-cms": {
+    media: "bg-lilac",
+    marker: "bg-violet",
+    label: "bg-lilac text-brand",
+  },
+  "atlas-lms": {
+    media: "bg-sage",
+    marker: "bg-lime",
+    label: "bg-sage text-forest",
+  },
+  compass: {
+    media: "bg-clay",
+    marker: "bg-coral",
+    label: "bg-clay text-ink",
+  },
+  "hr-performance": {
+    media: "bg-sky",
+    marker: "bg-cyan",
+    label: "bg-sky text-forest",
+  },
+  sonar: {
+    media: "bg-forest",
+    marker: "bg-cyan",
+    label: "bg-forest text-paper",
+  },
 } as const;
 
 export const metadata: Metadata = {
@@ -90,68 +110,75 @@ export default function CaseStudiesPage() {
               </p>
             </div>
 
-            <ul className="grid list-none gap-8 pt-14 md:grid-cols-2 lg:pt-16">
-              {systems.map((system, index) => (
-                <li id={system.slug} key={system.slug} className="scroll-mt-28" {...reveal(index)}>
-                  <article
-                    className={cn(
-                      "group h-full overflow-hidden rounded-bar border border-ink/10 p-2",
-                      studyTones[system.slug],
-                    )}
+            <ul className="grid list-none gap-7 pt-14 md:grid-cols-2 lg:gap-8 lg:pt-16">
+              {systems.map((system, index) => {
+                const tone = studyTones[system.slug];
+
+                return (
+                  <li
+                    id={system.slug}
+                    key={system.slug}
+                    className="scroll-mt-28"
+                    {...reveal(index)}
                   >
-                    <div className="flex min-h-64 flex-col p-5 sm:p-6">
-                      <div className="flex items-start justify-between gap-4">
-                        <p
-                          className={cn(
-                            "text-caption font-bold tracking-[0.1em] uppercase",
-                            system.slug === "sonar" ? "text-mint" : "text-brand",
-                          )}
-                        >
-                          {system.category}
-                        </p>
+                    <article className="group flex h-full flex-col overflow-hidden rounded-bar border border-ink/10 bg-paper transition-[transform,box-shadow,border-color] duration-300 ease-out-quiet hover:-translate-y-1 hover:border-ink/20 hover:shadow-panel">
+                      <div
+                        className={cn("relative m-2 overflow-hidden rounded-[1.2rem]", tone.media)}
+                      >
+                        <SystemVisual
+                          system={system}
+                          className="aspect-[16/8]"
+                          imageClassName="object-center transition-transform duration-700 ease-out-quiet group-hover:scale-[1.025]"
+                        />
                         <span
                           aria-hidden="true"
                           className={cn(
-                            "text-caption tabular",
-                            system.slug === "sonar" ? "text-paper/50" : "text-ink/40",
+                            "absolute top-4 left-4 h-1.5 w-10 rounded-full",
+                            tone.marker,
                           )}
-                        >
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+                        />
                       </div>
-                      <h3 className="mt-4 min-h-[3.75rem] font-display text-title-lg">
-                        {system.title}
-                      </h3>
-                      <p
-                        className={cn(
-                          "mt-2 line-clamp-3 max-w-[52ch] text-body",
-                          system.slug === "sonar" ? "text-paper/72" : "text-slate",
-                        )}
-                      >
-                        {system.description}
-                      </p>
-                      <Link
-                        href={`/case-studies/${system.slug}`}
-                        className={cn(
-                          "mt-auto inline-flex w-fit items-center gap-2 rounded-full px-5 py-2.5 text-label font-bold transition-transform hover:-translate-y-0.5",
-                          system.slug === "sonar"
-                            ? "bg-lime text-ink"
-                            : "bg-forest text-paper hover:bg-brand",
-                        )}
-                      >
-                        Read the case study <ArrowRightIcon />
-                      </Link>
-                    </div>
-                    <div className="relative overflow-hidden rounded-[1.2rem] bg-paper shadow-[0_20px_55px_-32px_rgba(16,42,33,.55)]">
-                      <SystemVisual
-                        system={system}
-                        className="aspect-[16/8]"
-                        imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.025]"
-                      />
-                    </div>
-                  </article>
-                </li>
-              ))}
+
+                      <div className="flex min-h-64 flex-1 flex-col px-6 pt-5 pb-6 sm:px-7 sm:pt-6 sm:pb-7">
+                        <div className="flex items-center justify-between gap-4">
+                          <p
+                            className={cn(
+                              "rounded-full px-3 py-1.5 text-caption font-bold tracking-[0.08em] uppercase",
+                              tone.label,
+                            )}
+                          >
+                            {system.category}
+                          </p>
+                          <span
+                            aria-hidden="true"
+                            className="text-caption font-semibold text-ink/42 tabular"
+                          >
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+
+                        <h3 className="mt-5 font-display text-title-lg text-ink">{system.title}</h3>
+                        <p className="mt-3 line-clamp-3 max-w-[56ch] text-body text-slate">
+                          {system.description}
+                        </p>
+
+                        <div className="mt-auto flex items-center justify-between gap-4 border-t border-ink/10 pt-5">
+                          <span className="text-caption font-semibold tracking-[0.08em] text-slate uppercase">
+                            Product case study
+                          </span>
+                          <Link
+                            href={`/case-studies/${system.slug}`}
+                            aria-label={`Read the ${system.title} case study`}
+                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-label font-bold text-paper transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-brand"
+                          >
+                            Read case study <ArrowRightIcon />
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
