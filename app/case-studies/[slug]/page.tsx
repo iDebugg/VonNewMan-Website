@@ -6,9 +6,17 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/Icon";
 import { systems } from "@/lib/content";
+import { cn } from "@/lib/utils/cn";
 import { reveal } from "@/lib/utils/reveal";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+const capabilityTones = [
+  { surface: "bg-lilac", accent: "bg-violet" },
+  { surface: "bg-sage", accent: "bg-lime" },
+  { surface: "bg-sky", accent: "bg-cyan" },
+  { surface: "bg-clay", accent: "bg-coral" },
+] as const;
 
 export function generateStaticParams() {
   return systems.map((system) => ({ slug: system.slug }));
@@ -163,21 +171,59 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           ) : null}
 
           {content.capabilities.length ? (
-            <section className="bg-paper px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28">
-              <div className="mx-auto grid max-w-site gap-10 lg:grid-cols-12">
-                <div className="lg:col-span-4" {...reveal()}>
+            <section className="overflow-hidden bg-paper px-gutter-narrow py-20 sm:px-gutter lg:px-gutter-wide lg:py-28">
+              <div className="mx-auto grid max-w-site gap-12 lg:grid-cols-12 lg:items-start">
+                <div className="lg:sticky lg:top-28 lg:col-span-4" {...reveal()}>
                   <SectionLabel number={capabilityNumber}>Core capabilities</SectionLabel>
-                  <h2 className="mt-5 font-display text-display-2">What sits inside the system.</h2>
+                  <h2 className="mt-5 max-w-[12ch] font-display text-display-2">
+                    What sits inside the system.
+                  </h2>
+                  <div className="mt-9 flex max-w-56 items-center" aria-hidden="true">
+                    <span className="size-3 rounded-full bg-brand" />
+                    <span className="h-px flex-1 bg-ink/18" />
+                    <span className="size-2 rounded-full bg-coral" />
+                    <span className="h-px flex-1 bg-ink/18" />
+                    <span className="size-3 rounded-full bg-violet" />
+                    <span className="h-px flex-1 bg-ink/18" />
+                    <span className="size-2 rounded-full bg-cyan" />
+                  </div>
                 </div>
-                <ul className="grid list-none gap-px overflow-hidden rounded-bar bg-ink/10 sm:grid-cols-2 lg:col-span-8">
-                  {content.capabilities.map((capability, index) => (
-                    <li key={capability} className="flex gap-4 bg-sage p-6 text-body lg:p-7">
-                      <span className="shrink-0 text-caption font-bold text-brand">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span>{capability}</span>
-                    </li>
-                  ))}
+                <ul className="grid list-none gap-4 sm:grid-cols-2 lg:col-span-8 xl:grid-cols-3">
+                  {content.capabilities.map((capability, index) => {
+                    const tone =
+                      capabilityTones[index % capabilityTones.length] ?? capabilityTones[0];
+
+                    return (
+                      <li
+                        key={capability}
+                        className={cn(
+                          "group relative flex min-h-44 flex-col overflow-hidden rounded-nav border border-ink/10 p-6 transition-[transform,box-shadow,border-color] duration-300 ease-out-quiet hover:-translate-y-1 hover:border-ink/20 hover:shadow-panel",
+                          tone.surface,
+                        )}
+                        {...reveal(index)}
+                      >
+                        <div className="flex items-center justify-between gap-4">
+                          <span className="grid size-9 place-items-center rounded-full bg-ink text-caption font-bold text-paper tabular">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span className="flex items-center" aria-hidden="true">
+                            <span className="h-px w-8 bg-ink/20" />
+                            <span className={cn("size-2 rounded-full", tone.accent)} />
+                          </span>
+                        </div>
+                        <p className="mt-auto max-w-[30ch] pt-8 text-body font-semibold text-ink">
+                          {capability}
+                        </p>
+                        <span
+                          aria-hidden="true"
+                          className={cn(
+                            "absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 transition-transform duration-300 ease-out-quiet group-hover:scale-x-100",
+                            tone.accent,
+                          )}
+                        />
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </section>
