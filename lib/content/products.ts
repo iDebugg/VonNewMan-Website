@@ -1,5 +1,6 @@
 import type { ImageAsset, LinkItem, SplitLabel } from "@/types/content";
 import { site } from "./site";
+import { atlasStats } from "./atlas";
 
 export type Feature = {
   lead: string;
@@ -41,8 +42,8 @@ export const atlas: Product = {
   description:
     "Deliver onboarding, skills development, compliance and certification training. Track learning in one platform, with content localised for Nigerian organisations.",
   figures: [
-    { value: "25", label: "learning pathways" },
-    { value: "209", label: "courses" },
+    { value: String(atlasStats.pathways), label: "learning pathways" },
+    { value: String(atlasStats.courses), label: "courses" },
     { value: "NG", label: "Localised content" },
   ],
   features: [

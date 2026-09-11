@@ -3,6 +3,7 @@ export * from "./navigation";
 export * from "./hero";
 export * from "./difference";
 export * from "./products";
+export * from "./atlas";
 export * from "./approach";
 export * from "./services";
 export * from "./sectors";

@@ -1,4 +1,5 @@
 import type { ImageAsset, LinkItem, SplitLabel } from "@/types/content";
+import { atlasStats } from "./atlas";
 
 export type HeroCaption = SplitLabel;
 
@@ -36,7 +37,10 @@ export const hero = {
         width: 1400,
         height: 875,
       } satisfies ImageAsset,
-      caption: { primary: "Atlas", secondary: "209 courses" } satisfies HeroCaption,
+      caption: {
+        primary: "Atlas",
+        secondary: `${atlasStats.courses} courses`,
+      } satisfies HeroCaption,
     },
     {
       image: {

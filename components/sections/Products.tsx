@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { atlas, sonar } from "@/lib/content";
+import { atlas, atlasStats, sonar } from "@/lib/content";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Section } from "@/components/ui/Section";
 import { reveal } from "@/lib/utils/reveal";
@@ -33,13 +33,19 @@ export function Products() {
               <dl className="mt-9 flex gap-10">
                 <div>
                   <dd>
-                    <CountUp value="25" className="text-figure font-bold tabular" />
+                    <CountUp
+                      value={String(atlasStats.pathways)}
+                      className="text-figure font-bold tabular"
+                    />
                   </dd>
                   <dt className="text-label text-slate">learning pathways</dt>
                 </div>
                 <div>
                   <dd>
-                    <CountUp value="209" className="text-figure font-bold tabular" />
+                    <CountUp
+                      value={String(atlasStats.courses)}
+                      className="text-figure font-bold tabular"
+                    />
                   </dd>
                   <dt className="text-label text-slate">courses</dt>
                 </div>

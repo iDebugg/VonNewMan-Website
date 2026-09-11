@@ -19,7 +19,8 @@ const studyTones = {
 
 export const metadata: Metadata = {
   title: "Case studies | Von Newman Technology Consultants",
-  description: "Explore systems designed, built, evolved or advised on by Von Newman teams.",
+  description:
+    "Explore how Von Newman approaches learning delivery, content operations, infrastructure visibility, election operations and workforce performance.",
 };
 
 export default function CaseStudiesPage() {
@@ -33,18 +34,18 @@ export default function CaseStudiesPage() {
               <p className="text-label font-bold tracking-[0.14em] text-brand uppercase">
                 Our work
               </p>
-              <h1 className="mt-5 font-display text-display-1 lg:whitespace-nowrap">
-                Case studies.
+              <h1 className="mt-5 font-display text-display-1">
+                Systems built for real organisational needs.
               </h1>
               <p className="mt-7 max-w-[32rem] text-[clamp(1.0625rem,1.25vw,1.25rem)] leading-[1.55] text-slate">
-                Explore the systems behind our consulting and engineering work, and how each one
-                addresses a practical organisational need.
+                Explore how we approach learning delivery, content operations, infrastructure
+                visibility, election operations and workforce performance.
               </p>
               <a
                 href="#all-case-studies"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-label font-bold text-paper hover:bg-brand"
               >
-                Explore the work <ArrowDownIcon />
+                Explore the case studies <ArrowDownIcon />
               </a>
             </div>
             <div className="relative lg:col-span-6" {...reveal(1)}>
@@ -58,7 +59,7 @@ export default function CaseStudiesPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent px-6 pt-16 pb-5 text-caption font-semibold text-paper sm:px-7">
-                  Consulting and engineering, considered together.
+                  Consulting and engineering, brought together around the way organisations work.
                 </div>
               </div>
             </div>
@@ -77,15 +78,15 @@ export default function CaseStudiesPage() {
                   Systems and platforms
                 </p>
                 <h2 id="case-studies-heading" className="mt-4 font-display text-display-2">
-                  Work shaped around real operations.
+                  The problem, the product and the thinking behind it.
                 </h2>
               </div>
               <p
                 className="max-w-[42ch] text-body text-slate lg:col-span-4 lg:col-start-9"
                 {...reveal(1)}
               >
-                Each study explains what the system does, the organisational context it supports and
-                the role our team played.
+                Each case study explains why the system was created, how it works and the role Von
+                Newman played in bringing it to life.
               </p>
             </div>
 
@@ -138,7 +139,7 @@ export default function CaseStudiesPage() {
                             : "bg-forest text-paper hover:bg-brand",
                         )}
                       >
-                        Learn more <ArrowRightIcon />
+                        Read the case study <ArrowRightIcon />
                       </Link>
                     </div>
                     <div className="relative overflow-hidden rounded-[1.2rem] bg-paper shadow-[0_20px_55px_-32px_rgba(16,42,33,.55)]">
