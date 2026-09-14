@@ -29,6 +29,12 @@ export const practices: Practice[] = [
       "Build and adapt platforms to manage courses, deliver training and track learning.",
   },
   {
+    slug: "e-library",
+    title: "E-library design and development",
+    description:
+      "Design searchable digital libraries for publications, records and learning resources.",
+  },
+  {
     slug: "doc2video",
     title: "Documents to video",
     description:

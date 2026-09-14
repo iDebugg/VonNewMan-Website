@@ -11,7 +11,7 @@ const common = (size: number) => ({
   focusable: false,
 });
 
-/** Solid symbols for the eight practice areas, one per slug. */
+/** Solid symbols for the practice areas, one per slug. */
 export function PracticeIcon({ slug, size = 40, ...props }: Props) {
   const base = { ...common(size), ...props };
 
@@ -28,6 +28,14 @@ export function PracticeIcon({ slug, size = 40, ...props }: Props) {
         <svg {...base}>
           <path d="M6 9.5C6 7.6 7.6 6 9.5 6H22c4 0 7.3 1.4 10 4.1V40c-2.7-2.7-6-4-10-4H9.5A3.5 3.5 0 0 1 6 32.5v-23Z" />
           <path d="M34 10.1A13.9 13.9 0 0 1 42 7v29h-5c-1 0-2 .1-3 .4V10.1Z" opacity=".62" />
+        </svg>
+      );
+    case "e-library":
+      return (
+        <svg {...base}>
+          <path d="M7 7h14c3.4 0 6.1 1.1 8 3.3V39c-1.9-1.5-4.6-2.3-8-2.3H7V7Z" />
+          <path d="M31 10.3C33 8.1 35.6 7 39 7h2v29.7h-8c-.7 0-1.3 0-2 .1V10.3Z" opacity=".58" />
+          <path d="M11 14h12v3H11v-3Zm0 7h12v3H11v-3Zm0 7h9v3h-9v-3Z" fill="white" opacity=".65" />
         </svg>
       );
     case "doc2video":

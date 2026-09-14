@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Chakra_Petch, Public_Sans } from "next/font/google";
+import { Albert_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { site } from "@/lib/content";
 import { siteUrl } from "@/lib/utils/site-url";
@@ -8,17 +8,10 @@ import { BackToTop } from "@/components/layout/BackToTop";
 import { RevealObserver } from "@/components/layout/RevealObserver";
 import "./globals.css";
 
-const publicSans = Public_Sans({
+const albertSans = Albert_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-public-sans",
-});
-
-const chakraPetch = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  display: "swap",
-  variable: "--font-chakra-petch",
+  variable: "--font-albert-sans",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-GB" className={`${publicSans.variable} ${chakraPetch.variable}`}>
+    <html lang="en-GB" className={albertSans.variable}>
       <body className="flex min-h-svh flex-col">
         <a
           href="#top"

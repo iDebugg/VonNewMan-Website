@@ -9,6 +9,8 @@ const summaries: Record<string, string> = {
     "Build applications, connect existing systems and automate manual workflows.",
   "lms-engineering":
     "Build and adapt platforms to manage courses, deliver training and track learning.",
+  "e-library":
+    "Design searchable digital libraries for publications, records and learning resources.",
   doc2video: "Turn policies and manuals into digital learning that staff can understand and use.",
   "hr-performance":
     "Connect employee performance, skills and learning in workforce management tools.",
@@ -30,6 +32,12 @@ const serviceMeta = [
   {
     label: "LEARNING PLATFORMS",
     surface: "bg-lilac text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
+  {
+    label: "DIGITAL KNOWLEDGE",
+    surface: "bg-sage text-ink",
     icon: "bg-paper text-brand",
     muted: "text-slate",
   },
@@ -92,7 +100,7 @@ export function Services() {
           </p>
         </div>
 
-        <ul className="grid list-none gap-4 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
+        <ul className="grid list-none gap-4 sm:grid-cols-2 lg:col-span-7 lg:col-start-6 xl:grid-cols-3">
           {practices.map((practice, index) => {
             const meta = serviceMeta[index]!;
             return (
@@ -136,7 +144,7 @@ export function Services() {
         <figcaption className="absolute inset-x-0 bottom-0 p-7 text-paper sm:p-10 lg:max-w-[46rem] lg:p-12">
           {/* Client wording, 8 September 2026, in the site's British spelling. Longer sentence,
               so the size steps down from the previous statement. */}
-          <p className="font-display text-[clamp(1.25rem,2vw,1.875rem)] leading-[1.2] font-bold tracking-[-.02em]">
+          <p className="font-display text-[clamp(1.25rem,2vw,1.875rem)] leading-[1.25] font-medium tracking-[-.02em]">
             Choose a defined project, ongoing support, product licensing or additional delivery
             capacity to match your procurement needs.
           </p>
