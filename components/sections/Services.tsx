@@ -5,6 +5,8 @@ import { PracticeIcon } from "@/components/ui/PracticeIcon";
 import { reveal } from "@/lib/utils/reveal";
 
 const summaries: Record<string, string> = {
+  "technology-consulting":
+    "Assess operational needs, define the right technology response and guide delivery.",
   "software-development":
     "Build applications, connect existing systems and automate manual workflows.",
   "lms-engineering":
@@ -23,6 +25,12 @@ const summaries: Record<string, string> = {
 };
 
 const serviceMeta = [
+  {
+    label: "STRATEGY AND DELIVERY",
+    surface: "bg-clay text-ink",
+    icon: "bg-paper text-brand",
+    muted: "text-slate",
+  },
   {
     label: "APPLICATIONS AND INTEGRATION",
     surface: "bg-ink text-paper",
@@ -95,19 +103,19 @@ export function Services() {
             Technology services for day-to-day operations and long-term change.
           </h2>
           <p className="mt-6 max-w-[34rem] text-lede text-slate">
-            Build software, connect systems, deliver staff learning and strengthen the
-            infrastructure your organisation relies on.
+            Define technology strategy, build software, connect systems and strengthen the
+            operations your organisation relies on.
           </p>
         </div>
 
-        <ul className="grid list-none gap-4 sm:grid-cols-2 lg:col-span-7 lg:col-start-6 xl:grid-cols-3">
+        <ul className="grid list-none gap-5 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
           {practices.map((practice, index) => {
             const meta = serviceMeta[index]!;
             return (
               <li
                 key={practice.slug}
                 {...reveal(index, 45)}
-                className={`group flex min-h-64 flex-col overflow-hidden rounded-bar p-7 transition-[transform,box-shadow] duration-300 ease-out-quiet hover:-translate-y-1 hover:shadow-panel ${meta.surface}`}
+                className={`group flex min-h-72 flex-col overflow-hidden rounded-bar p-8 transition-[transform,box-shadow] duration-300 ease-out-quiet hover:-translate-y-1 hover:shadow-panel ${meta.surface}`}
               >
                 <div className="flex items-center justify-between gap-4">
                   <span
@@ -117,9 +125,11 @@ export function Services() {
                   </span>
                   <span className={`text-caption font-bold ${meta.muted}`}>{meta.label}</span>
                 </div>
-                <div className="mt-auto pt-10">
-                  <h3 className="text-title font-bold">{practice.title}</h3>
-                  <p className={`mt-3 max-w-[34ch] text-body ${meta.muted}`}>
+                <div className="mt-auto pt-12">
+                  <h3 className="max-w-[24ch] text-title leading-[1.35] font-bold">
+                    {practice.title}
+                  </h3>
+                  <p className={`mt-4 max-w-[38ch] text-body leading-[1.65] ${meta.muted}`}>
                     {summaries[practice.slug]}
                   </p>
                 </div>

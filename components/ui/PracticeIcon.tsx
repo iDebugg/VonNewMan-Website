@@ -16,6 +16,13 @@ export function PracticeIcon({ slug, size = 40, ...props }: Props) {
   const base = { ...common(size), ...props };
 
   switch (slug) {
+    case "technology-consulting":
+      return (
+        <svg {...base}>
+          <path d="M8 8h32v10H8V8Zm0 14h15v18H8V22Zm19 0h13v8H27v-8Zm0 12h13v6H27v-6Z" />
+          <circle cx="34" cy="15" r="3" fill="white" opacity=".7" />
+        </svg>
+      );
     case "software-development":
       return (
         <svg {...base}>

@@ -13,10 +13,16 @@ export type EngagementPanel = {
 export const services = {
   kicker: "Technology services",
   headline: "Technology services for day-to-day operations and long-term change.",
-  lede: "Build software, connect systems, deliver staff learning and strengthen the infrastructure your organisation relies on.",
+  lede: "Define technology strategy, build software, connect systems and strengthen the operations your organisation relies on.",
 } as const;
 
 export const practices: Practice[] = [
+  {
+    slug: "technology-consulting",
+    title: "Technology consultancy",
+    description:
+      "Assess operational needs, define the right technology response and guide delivery from decision to adoption.",
+  },
   {
     slug: "software-development",
     title: "Software development",
